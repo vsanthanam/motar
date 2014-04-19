@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F8829919033F1A0078AD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829819033F1A0078AD13 /* Foundation.framework */; };
+		07F8829B19033F1A0078AD13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829A19033F1A0078AD13 /* CoreGraphics.framework */; };
+		07F8829D19033F1A0078AD13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829C19033F1A0078AD13 /* UIKit.framework */; };
+		07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F882A119033F1A0078AD13 /* InfoPlist.strings */; };
+		07F882A519033F1A0078AD13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882A419033F1A0078AD13 /* main.m */; };
+		07F882A919033F1A0078AD13 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882A819033F1A0078AD13 /* MPAppDelegate.m */; };
+		07F882AC19033F1A0078AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F882AA19033F1A0078AD13 /* Main.storyboard */; };
+		07F882AF19033F1A0078AD13 /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882AE19033F1A0078AD13 /* MPViewController.m */; };
+		07F882B119033F1A0078AD13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F882B019033F1A0078AD13 /* Images.xcassets */; };
+		07F882B819033F1A0078AD13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F882B719033F1A0078AD13 /* XCTest.framework */; };
+		07F882B919033F1A0078AD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829819033F1A0078AD13 /* Foundation.framework */; };
+		07F882BA19033F1A0078AD13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829C19033F1A0078AD13 /* UIKit.framework */; };
+		07F882C219033F1A0078AD13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F882C019033F1A0078AD13 /* InfoPlist.strings */; };
+		07F882C419033F1A0078AD13 /* motarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882C319033F1A0078AD13 /* motarTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07F882BB19033F1A0078AD13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07F8828D19033F1A0078AD13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07F8829419033F1A0078AD13;
+			remoteInfo = motar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07F8829519033F1A0078AD13 /* motar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F8829819033F1A0078AD13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07F8829A19033F1A0078AD13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07F8829C19033F1A0078AD13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07F882A019033F1A0078AD13 /* motar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "motar-Info.plist"; sourceTree = "<group>"; };
+		07F882A219033F1A0078AD13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07F882A419033F1A0078AD13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07F882A619033F1A0078AD13 /* motar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "motar-Prefix.pch"; sourceTree = "<group>"; };
+		07F882A719033F1A0078AD13 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
+		07F882A819033F1A0078AD13 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
+		07F882AB19033F1A0078AD13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		07F882AD19033F1A0078AD13 /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
+		07F882AE19033F1A0078AD13 /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
+		07F882B019033F1A0078AD13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07F882B619033F1A0078AD13 /* motarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = motarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07F882B719033F1A0078AD13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		07F882BF19033F1A0078AD13 /* motarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "motarTests-Info.plist"; sourceTree = "<group>"; };
+		07F882C119033F1A0078AD13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07F882C319033F1A0078AD13 /* motarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = motarTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07F8829219033F1A0078AD13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F8829B19033F1A0078AD13 /* CoreGraphics.framework in Frameworks */,
+				07F8829D19033F1A0078AD13 /* UIKit.framework in Frameworks */,
+				07F8829919033F1A0078AD13 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F882B319033F1A0078AD13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F882B819033F1A0078AD13 /* XCTest.framework in Frameworks */,
+				07F882BA19033F1A0078AD13 /* UIKit.framework in Frameworks */,
+				07F882B919033F1A0078AD13 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07F8828C19033F1A0078AD13 = {
+			isa = PBXGroup;
+			children = (
+				07F8829E19033F1A0078AD13 /* motar */,
+				07F882BD19033F1A0078AD13 /* motarTests */,
+				07F8829719033F1A0078AD13 /* Frameworks */,
+				07F8829619033F1A0078AD13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07F8829619033F1A0078AD13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07F8829519033F1A0078AD13 /* motar.app */,
+				07F882B619033F1A0078AD13 /* motarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07F8829719033F1A0078AD13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07F8829819033F1A0078AD13 /* Foundation.framework */,
+				07F8829A19033F1A0078AD13 /* CoreGraphics.framework */,
+				07F8829C19033F1A0078AD13 /* UIKit.framework */,
+				07F882B719033F1A0078AD13 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07F8829E19033F1A0078AD13 /* motar */ = {
+			isa = PBXGroup;
+			children = (
+				07F882A719033F1A0078AD13 /* MPAppDelegate.h */,
+				07F882A819033F1A0078AD13 /* MPAppDelegate.m */,
+				07F882AA19033F1A0078AD13 /* Main.storyboard */,
+				07F882AD19033F1A0078AD13 /* MPViewController.h */,
+				07F882AE19033F1A0078AD13 /* MPViewController.m */,
+				07F882B019033F1A0078AD13 /* Images.xcassets */,
+				07F8829F19033F1A0078AD13 /* Supporting Files */,
+			);
+			path = motar;
+			sourceTree = "<group>";
+		};
+		07F8829F19033F1A0078AD13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07F882A019033F1A0078AD13 /* motar-Info.plist */,
+				07F882A119033F1A0078AD13 /* InfoPlist.strings */,
+				07F882A419033F1A0078AD13 /* main.m */,
+				07F882A619033F1A0078AD13 /* motar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07F882BD19033F1A0078AD13 /* motarTests */ = {
+			isa = PBXGroup;
+			children = (
+				07F882C319033F1A0078AD13 /* motarTests.m */,
+				07F882BE19033F1A0078AD13 /* Supporting Files */,
+			);
+			path = motarTests;
+			sourceTree = "<group>";
+		};
+		07F882BE19033F1A0078AD13 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07F882BF19033F1A0078AD13 /* motarTests-Info.plist */,
+				07F882C019033F1A0078AD13 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07F8829419033F1A0078AD13 /* motar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F882C719033F1A0078AD13 /* Build configuration list for PBXNativeTarget "motar" */;
+			buildPhases = (
+				07F8829119033F1A0078AD13 /* Sources */,
+				07F8829219033F1A0078AD13 /* Frameworks */,
+				07F8829319033F1A0078AD13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = motar;
+			productName = motar;
+			productReference = 07F8829519033F1A0078AD13 /* motar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07F882B519033F1A0078AD13 /* motarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07F882CA19033F1A0078AD13 /* Build configuration list for PBXNativeTarget "motarTests" */;
+			buildPhases = (
+				07F882B219033F1A0078AD13 /* Sources */,
+				07F882B319033F1A0078AD13 /* Frameworks */,
+				07F882B419033F1A0078AD13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07F882BC19033F1A0078AD13 /* PBXTargetDependency */,
+			);
+			name = motarTests;
+			productName = motarTests;
+			productReference = 07F882B619033F1A0078AD13 /* motarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07F8828D19033F1A0078AD13 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Varun Santhanam";
+				TargetAttributes = {
+					07F882B519033F1A0078AD13 = {
+						TestTargetID = 07F8829419033F1A0078AD13;
+					};
+				};
+			};
+			buildConfigurationList = 07F8829019033F1A0078AD13 /* Build configuration list for PBXProject "motar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07F8828C19033F1A0078AD13;
+			productRefGroup = 07F8829619033F1A0078AD13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07F8829419033F1A0078AD13 /* motar */,
+				07F882B519033F1A0078AD13 /* motarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07F8829319033F1A0078AD13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F882B119033F1A0078AD13 /* Images.xcassets in Resources */,
+				07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */,
+				07F882AC19033F1A0078AD13 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F882B419033F1A0078AD13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F882C219033F1A0078AD13 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07F8829119033F1A0078AD13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F882A519033F1A0078AD13 /* main.m in Sources */,
+				07F882AF19033F1A0078AD13 /* MPViewController.m in Sources */,
+				07F882A919033F1A0078AD13 /* MPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07F882B219033F1A0078AD13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F882C419033F1A0078AD13 /* motarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07F882BC19033F1A0078AD13 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07F8829419033F1A0078AD13 /* motar */;
+			targetProxy = 07F882BB19033F1A0078AD13 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07F882A119033F1A0078AD13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07F882A219033F1A0078AD13 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07F882AA19033F1A0078AD13 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07F882AB19033F1A0078AD13 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		07F882C019033F1A0078AD13 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07F882C119033F1A0078AD13 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07F882C519033F1A0078AD13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07F882C619033F1A0078AD13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07F882C819033F1A0078AD13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
+				INFOPLIST_FILE = "motar/motar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07F882C919033F1A0078AD13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
+				INFOPLIST_FILE = "motar/motar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		07F882CB19033F1A0078AD13 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/motar.app/motar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "motarTests/motarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		07F882CC19033F1A0078AD13 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/motar.app/motar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
+				INFOPLIST_FILE = "motarTests/motarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07F8829019033F1A0078AD13 /* Build configuration list for PBXProject "motar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F882C519033F1A0078AD13 /* Debug */,
+				07F882C619033F1A0078AD13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07F882C719033F1A0078AD13 /* Build configuration list for PBXNativeTarget "motar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F882C819033F1A0078AD13 /* Debug */,
+				07F882C919033F1A0078AD13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07F882CA19033F1A0078AD13 /* Build configuration list for PBXNativeTarget "motarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07F882CB19033F1A0078AD13 /* Debug */,
+				07F882CC19033F1A0078AD13 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07F8828D19033F1A0078AD13 /* Project object */;
+}
