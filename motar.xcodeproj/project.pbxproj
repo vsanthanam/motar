@@ -12,15 +12,73 @@
 		07F8829D19033F1A0078AD13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829C19033F1A0078AD13 /* UIKit.framework */; };
 		07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F882A119033F1A0078AD13 /* InfoPlist.strings */; };
 		07F882A519033F1A0078AD13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882A419033F1A0078AD13 /* main.m */; };
-		07F882A919033F1A0078AD13 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882A819033F1A0078AD13 /* MPAppDelegate.m */; };
-		07F882AC19033F1A0078AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F882AA19033F1A0078AD13 /* Main.storyboard */; };
-		07F882AF19033F1A0078AD13 /* MPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882AE19033F1A0078AD13 /* MPViewController.m */; };
 		07F882B119033F1A0078AD13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F882B019033F1A0078AD13 /* Images.xcassets */; };
 		07F882B819033F1A0078AD13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F882B719033F1A0078AD13 /* XCTest.framework */; };
 		07F882B919033F1A0078AD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829819033F1A0078AD13 /* Foundation.framework */; };
 		07F882BA19033F1A0078AD13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829C19033F1A0078AD13 /* UIKit.framework */; };
 		07F882C219033F1A0078AD13 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07F882C019033F1A0078AD13 /* InfoPlist.strings */; };
 		07F882C419033F1A0078AD13 /* motarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F882C319033F1A0078AD13 /* motarTests.m */; };
+		07F882ED19033FF60078AD13 /* automotive.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882CD19033FF60078AD13 /* automotive.png */; };
+		07F882EE19033FF60078AD13 /* automotive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882CE19033FF60078AD13 /* automotive@2x.png */; };
+		07F882EF19033FF60078AD13 /* autopark.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882CF19033FF60078AD13 /* autopark.png */; };
+		07F882F019033FF60078AD13 /* autopark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D019033FF60078AD13 /* autopark@2x.png */; };
+		07F882F119033FF60078AD13 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D119033FF60078AD13 /* camera.png */; };
+		07F882F219033FF60078AD13 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D219033FF60078AD13 /* camera@2x.png */; };
+		07F882F319033FF60078AD13 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D319033FF60078AD13 /* directions.png */; };
+		07F882F419033FF60078AD13 /* directions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D419033FF60078AD13 /* directions@2x.png */; };
+		07F882F519033FF60078AD13 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D519033FF60078AD13 /* error.png */; };
+		07F882F619033FF60078AD13 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D619033FF60078AD13 /* error@2x.png */; };
+		07F882F719033FF60078AD13 /* geo.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D719033FF60078AD13 /* geo.png */; };
+		07F882F819033FF60078AD13 /* geo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D819033FF60078AD13 /* geo@2x.png */; };
+		07F882F919033FF60078AD13 /* iCloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882D919033FF60078AD13 /* iCloud.png */; };
+		07F882FA19033FF60078AD13 /* iCloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DA19033FF60078AD13 /* iCloud@2x.png */; };
+		07F882FB19033FF60078AD13 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DB19033FF60078AD13 /* loading.png */; };
+		07F882FC19033FF60078AD13 /* loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DC19033FF60078AD13 /* loading@2x.png */; };
+		07F882FD19033FF60078AD13 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DD19033FF60078AD13 /* location.png */; };
+		07F882FE19033FF60078AD13 /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DE19033FF60078AD13 /* location@2x.png */; };
+		07F882FF19033FF60078AD13 /* parkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882DF19033FF60078AD13 /* parkImage.png */; };
+		07F8830019033FF60078AD13 /* parkImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E019033FF60078AD13 /* parkImage@2x.png */; };
+		07F8830119033FF60078AD13 /* running.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E119033FF60078AD13 /* running.png */; };
+		07F8830219033FF60078AD13 /* running@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E219033FF60078AD13 /* running@2x.png */; };
+		07F8830319033FF60078AD13 /* sensor.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E319033FF60078AD13 /* sensor.png */; };
+		07F8830419033FF60078AD13 /* sensor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E419033FF60078AD13 /* sensor@2x.png */; };
+		07F8830519033FF60078AD13 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E519033FF60078AD13 /* share.png */; };
+		07F8830619033FF60078AD13 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E619033FF60078AD13 /* share@2x.png */; };
+		07F8830719033FF60078AD13 /* stationary.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E719033FF60078AD13 /* stationary.png */; };
+		07F8830819033FF60078AD13 /* stationary@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E819033FF60078AD13 /* stationary@2x.png */; };
+		07F8830919033FF60078AD13 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882E919033FF60078AD13 /* time.png */; };
+		07F8830A19033FF60078AD13 /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882EA19033FF60078AD13 /* time@2x.png */; };
+		07F8830B19033FF60078AD13 /* walking.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882EB19033FF60078AD13 /* walking.png */; };
+		07F8830C19033FF60078AD13 /* walking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F882EC19033FF60078AD13 /* walking@2x.png */; };
+		07F88310190340450078AD13 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8830F190340450078AD13 /* MPAppDelegate.m */; };
+		07F88312190340610078AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F88311190340610078AD13 /* Main.storyboard */; };
+		07F88315190340810078AD13 /* MPColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88314190340810078AD13 /* MPColorManager.m */; };
+		07F883181903408D0078AD13 /* MPAutoParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F883171903408D0078AD13 /* MPAutoParkManager.m */; };
+		07F8833A190340D70078AD13 /* MPAutoParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831B190340D60078AD13 /* MPAutoParkViewController.m */; };
+		07F8833B190340D70078AD13 /* MPCarNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831D190340D60078AD13 /* MPCarNameViewController.m */; };
+		07F8833C190340D70078AD13 /* MPDataStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831F190340D60078AD13 /* MPDataStorageViewController.m */; };
+		07F8833D190340D70078AD13 /* MPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88321190340D60078AD13 /* MPMainViewController.m */; };
+		07F8833E190340D70078AD13 /* MPParkImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88323190340D60078AD13 /* MPParkImageViewController.m */; };
+		07F8833F190340D70078AD13 /* MPParkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88325190340D60078AD13 /* MPParkInfoViewController.m */; };
+		07F88340190340D70078AD13 /* MPParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88327190340D60078AD13 /* MPParkViewController.m */; };
+		07F88341190340D70078AD13 /* MPPinColorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88329190340D60078AD13 /* MPPinColorTableViewController.m */; };
+		07F88342190340D70078AD13 /* MPPreviousParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8832B190340D60078AD13 /* MPPreviousParkViewController.m */; };
+		07F88343190340D70078AD13 /* MPPreviousTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8832D190340D60078AD13 /* MPPreviousTableViewController.m */; };
+		07F88344190340D70078AD13 /* MPRetroReturnTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8832F190340D60078AD13 /* MPRetroReturnTimeViewController.m */; };
+		07F88345190340D70078AD13 /* MPReturnTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88331190340D70078AD13 /* MPReturnTimeViewController.m */; };
+		07F88346190340D70078AD13 /* MPSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88333190340D70078AD13 /* MPSettingsTableViewController.m */; };
+		07F88347190340D70078AD13 /* MPTutorialParkInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88335190340D70078AD13 /* MPTutorialParkInfoViewController.m */; };
+		07F88348190340D70078AD13 /* MPTutorialParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88337190340D70078AD13 /* MPTutorialParkViewController.m */; };
+		07F88349190340D70078AD13 /* MPTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88339190340D70078AD13 /* MPTutorialViewController.m */; };
+		07F8834D190341460078AD13 /* MPPark.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8834C190341460078AD13 /* MPPark.m */; };
+		07F88351190341800078AD13 /* MPParkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88350190341800078AD13 /* MPParkButton.m */; };
+		07F883531903418D0078AD13 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F883521903418D0078AD13 /* CoreMotion.framework */; };
+		07F88356190341A30078AD13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F88355190341A30078AD13 /* MapKit.framework */; };
+		07F88359190341B40078AD13 /* MPParkStatusMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88358190341B40078AD13 /* MPParkStatusMeter.m */; };
+		07F8835C190341CC0078AD13 /* MPParkTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8835B190341CC0078AD13 /* MPParkTimeView.m */; };
+		07F8835F190341E80078AD13 /* MPReturnTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8835E190341E80078AD13 /* MPReturnTimeView.m */; };
+		07F88362190342050078AD13 /* MPShortInfoBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88361190342050078AD13 /* MPShortInfoBubble.m */; };
+		07F88364190342430078AD13 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F88363190342430078AD13 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,17 +100,99 @@
 		07F882A219033F1A0078AD13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07F882A419033F1A0078AD13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07F882A619033F1A0078AD13 /* motar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "motar-Prefix.pch"; sourceTree = "<group>"; };
-		07F882A719033F1A0078AD13 /* MPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPAppDelegate.h; sourceTree = "<group>"; };
-		07F882A819033F1A0078AD13 /* MPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPAppDelegate.m; sourceTree = "<group>"; };
-		07F882AB19033F1A0078AD13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07F882AD19033F1A0078AD13 /* MPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPViewController.h; sourceTree = "<group>"; };
-		07F882AE19033F1A0078AD13 /* MPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPViewController.m; sourceTree = "<group>"; };
 		07F882B019033F1A0078AD13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07F882B619033F1A0078AD13 /* motarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = motarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F882B719033F1A0078AD13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		07F882BF19033F1A0078AD13 /* motarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "motarTests-Info.plist"; sourceTree = "<group>"; };
 		07F882C119033F1A0078AD13 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07F882C319033F1A0078AD13 /* motarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = motarTests.m; sourceTree = "<group>"; };
+		07F882CD19033FF60078AD13 /* automotive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = automotive.png; sourceTree = "<group>"; };
+		07F882CE19033FF60078AD13 /* automotive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "automotive@2x.png"; sourceTree = "<group>"; };
+		07F882CF19033FF60078AD13 /* autopark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autopark.png; sourceTree = "<group>"; };
+		07F882D019033FF60078AD13 /* autopark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autopark@2x.png"; sourceTree = "<group>"; };
+		07F882D119033FF60078AD13 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		07F882D219033FF60078AD13 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		07F882D319033FF60078AD13 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directions.png; sourceTree = "<group>"; };
+		07F882D419033FF60078AD13 /* directions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "directions@2x.png"; sourceTree = "<group>"; };
+		07F882D519033FF60078AD13 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		07F882D619033FF60078AD13 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		07F882D719033FF60078AD13 /* geo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = geo.png; sourceTree = "<group>"; };
+		07F882D819033FF60078AD13 /* geo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geo@2x.png"; sourceTree = "<group>"; };
+		07F882D919033FF60078AD13 /* iCloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iCloud.png; sourceTree = "<group>"; };
+		07F882DA19033FF60078AD13 /* iCloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iCloud@2x.png"; sourceTree = "<group>"; };
+		07F882DB19033FF60078AD13 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		07F882DC19033FF60078AD13 /* loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading@2x.png"; sourceTree = "<group>"; };
+		07F882DD19033FF60078AD13 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
+		07F882DE19033FF60078AD13 /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
+		07F882DF19033FF60078AD13 /* parkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkImage.png; sourceTree = "<group>"; };
+		07F882E019033FF60078AD13 /* parkImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parkImage@2x.png"; sourceTree = "<group>"; };
+		07F882E119033FF60078AD13 /* running.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running.png; sourceTree = "<group>"; };
+		07F882E219033FF60078AD13 /* running@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "running@2x.png"; sourceTree = "<group>"; };
+		07F882E319033FF60078AD13 /* sensor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensor.png; sourceTree = "<group>"; };
+		07F882E419033FF60078AD13 /* sensor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sensor@2x.png"; sourceTree = "<group>"; };
+		07F882E519033FF60078AD13 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		07F882E619033FF60078AD13 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
+		07F882E719033FF60078AD13 /* stationary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stationary.png; sourceTree = "<group>"; };
+		07F882E819033FF60078AD13 /* stationary@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stationary@2x.png"; sourceTree = "<group>"; };
+		07F882E919033FF60078AD13 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
+		07F882EA19033FF60078AD13 /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time@2x.png"; sourceTree = "<group>"; };
+		07F882EB19033FF60078AD13 /* walking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walking.png; sourceTree = "<group>"; };
+		07F882EC19033FF60078AD13 /* walking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walking@2x.png"; sourceTree = "<group>"; };
+		07F8830E190340450078AD13 /* MPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8830F190340450078AD13 /* MPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88311190340610078AD13 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		07F88313190340810078AD13 /* MPColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPColorManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88314190340810078AD13 /* MPColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPColorManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F883161903408D0078AD13 /* MPAutoParkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPAutoParkManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F883171903408D0078AD13 /* MPAutoParkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPAutoParkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8831A190340D60078AD13 /* MPAutoParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPAutoParkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8831B190340D60078AD13 /* MPAutoParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPAutoParkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8831C190340D60078AD13 /* MPCarNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPCarNameViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8831D190340D60078AD13 /* MPCarNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPCarNameViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8831E190340D60078AD13 /* MPDataStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPDataStorageViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8831F190340D60078AD13 /* MPDataStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPDataStorageViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88320190340D60078AD13 /* MPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPMainViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88321190340D60078AD13 /* MPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPMainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88322190340D60078AD13 /* MPParkImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkImageViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88323190340D60078AD13 /* MPParkImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkImageViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88324190340D60078AD13 /* MPParkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkInfoViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88325190340D60078AD13 /* MPParkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88326190340D60078AD13 /* MPParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88327190340D60078AD13 /* MPParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88328190340D60078AD13 /* MPPinColorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPPinColorTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88329190340D60078AD13 /* MPPinColorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPPinColorTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8832A190340D60078AD13 /* MPPreviousParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPPreviousParkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8832B190340D60078AD13 /* MPPreviousParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPPreviousParkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8832C190340D60078AD13 /* MPPreviousTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPPreviousTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8832D190340D60078AD13 /* MPPreviousTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPPreviousTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8832E190340D60078AD13 /* MPRetroReturnTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPRetroReturnTimeViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8832F190340D60078AD13 /* MPRetroReturnTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPRetroReturnTimeViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88330190340D70078AD13 /* MPReturnTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPReturnTimeViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88331190340D70078AD13 /* MPReturnTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPReturnTimeViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88332190340D70078AD13 /* MPSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPSettingsTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88333190340D70078AD13 /* MPSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPSettingsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88334190340D70078AD13 /* MPTutorialParkInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPTutorialParkInfoViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88335190340D70078AD13 /* MPTutorialParkInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPTutorialParkInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88336190340D70078AD13 /* MPTutorialParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPTutorialParkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88337190340D70078AD13 /* MPTutorialParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPTutorialParkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88338190340D70078AD13 /* MPTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPTutorialViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88339190340D70078AD13 /* MPTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPTutorialViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8834B190341460078AD13 /* MPPark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPPark.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8834C190341460078AD13 /* MPPark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPPark.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8834F190341800078AD13 /* MPParkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkButton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88350190341800078AD13 /* MPParkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F883521903418D0078AD13 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		07F88354190341960078AD13 /* motar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = motar.entitlements; sourceTree = "<group>"; };
+		07F88355190341A30078AD13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		07F88357190341B40078AD13 /* MPParkStatusMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkStatusMeter.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88358190341B40078AD13 /* MPParkStatusMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkStatusMeter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8835A190341CC0078AD13 /* MPParkTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkTimeView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8835B190341CC0078AD13 /* MPParkTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkTimeView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F8835D190341E80078AD13 /* MPReturnTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPReturnTimeView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F8835E190341E80078AD13 /* MPReturnTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPReturnTimeView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88360190342050078AD13 /* MPShortInfoBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPShortInfoBubble.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		07F88361190342050078AD13 /* MPShortInfoBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPShortInfoBubble.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		07F88363190342430078AD13 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +200,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F88364190342430078AD13 /* iAd.framework in Frameworks */,
+				07F883531903418D0078AD13 /* CoreMotion.framework in Frameworks */,
 				07F8829B19033F1A0078AD13 /* CoreGraphics.framework in Frameworks */,
+				07F88356190341A30078AD13 /* MapKit.framework in Frameworks */,
 				07F8829D19033F1A0078AD13 /* UIKit.framework in Frameworks */,
 				07F8829919033F1A0078AD13 /* Foundation.framework in Frameworks */,
 			);
@@ -101,6 +244,9 @@
 		07F8829719033F1A0078AD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07F88363190342430078AD13 /* iAd.framework */,
+				07F88355190341A30078AD13 /* MapKit.framework */,
+				07F883521903418D0078AD13 /* CoreMotion.framework */,
 				07F8829819033F1A0078AD13 /* Foundation.framework */,
 				07F8829A19033F1A0078AD13 /* CoreGraphics.framework */,
 				07F8829C19033F1A0078AD13 /* UIKit.framework */,
@@ -112,13 +258,13 @@
 		07F8829E19033F1A0078AD13 /* motar */ = {
 			isa = PBXGroup;
 			children = (
-				07F882A719033F1A0078AD13 /* MPAppDelegate.h */,
-				07F882A819033F1A0078AD13 /* MPAppDelegate.m */,
-				07F882AA19033F1A0078AD13 /* Main.storyboard */,
-				07F882AD19033F1A0078AD13 /* MPViewController.h */,
-				07F882AE19033F1A0078AD13 /* MPViewController.m */,
-				07F882B019033F1A0078AD13 /* Images.xcassets */,
+				07F88354190341960078AD13 /* motar.entitlements */,
+				07F88319190340AD0078AD13 /* View Controllers */,
+				07F8834E190341500078AD13 /* Parts */,
+				07F8834A190341210078AD13 /* Data Structures */,
+				07F8830D1903401F0078AD13 /* Other */,
 				07F8829F19033F1A0078AD13 /* Supporting Files */,
+				07F882B019033F1A0078AD13 /* Images.xcassets */,
 			);
 			path = motar;
 			sourceTree = "<group>";
@@ -126,6 +272,38 @@
 		07F8829F19033F1A0078AD13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07F882CD19033FF60078AD13 /* automotive.png */,
+				07F882CE19033FF60078AD13 /* automotive@2x.png */,
+				07F882CF19033FF60078AD13 /* autopark.png */,
+				07F882D019033FF60078AD13 /* autopark@2x.png */,
+				07F882D119033FF60078AD13 /* camera.png */,
+				07F882D219033FF60078AD13 /* camera@2x.png */,
+				07F882D319033FF60078AD13 /* directions.png */,
+				07F882D419033FF60078AD13 /* directions@2x.png */,
+				07F882D519033FF60078AD13 /* error.png */,
+				07F882D619033FF60078AD13 /* error@2x.png */,
+				07F882D719033FF60078AD13 /* geo.png */,
+				07F882D819033FF60078AD13 /* geo@2x.png */,
+				07F882D919033FF60078AD13 /* iCloud.png */,
+				07F882DA19033FF60078AD13 /* iCloud@2x.png */,
+				07F882DB19033FF60078AD13 /* loading.png */,
+				07F882DC19033FF60078AD13 /* loading@2x.png */,
+				07F882DD19033FF60078AD13 /* location.png */,
+				07F882DE19033FF60078AD13 /* location@2x.png */,
+				07F882DF19033FF60078AD13 /* parkImage.png */,
+				07F882E019033FF60078AD13 /* parkImage@2x.png */,
+				07F882E119033FF60078AD13 /* running.png */,
+				07F882E219033FF60078AD13 /* running@2x.png */,
+				07F882E319033FF60078AD13 /* sensor.png */,
+				07F882E419033FF60078AD13 /* sensor@2x.png */,
+				07F882E519033FF60078AD13 /* share.png */,
+				07F882E619033FF60078AD13 /* share@2x.png */,
+				07F882E719033FF60078AD13 /* stationary.png */,
+				07F882E819033FF60078AD13 /* stationary@2x.png */,
+				07F882E919033FF60078AD13 /* time.png */,
+				07F882EA19033FF60078AD13 /* time@2x.png */,
+				07F882EB19033FF60078AD13 /* walking.png */,
+				07F882EC19033FF60078AD13 /* walking@2x.png */,
 				07F882A019033F1A0078AD13 /* motar-Info.plist */,
 				07F882A119033F1A0078AD13 /* InfoPlist.strings */,
 				07F882A419033F1A0078AD13 /* main.m */,
@@ -150,6 +328,85 @@
 				07F882C019033F1A0078AD13 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07F8830D1903401F0078AD13 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				07F8830F190340450078AD13 /* MPAppDelegate.m */,
+				07F8830E190340450078AD13 /* MPAppDelegate.h */,
+				07F883171903408D0078AD13 /* MPAutoParkManager.m */,
+				07F883161903408D0078AD13 /* MPAutoParkManager.h */,
+				07F88314190340810078AD13 /* MPColorManager.m */,
+				07F88313190340810078AD13 /* MPColorManager.h */,
+				07F88311190340610078AD13 /* Main.storyboard */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		07F88319190340AD0078AD13 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07F8831A190340D60078AD13 /* MPAutoParkViewController.h */,
+				07F8831B190340D60078AD13 /* MPAutoParkViewController.m */,
+				07F8831C190340D60078AD13 /* MPCarNameViewController.h */,
+				07F8831D190340D60078AD13 /* MPCarNameViewController.m */,
+				07F8831E190340D60078AD13 /* MPDataStorageViewController.h */,
+				07F8831F190340D60078AD13 /* MPDataStorageViewController.m */,
+				07F88320190340D60078AD13 /* MPMainViewController.h */,
+				07F88321190340D60078AD13 /* MPMainViewController.m */,
+				07F88322190340D60078AD13 /* MPParkImageViewController.h */,
+				07F88323190340D60078AD13 /* MPParkImageViewController.m */,
+				07F88324190340D60078AD13 /* MPParkInfoViewController.h */,
+				07F88325190340D60078AD13 /* MPParkInfoViewController.m */,
+				07F88326190340D60078AD13 /* MPParkViewController.h */,
+				07F88327190340D60078AD13 /* MPParkViewController.m */,
+				07F88328190340D60078AD13 /* MPPinColorTableViewController.h */,
+				07F88329190340D60078AD13 /* MPPinColorTableViewController.m */,
+				07F8832A190340D60078AD13 /* MPPreviousParkViewController.h */,
+				07F8832B190340D60078AD13 /* MPPreviousParkViewController.m */,
+				07F8832C190340D60078AD13 /* MPPreviousTableViewController.h */,
+				07F8832D190340D60078AD13 /* MPPreviousTableViewController.m */,
+				07F8832E190340D60078AD13 /* MPRetroReturnTimeViewController.h */,
+				07F8832F190340D60078AD13 /* MPRetroReturnTimeViewController.m */,
+				07F88330190340D70078AD13 /* MPReturnTimeViewController.h */,
+				07F88331190340D70078AD13 /* MPReturnTimeViewController.m */,
+				07F88332190340D70078AD13 /* MPSettingsTableViewController.h */,
+				07F88333190340D70078AD13 /* MPSettingsTableViewController.m */,
+				07F88334190340D70078AD13 /* MPTutorialParkInfoViewController.h */,
+				07F88335190340D70078AD13 /* MPTutorialParkInfoViewController.m */,
+				07F88336190340D70078AD13 /* MPTutorialParkViewController.h */,
+				07F88337190340D70078AD13 /* MPTutorialParkViewController.m */,
+				07F88338190340D70078AD13 /* MPTutorialViewController.h */,
+				07F88339190340D70078AD13 /* MPTutorialViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		07F8834A190341210078AD13 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				07F8834B190341460078AD13 /* MPPark.h */,
+				07F8834C190341460078AD13 /* MPPark.m */,
+			);
+			name = "Data Structures";
+			sourceTree = "<group>";
+		};
+		07F8834E190341500078AD13 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				07F8834F190341800078AD13 /* MPParkButton.h */,
+				07F88350190341800078AD13 /* MPParkButton.m */,
+				07F88357190341B40078AD13 /* MPParkStatusMeter.h */,
+				07F88358190341B40078AD13 /* MPParkStatusMeter.m */,
+				07F8835A190341CC0078AD13 /* MPParkTimeView.h */,
+				07F8835B190341CC0078AD13 /* MPParkTimeView.m */,
+				07F8835D190341E80078AD13 /* MPReturnTimeView.h */,
+				07F8835E190341E80078AD13 /* MPReturnTimeView.m */,
+				07F88360190342050078AD13 /* MPShortInfoBubble.h */,
+				07F88361190342050078AD13 /* MPShortInfoBubble.m */,
+			);
+			name = Parts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +457,20 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Varun Santhanam";
 				TargetAttributes = {
+					07F8829419033F1A0078AD13 = {
+						DevelopmentTeam = 3FJXDZ3HU4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					07F882B519033F1A0078AD13 = {
 						TestTargetID = 07F8829419033F1A0078AD13;
 					};
@@ -229,9 +500,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F8830C19033FF60078AD13 /* walking@2x.png in Resources */,
+				07F882ED19033FF60078AD13 /* automotive.png in Resources */,
+				07F882F119033FF60078AD13 /* camera.png in Resources */,
+				07F882F319033FF60078AD13 /* directions.png in Resources */,
+				07F882F619033FF60078AD13 /* error@2x.png in Resources */,
+				07F882FF19033FF60078AD13 /* parkImage.png in Resources */,
+				07F882F019033FF60078AD13 /* autopark@2x.png in Resources */,
+				07F8830719033FF60078AD13 /* stationary.png in Resources */,
+				07F882F219033FF60078AD13 /* camera@2x.png in Resources */,
+				07F882F519033FF60078AD13 /* error.png in Resources */,
+				07F882FD19033FF60078AD13 /* location.png in Resources */,
+				07F882EF19033FF60078AD13 /* autopark.png in Resources */,
+				07F8830019033FF60078AD13 /* parkImage@2x.png in Resources */,
+				07F882FB19033FF60078AD13 /* loading.png in Resources */,
+				07F8830619033FF60078AD13 /* share@2x.png in Resources */,
+				07F882FC19033FF60078AD13 /* loading@2x.png in Resources */,
+				07F882F819033FF60078AD13 /* geo@2x.png in Resources */,
+				07F8830819033FF60078AD13 /* stationary@2x.png in Resources */,
+				07F8830319033FF60078AD13 /* sensor.png in Resources */,
+				07F882F719033FF60078AD13 /* geo.png in Resources */,
+				07F8830119033FF60078AD13 /* running.png in Resources */,
+				07F88312190340610078AD13 /* Main.storyboard in Resources */,
+				07F882FA19033FF60078AD13 /* iCloud@2x.png in Resources */,
+				07F882F419033FF60078AD13 /* directions@2x.png in Resources */,
+				07F8830B19033FF60078AD13 /* walking.png in Resources */,
+				07F8830519033FF60078AD13 /* share.png in Resources */,
+				07F8830A19033FF60078AD13 /* time@2x.png in Resources */,
 				07F882B119033F1A0078AD13 /* Images.xcassets in Resources */,
 				07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */,
-				07F882AC19033F1A0078AD13 /* Main.storyboard in Resources */,
+				07F8830219033FF60078AD13 /* running@2x.png in Resources */,
+				07F8830419033FF60078AD13 /* sensor@2x.png in Resources */,
+				07F882FE19033FF60078AD13 /* location@2x.png in Resources */,
+				07F882F919033FF60078AD13 /* iCloud.png in Resources */,
+				07F8830919033FF60078AD13 /* time.png in Resources */,
+				07F882EE19033FF60078AD13 /* automotive@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +553,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F88351190341800078AD13 /* MPParkButton.m in Sources */,
+				07F8833E190340D70078AD13 /* MPParkImageViewController.m in Sources */,
+				07F88348190340D70078AD13 /* MPTutorialParkViewController.m in Sources */,
+				07F8833C190340D70078AD13 /* MPDataStorageViewController.m in Sources */,
+				07F88345190340D70078AD13 /* MPReturnTimeViewController.m in Sources */,
+				07F88347190340D70078AD13 /* MPTutorialParkInfoViewController.m in Sources */,
 				07F882A519033F1A0078AD13 /* main.m in Sources */,
-				07F882AF19033F1A0078AD13 /* MPViewController.m in Sources */,
-				07F882A919033F1A0078AD13 /* MPAppDelegate.m in Sources */,
+				07F8834D190341460078AD13 /* MPPark.m in Sources */,
+				07F8835C190341CC0078AD13 /* MPParkTimeView.m in Sources */,
+				07F8833D190340D70078AD13 /* MPMainViewController.m in Sources */,
+				07F88342190340D70078AD13 /* MPPreviousParkViewController.m in Sources */,
+				07F88346190340D70078AD13 /* MPSettingsTableViewController.m in Sources */,
+				07F8833A190340D70078AD13 /* MPAutoParkViewController.m in Sources */,
+				07F88362190342050078AD13 /* MPShortInfoBubble.m in Sources */,
+				07F8833F190340D70078AD13 /* MPParkInfoViewController.m in Sources */,
+				07F88343190340D70078AD13 /* MPPreviousTableViewController.m in Sources */,
+				07F88344190340D70078AD13 /* MPRetroReturnTimeViewController.m in Sources */,
+				07F88349190340D70078AD13 /* MPTutorialViewController.m in Sources */,
+				07F883181903408D0078AD13 /* MPAutoParkManager.m in Sources */,
+				07F8833B190340D70078AD13 /* MPCarNameViewController.m in Sources */,
+				07F8835F190341E80078AD13 /* MPReturnTimeView.m in Sources */,
+				07F88341190340D70078AD13 /* MPPinColorTableViewController.m in Sources */,
+				07F88359190341B40078AD13 /* MPParkStatusMeter.m in Sources */,
+				07F88310190340450078AD13 /* MPAppDelegate.m in Sources */,
+				07F88340190340D70078AD13 /* MPParkViewController.m in Sources */,
+				07F88315190340810078AD13 /* MPColorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,14 +607,6 @@
 				07F882A219033F1A0078AD13 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		07F882AA19033F1A0078AD13 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07F882AB19033F1A0078AD13 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		07F882C019033F1A0078AD13 /* InfoPlist.strings */ = {
@@ -377,6 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = motar/motar.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
@@ -390,6 +709,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = motar/motar.entitlements;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
