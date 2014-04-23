@@ -62,7 +62,7 @@
 
 - (BOOL)canShowAds {
     
-    return NO;
+    return ![[NSUserDefaults standardUserDefaults] boolForKey:@"com.varunsanthanam.motar.noads"];
     
 }
 
@@ -181,6 +181,12 @@
         
     }
     
+    if (![self canShowAds]) {
+        
+        [self hideAds];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -200,6 +206,7 @@
         self.currentPark = [MPPark parkFromSave];
         
     }
+    
     self.adBanner.alpha = 0.0;
     self.adBanner.hidden = YES;
     self.adBanner.delegate = self;

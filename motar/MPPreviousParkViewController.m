@@ -19,6 +19,11 @@
 }
 
 @synthesize currentPark = _currentPark;
+@synthesize mapView = _mapView;
+@synthesize parkTimeLabel = _parkTimeLabel;
+@synthesize areaLabel = _areaLabel;
+@synthesize carLocationButton = _carLocationButton;
+@synthesize renameParkButton = _renameParkButton;
 
 #pragma mark - MKMapViewDelegate Protocol Instance Methods
 
@@ -76,7 +81,6 @@
         [self.navigationController popViewControllerAnimated:YES];
         
     }
-    self.title = self.currentPark.parkTag;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
     
@@ -86,7 +90,6 @@
     
     [super viewDidAppear:animated];
     [self refreshUI];
-    NSLog(@"%li", (long)self.currentPark.index);
     
 }
 
@@ -104,6 +107,12 @@
         MPRetroReturnTimeViewController *viewController = (MPRetroReturnTimeViewController *)navController.visibleViewController;
         viewController.currentPark = self.currentPark;
         
+    } else if ([[segue identifier] isEqualToString:@"RetroNameSegue"]) {
+        
+        UINavigationController *navController = [segue destinationViewController];
+        MPRetroNameViewController *viewController = (MPRetroNameViewController *)navController.visibleViewController;
+        viewController.currentPark = self.currentPark;
+        
     }
     
 }
@@ -112,6 +121,7 @@
 
 - (void)refreshUI {
     
+    self.title = self.currentPark.parkTag;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterShortStyle;
     dateFormatter.dateStyle = NSDateFormatterShortStyle;
@@ -195,7 +205,7 @@
                        
                    }];
     
-    
+    [self.currentPark updateArchive];
     
 }
 
@@ -211,6 +221,20 @@
 - (IBAction)userChangeDate:(id)sender {
     
     [self performSegueWithIdentifier:@"RetroDateSegue" sender:sender];
+    
+}
+
+- (IBAction)userRename:(id)sender {
+    
+    [self performSegueWithIdentifier:@"RetroNameSegue" sender:sender];
+    
+}
+
+- (IBAction)userCarLocation:(id)sender {
+    
+    MKCoordinateRegion region = self.mapView.region;
+    region.center = self.currentPark.parkLocation.coordinate;
+    [self.mapView setRegion:region animated:YES];
     
 }
 @end

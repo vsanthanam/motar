@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0719B2BC1905B71600CBD96A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BA1905B71600CBD96A /* Icon@2x.png */; };
+		0719B2BD1905B71600CBD96A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BB1905B71600CBD96A /* Icon.png */; };
+		0719B2C01905B7B500CBD96A /* SpotlightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */; };
+		0719B2C11905B7B500CBD96A /* SpotlightIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BF1905B7B500CBD96A /* SpotlightIcon@2x.png */; };
+		0719B2C31905B96C00CBD96A /* DefaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C21905B96C00CBD96A /* DefaultImage.png */; };
+		0719B2C51905D70C00CBD96A /* OldDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C41905D70C00CBD96A /* OldDefault.png */; };
+		0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */; };
+		0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719B2C81905E1F500CBD96A /* StoreKit.framework */; };
+		075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 075492431905FF5B002B5561 /* MPPaymentObserver.m */; };
+		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
+		07A01A8C1905A7A2003825BB /* rename.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A8A1905A7A2003825BB /* rename.png */; };
+		07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A01A8E1905A866003825BB /* MPRenameParkViewController.m */; };
+		07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */; };
 		07F8829919033F1A0078AD13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829819033F1A0078AD13 /* Foundation.framework */; };
 		07F8829B19033F1A0078AD13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829A19033F1A0078AD13 /* CoreGraphics.framework */; };
 		07F8829D19033F1A0078AD13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F8829C19033F1A0078AD13 /* UIKit.framework */; };
@@ -92,6 +105,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0719B2BA1905B71600CBD96A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		0719B2BB1905B71600CBD96A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpotlightIcon.png; sourceTree = "<group>"; };
+		0719B2BF1905B7B500CBD96A /* SpotlightIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SpotlightIcon@2x.png"; sourceTree = "<group>"; };
+		0719B2C21905B96C00CBD96A /* DefaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DefaultImage.png; sourceTree = "<group>"; };
+		0719B2C41905D70C00CBD96A /* OldDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OldDefault.png; sourceTree = "<group>"; };
+		0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductCatalogue.plist; sourceTree = "<group>"; };
+		0719B2C81905E1F500CBD96A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		075492421905FF5B002B5561 /* MPPaymentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPaymentObserver.h; sourceTree = "<group>"; };
+		075492431905FF5B002B5561 /* MPPaymentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPaymentObserver.m; sourceTree = "<group>"; };
+		07A01A891905A7A2003825BB /* rename@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rename@2x.png"; sourceTree = "<group>"; };
+		07A01A8A1905A7A2003825BB /* rename.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rename.png; sourceTree = "<group>"; };
+		07A01A8D1905A866003825BB /* MPRenameParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenameParkViewController.h; sourceTree = "<group>"; };
+		07A01A8E1905A866003825BB /* MPRenameParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRenameParkViewController.m; sourceTree = "<group>"; };
+		07BE2CA11908380E000A28A6 /* MPRetroNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRetroNameViewController.h; sourceTree = "<group>"; };
+		07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRetroNameViewController.m; sourceTree = "<group>"; };
+		07DFB6F3190737C600CB14C0 /* motar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = motar.entitlements; sourceTree = "<group>"; };
 		07F8829519033F1A0078AD13 /* motar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F8829819033F1A0078AD13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07F8829A19033F1A0078AD13 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,7 +212,6 @@
 		07F8834F190341800078AD13 /* MPParkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkButton.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F88350190341800078AD13 /* MPParkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F883521903418D0078AD13 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		07F88354190341960078AD13 /* motar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = motar.entitlements; sourceTree = "<group>"; };
 		07F88355190341A30078AD13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		07F88357190341B40078AD13 /* MPParkStatusMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPParkStatusMeter.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F88358190341B40078AD13 /* MPParkStatusMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPParkStatusMeter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -201,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F88364190342430078AD13 /* iAd.framework in Frameworks */,
+				0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */,
 				07F883531903418D0078AD13 /* CoreMotion.framework in Frameworks */,
 				07F8829B19033F1A0078AD13 /* CoreGraphics.framework in Frameworks */,
 				07F88356190341A30078AD13 /* MapKit.framework in Frameworks */,
@@ -244,6 +274,7 @@
 		07F8829719033F1A0078AD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0719B2C81905E1F500CBD96A /* StoreKit.framework */,
 				07F88363190342430078AD13 /* iAd.framework */,
 				07F88355190341A30078AD13 /* MapKit.framework */,
 				07F883521903418D0078AD13 /* CoreMotion.framework */,
@@ -258,7 +289,7 @@
 		07F8829E19033F1A0078AD13 /* motar */ = {
 			isa = PBXGroup;
 			children = (
-				07F88354190341960078AD13 /* motar.entitlements */,
+				07DFB6F3190737C600CB14C0 /* motar.entitlements */,
 				07F88319190340AD0078AD13 /* View Controllers */,
 				07F8834E190341500078AD13 /* Parts */,
 				07F8834A190341210078AD13 /* Data Structures */,
@@ -272,6 +303,14 @@
 		07F8829F19033F1A0078AD13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0719B2C41905D70C00CBD96A /* OldDefault.png */,
+				0719B2C21905B96C00CBD96A /* DefaultImage.png */,
+				0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */,
+				0719B2BF1905B7B500CBD96A /* SpotlightIcon@2x.png */,
+				0719B2BB1905B71600CBD96A /* Icon.png */,
+				0719B2BA1905B71600CBD96A /* Icon@2x.png */,
+				07A01A8A1905A7A2003825BB /* rename.png */,
+				07A01A891905A7A2003825BB /* rename@2x.png */,
 				07F882CD19033FF60078AD13 /* automotive.png */,
 				07F882CE19033FF60078AD13 /* automotive@2x.png */,
 				07F882CF19033FF60078AD13 /* autopark.png */,
@@ -308,6 +347,7 @@
 				07F882A119033F1A0078AD13 /* InfoPlist.strings */,
 				07F882A419033F1A0078AD13 /* main.m */,
 				07F882A619033F1A0078AD13 /* motar-Prefix.pch */,
+				0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -333,12 +373,14 @@
 		07F8830D1903401F0078AD13 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				07F8830F190340450078AD13 /* MPAppDelegate.m */,
 				07F8830E190340450078AD13 /* MPAppDelegate.h */,
-				07F883171903408D0078AD13 /* MPAutoParkManager.m */,
+				07F8830F190340450078AD13 /* MPAppDelegate.m */,
 				07F883161903408D0078AD13 /* MPAutoParkManager.h */,
-				07F88314190340810078AD13 /* MPColorManager.m */,
+				07F883171903408D0078AD13 /* MPAutoParkManager.m */,
 				07F88313190340810078AD13 /* MPColorManager.h */,
+				07F88314190340810078AD13 /* MPColorManager.m */,
+				075492421905FF5B002B5561 /* MPPaymentObserver.h */,
+				075492431905FF5B002B5561 /* MPPaymentObserver.m */,
 				07F88311190340610078AD13 /* Main.storyboard */,
 			);
 			name = Other;
@@ -379,6 +421,10 @@
 				07F88337190340D70078AD13 /* MPTutorialParkViewController.m */,
 				07F88338190340D70078AD13 /* MPTutorialViewController.h */,
 				07F88339190340D70078AD13 /* MPTutorialViewController.m */,
+				07A01A8D1905A866003825BB /* MPRenameParkViewController.h */,
+				07A01A8E1905A866003825BB /* MPRenameParkViewController.m */,
+				07BE2CA11908380E000A28A6 /* MPRetroNameViewController.h */,
+				07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -463,6 +509,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
@@ -502,10 +551,12 @@
 			files = (
 				07F8830C19033FF60078AD13 /* walking@2x.png in Resources */,
 				07F882ED19033FF60078AD13 /* automotive.png in Resources */,
+				0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */,
 				07F882F119033FF60078AD13 /* camera.png in Resources */,
 				07F882F319033FF60078AD13 /* directions.png in Resources */,
 				07F882F619033FF60078AD13 /* error@2x.png in Resources */,
 				07F882FF19033FF60078AD13 /* parkImage.png in Resources */,
+				07A01A8C1905A7A2003825BB /* rename.png in Resources */,
 				07F882F019033FF60078AD13 /* autopark@2x.png in Resources */,
 				07F8830719033FF60078AD13 /* stationary.png in Resources */,
 				07F882F219033FF60078AD13 /* camera@2x.png in Resources */,
@@ -514,10 +565,14 @@
 				07F882EF19033FF60078AD13 /* autopark.png in Resources */,
 				07F8830019033FF60078AD13 /* parkImage@2x.png in Resources */,
 				07F882FB19033FF60078AD13 /* loading.png in Resources */,
+				0719B2C31905B96C00CBD96A /* DefaultImage.png in Resources */,
+				0719B2BC1905B71600CBD96A /* Icon@2x.png in Resources */,
 				07F8830619033FF60078AD13 /* share@2x.png in Resources */,
 				07F882FC19033FF60078AD13 /* loading@2x.png in Resources */,
 				07F882F819033FF60078AD13 /* geo@2x.png in Resources */,
+				0719B2C01905B7B500CBD96A /* SpotlightIcon.png in Resources */,
 				07F8830819033FF60078AD13 /* stationary@2x.png in Resources */,
+				0719B2C51905D70C00CBD96A /* OldDefault.png in Resources */,
 				07F8830319033FF60078AD13 /* sensor.png in Resources */,
 				07F882F719033FF60078AD13 /* geo.png in Resources */,
 				07F8830119033FF60078AD13 /* running.png in Resources */,
@@ -526,11 +581,14 @@
 				07F882F419033FF60078AD13 /* directions@2x.png in Resources */,
 				07F8830B19033FF60078AD13 /* walking.png in Resources */,
 				07F8830519033FF60078AD13 /* share.png in Resources */,
+				07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */,
 				07F8830A19033FF60078AD13 /* time@2x.png in Resources */,
 				07F882B119033F1A0078AD13 /* Images.xcassets in Resources */,
 				07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */,
 				07F8830219033FF60078AD13 /* running@2x.png in Resources */,
+				0719B2BD1905B71600CBD96A /* Icon.png in Resources */,
 				07F8830419033FF60078AD13 /* sensor@2x.png in Resources */,
+				0719B2C11905B7B500CBD96A /* SpotlightIcon@2x.png in Resources */,
 				07F882FE19033FF60078AD13 /* location@2x.png in Resources */,
 				07F882F919033FF60078AD13 /* iCloud.png in Resources */,
 				07F8830919033FF60078AD13 /* time.png in Resources */,
@@ -559,12 +617,15 @@
 				07F8833C190340D70078AD13 /* MPDataStorageViewController.m in Sources */,
 				07F88345190340D70078AD13 /* MPReturnTimeViewController.m in Sources */,
 				07F88347190340D70078AD13 /* MPTutorialParkInfoViewController.m in Sources */,
+				07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */,
 				07F882A519033F1A0078AD13 /* main.m in Sources */,
 				07F8834D190341460078AD13 /* MPPark.m in Sources */,
 				07F8835C190341CC0078AD13 /* MPParkTimeView.m in Sources */,
 				07F8833D190340D70078AD13 /* MPMainViewController.m in Sources */,
+				07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */,
 				07F88342190340D70078AD13 /* MPPreviousParkViewController.m in Sources */,
 				07F88346190340D70078AD13 /* MPSettingsTableViewController.m in Sources */,
+				075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */,
 				07F8833A190340D70078AD13 /* MPAutoParkViewController.m in Sources */,
 				07F88362190342050078AD13 /* MPShortInfoBubble.m in Sources */,
 				07F8833F190340D70078AD13 /* MPParkInfoViewController.m in Sources */,
@@ -696,10 +757,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = motar/motar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -710,10 +774,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = motar/motar.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -777,6 +844,7 @@
 				07F882C919033F1A0078AD13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07F882CA19033F1A0078AD13 /* Build configuration list for PBXNativeTarget "motarTests" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +853,7 @@
 				07F882CC19033F1A0078AD13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -230,6 +230,7 @@ static MKPinAnnotationColor _pinColor;
                              self.showLocationButton.hidden = YES;
                              self.showCarButton.hidden = YES;
                              self.shareButton.hidden = YES;
+                             self.renameButton.hidden = YES;
                              self.mapView.showsUserLocation = NO;
                              
                          }
@@ -250,6 +251,7 @@ static MKPinAnnotationColor _pinColor;
                              self.showLocationButton.hidden = NO;
                              self.showCarButton.hidden = NO;
                              self.shareButton.hidden = NO;
+                             self.renameButton.hidden = NO;
                              self.mapView.showsUserLocation = YES;
                              
                          }
@@ -328,6 +330,12 @@ static MKPinAnnotationColor _pinColor;
         UIImageView *imageView = (UIImageView *)viewController.view;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = self.currentPark.parkImage;
+        
+    } else if ([[segue identifier] isEqualToString:@"RenameParkSegue"]) {
+        
+        UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+        MPRenameParkViewController *viewController = (MPRenameParkViewController *)navController.viewControllers[0];
+        viewController.currentPark = self.currentPark;
         
     }
     
@@ -578,6 +586,7 @@ static MKPinAnnotationColor _pinColor;
 - (IBAction)userDirections:(id)sender {
     
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.currentPark.parkLocation.coordinate addressDictionary:nil]];
+    mapItem.name = self.currentPark.parkTag;
     BOOL mapLaunch = [mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsMapTypeKey: @0}];
     
     if (!mapLaunch) {
@@ -627,16 +636,20 @@ static MKPinAnnotationColor _pinColor;
             
             for (id<MKAnnotation>annotation in self.mapView.annotations) {
                 
-                CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
-                if (CGRectContainsPoint(rect, point)) {
+                if (![annotation isKindOfClass:[MKUserLocation class]]) {
                     
-                    CGPoint pinCenterOffset = pinView.centerOffset;
-                    point.x -= pinView.bounds.size.width / 2.0;
-                    point.y -= pinView.bounds.size.height / 2.0;
-                    point.x += pinCenterOffset.x;
-                    point.y += pinCenterOffset.y;
-                    
-                    [pinImage drawAtPoint:point];
+                    CGPoint point = [snapshot pointForCoordinate:annotation.coordinate];
+                    if (CGRectContainsPoint(rect, point)) {
+                        
+                        CGPoint pinCenterOffset = pinView.centerOffset;
+                        point.x -= pinView.bounds.size.width / 2.0;
+                        point.y -= pinView.bounds.size.height / 2.0;
+                        point.x += pinCenterOffset.x;
+                        point.y += pinCenterOffset.y;
+                        
+                        [pinImage drawAtPoint:point];
+                        
+                    }
                     
                 }
                 
@@ -645,7 +658,18 @@ static MKPinAnnotationColor _pinColor;
             UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-            UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Parked here at %@", self.currentPark.parkDate], finalImage] applicationActivities:nil];
+            UIActivityViewController *activityViewController;
+            
+            if (!self.currentPark.parkImage) {
+                
+                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Parked here at %@", self.currentPark.parkDate], finalImage] applicationActivities:nil];
+                
+            } else {
+                
+                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Parked here at %@", self.currentPark.parkDate], finalImage, self.currentPark.parkImage] applicationActivities:nil];
+                
+            }
+            
             activityViewController.excludedActivityTypes = @[UIActivityTypeAssignToContact];
             [self presentViewController:activityViewController animated:YES completion:nil];
             self.shareButton.enabled = YES;
@@ -653,6 +677,12 @@ static MKPinAnnotationColor _pinColor;
         }
         
     }];
+    
+}
+
+- (IBAction)userRename:(id)sender {
+    
+    [self performSegueWithIdentifier:@"RenameParkSegue" sender:sender];
     
 }
 @end

@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
 #import "MPColorManager.h"
 #import "MPParkInfoViewController.h"
 #import "MPPark.h"
+#import "MPAutoParkManager.h"
+#import "MPPaymentObserver.h"
 
 @interface MPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MPPaymentObserver *paymentObserver;
 
 @end

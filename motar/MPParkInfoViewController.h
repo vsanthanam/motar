@@ -12,6 +12,7 @@
 #import "MPPark.h"
 #import "MPReturnTimeViewController.h"
 #import "MPParkImageViewController.h"
+#import "MPRenameParkViewController.h"
 #import "MPColorManager.h"
 #import "MPAppDelegate.h"
 
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pictureButton;
 @property (weak, nonatomic) IBOutlet UIButton *directionsButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *renameButton;
 
 + (MKPinAnnotationColor)pinColor;
 + (void)setPinColor:(MKPinAnnotationColor)pinColor;
@@ -43,6 +45,7 @@
 - (IBAction)userPicture:(id)sender;
 - (IBAction)userDirections:(id)sender;
 - (IBAction)userShare:(id)sender;
+- (IBAction)userRename:(id)sender;
 
 
 @end

@@ -14,12 +14,16 @@
     UIActionSheet *_historyActionSheet;
     UIActionSheet *_resetActionSheet;
     UIActionSheet *_confirmActionSheet;
+    UIAlertView *_noadsAlert;
     
 }
 
 @end
 
 @implementation MPSettingsTableViewController
+
+@synthesize productCatalogue = _productCatalogue;
+@synthesize availableProducts = _availableProducts;
 
 @synthesize iCloudSwitch = _iCloudSwitch;
 @synthesize autoParkSwitch = _autoParkSwitch;
@@ -32,8 +36,12 @@
 @synthesize tutorialCell = _tutorialCell;
 @synthesize websiteCell = _websiteCell;
 @synthesize shareAppCell = _shareAppCell;
+@synthesize removeAdsCell = _removeAdsCell;
+@synthesize restoreCell = _restoreCell;
 @synthesize nameLabel = _nameLabel;
 @synthesize colorLabel = _colorLabel;
+@synthesize removeAdsLabel = _removeAdsLabel;
+@synthesize restoreLabel = _restoreLabel;
 
 #pragma mark - UIActionSheetDelegate Protocol Instance Methods
 
@@ -97,6 +105,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [MPColorManager lightColor];
     self.carNameCell.backgroundColor = [MPColorManager darkColorLessAlpha];
     self.pinColorCell.backgroundColor = [MPColorManager darkColorLessAlpha];
@@ -107,7 +116,27 @@
     self.tutorialCell.backgroundColor = [MPColorManager darkColorLessAlpha];
     self.websiteCell.backgroundColor = [MPColorManager darkColorLessAlpha];
     self.shareAppCell.backgroundColor = [MPColorManager darkColorLessAlpha];
+    self.removeAdsCell.backgroundColor = [MPColorManager darkColorLessAlpha];
+    self.restoreCell.backgroundColor = [MPColorManager darkColorLessAlpha];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeAds) name:@"PurchasedNoAds" object:nil];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"com.varunsanthanam.motar.noads"]) {
+        
+        [self prepareStore];
+        
+    } else {
+        
+        self.removeAdsCell.backgroundColor = [MPColorManager lightColor];
+        self.restoreCell.backgroundColor = [MPColorManager lightColor];
+        self.removeAdsLabel.textColor = [MPColorManager darkColor];
+        self.restoreLabel.textColor = [MPColorManager darkColor];
+        self.removeAdsCell.userInteractionEnabled = NO;
+        self.restoreCell.userInteractionEnabled = NO;
+        self.removeAdsLabel.text = @"Thank You For Purchasing";
+        
+    }
     
 }
 
@@ -120,7 +149,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
     [self refreshUI];
     
 }
@@ -165,6 +193,14 @@
         
         [self userShareApp];
         
+    } else if (indexPath.row == 0 && indexPath.section == 4) {
+        
+        [self userRemoveAds];
+        
+    } else if (indexPath.row == 1 && indexPath.section == 4) {
+        
+        [self userRestorePurchase];
+        
     }
     
 }
@@ -173,11 +209,51 @@
     
     if (![MPAutoParkManager canTrack]) {
         
-        return 5;
+        return 6;
         
     }
     
-    return 6;
+    return 7;
+    
+}
+
+#pragma mark - SKProductsRequestDelegate Protocol Instance Methods
+
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    
+    for (SKProduct *product in response.products) {
+        
+        self.availableProducts[product.productIdentifier] = product;
+        
+    }
+    
+    for (NSString *identifier in response.invalidProductIdentifiers) {
+        
+        NSLog(@"Invalid Product Identifier %@", identifier);
+        [self disableProductWithIdentifier:identifier];
+        
+    }
+    
+    [self enableValidProducts];
+    
+}
+
+#pragma mark - SKRequestDelegate Protocol Instance Methods
+
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
+    
+    if (error != NULL) {
+        
+        NSLog(@"Failed to validate products with error %@", error);
+        [self disableAllProducts];
+        
+    }
+    
+}
+
+- (void)requestDidFinish:(SKRequest *)request {
+    
+    NSLog(@"Finished product validation");
     
 }
 
@@ -221,7 +297,7 @@
 
 - (void)userShareApp {
     
-    static NSString *shareString = @"Check out ParkMotion! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! ParkMotion";
+    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! motar";
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareString] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
     [self presentViewController:activityViewController animated:YES completion:nil];
@@ -283,6 +359,173 @@
     [MPPark refresh];
     [MPParkInfoViewController refresh];
     [self refreshUI];
+    
+}
+
+- (void)prepareStore {
+
+    self.productCatalogue = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"ProductCatalogue" withExtension:@"plist"]];
+    self.availableProducts = [NSMutableDictionary dictionaryWithSharedKeySet:[NSMutableDictionary sharedKeySetForKeys:self.productCatalogue]];
+    
+    [self disableAllProducts];
+    
+    if ([SKPaymentQueue canMakePayments]) {
+        
+        [self validateProducts:self.productCatalogue];
+        
+    }
+    
+}
+
+- (void)validateProducts:(NSArray *)productCatalogue {
+    
+    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:productCatalogue]];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    [self processAllProducts];
+    
+}
+
+- (void)disableProductWithIdentifier:(NSString *)identifier {
+    
+    if ([identifier isEqualToString:@"com.varunsanthanam.motar.noads"]) {
+        
+        self.removeAdsCell.userInteractionEnabled = NO;
+        self.restoreCell.userInteractionEnabled = NO;
+        
+        self.removeAdsCell.backgroundColor = [MPColorManager lightColor];
+        self.restoreCell.backgroundColor = [MPColorManager lightColor];
+        
+        self.removeAdsLabel.text = @"Remove Ads (Unavailable)";
+        self.restoreLabel.text = @"Restore Purchase (Unavailable)";
+        
+        self.removeAdsLabel.textColor = [MPColorManager darkColor];
+        self.restoreLabel.textColor = [MPColorManager darkColor];
+        
+        NSLog(@"Disabled %@", identifier);
+        
+    } else {
+        
+        NSLog(@"Unknown product ID: %@", identifier);
+        
+    }
+    
+}
+
+- (void)disableAllProducts {
+    
+    for (NSString *identifier in self.productCatalogue) {
+        
+        [self disableProductWithIdentifier:identifier];
+        
+    }
+    
+}
+
+- (void)enableProductWithIdentifier:(NSString *)identifier {
+    
+    if ([identifier isEqualToString:@"com.varunsanthanam.motar.noads"]) {
+        
+        self.removeAdsCell.userInteractionEnabled = YES;
+        self.restoreCell.userInteractionEnabled = YES;
+        
+        SKProduct *product = self.availableProducts[identifier];
+        
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+        numberFormatter.locale = product.priceLocale;
+        
+        self.removeAdsLabel.text = [NSString stringWithFormat:@"Remove Ads (%@)", [numberFormatter stringFromNumber:product.price]];
+        self.restoreLabel.text = @"Restore Purchase";
+        self.removeAdsLabel.textColor = [UIColor whiteColor];
+        self.restoreLabel.textColor = [UIColor whiteColor];
+        
+        self.removeAdsCell.backgroundColor = [MPColorManager darkColorLessAlpha];
+        self.restoreCell.backgroundColor = [MPColorManager darkColorLessAlpha];
+        
+        NSLog(@"Enabled %@", identifier);
+        
+    } else {
+        
+        NSLog(@"Unknown Product ID: %@", identifier);
+        
+    }
+    
+}
+
+- (void)enableValidProducts {
+    
+    for (NSString *identifier in [[self.availableProducts allKeys] mutableCopy]) {
+        
+        [self enableProductWithIdentifier:identifier];
+        
+    }
+    
+}
+
+- (void)processProductsWithIdentifier:(NSString *)identifier {
+    
+    if ([identifier isEqualToString:@"com.varunsanthanam.motar.noads"]) {
+        
+        self.removeAdsCell.backgroundColor = [MPColorManager lightColor];
+        self.restoreCell.backgroundColor = [MPColorManager lightColor];
+        self.removeAdsCell.userInteractionEnabled = NO;
+        self.restoreCell.userInteractionEnabled = NO;
+        self.removeAdsLabel.text = @"Remove Ads (Loading)";
+        self.restoreLabel.text = @"Restore Purchase";
+        self.removeAdsLabel.textColor = [MPColorManager darkColor];
+        self.restoreLabel.textColor = [MPColorManager darkColor];
+        
+        NSLog(@"Processing %@", identifier);
+        
+    }
+    
+}
+
+
+- (void)processAllProducts {
+    
+    for (NSString *identifier in self.productCatalogue) {
+        
+        [self processProductsWithIdentifier:identifier];
+        
+    }
+    
+}
+
+- (void)userRemoveAds {
+    
+    SKProduct *product = self.availableProducts[@"com.varunsanthanam.motar.noads"];
+    SKMutablePayment *payment = [SKMutablePayment paymentWithProduct:product];
+    payment.quantity = 1;
+    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    [self processProductsWithIdentifier:@"com.varunsanthanam.motar.noads"];
+    
+}
+
+- (void)userRestorePurchase {
+    
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    
+}
+
+- (void)removeAds {
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"com.varunsanthanam.motar.noads"];
+    self->_noadsAlert = [[UIAlertView alloc] initWithTitle:@"Thank You"
+                                                   message:@"Thank you for your support!"
+                                                  delegate:nil
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil];
+    [self->_noadsAlert show];
+    
+    self.removeAdsCell.backgroundColor = [MPColorManager lightColor];
+    self.removeAdsLabel.textColor = [MPColorManager darkColor];
+    self.restoreCell.backgroundColor = [MPColorManager lightColor];
+    self.restoreLabel.textColor = [MPColorManager darkColor];
+    self.removeAdsLabel.text = @"Thank You For Purchasing";
+    self.removeAdsCell.userInteractionEnabled = NO;
+    self.restoreCell.userInteractionEnabled = NO;
     
 }
 

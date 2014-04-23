@@ -58,7 +58,7 @@
 
 - (BOOL)canTrack {
     
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkKey"] && [CMMotionActivityManager isActivityAvailable];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkKey"] && [MPAutoParkManager canTrack];
     
 }
 

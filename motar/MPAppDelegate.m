@@ -55,6 +55,10 @@
     // Data While Inactive, Bring To Memory;
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
     
+    // IAP Setup
+    self.paymentObserver = [[MPPaymentObserver alloc] init];
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self.paymentObserver];
+    
     return YES;
     
 }
@@ -87,7 +91,44 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkKey"]) {
+        
+        UILocalNotification *alert = [[UILocalNotification alloc] init];
+        alert.alertBody = @"Hey you quit motar! AutoPark tracking will résume next time you use the app.";
+        alert.hasAction = NO;
+        alert.timeZone = [NSTimeZone defaultTimeZone];
+        alert.fireDate = [[NSDate date] dateByAddingTimeInterval:2];
+        alert.userInfo = @{@"key": @"exit"};
+        [[UIApplication sharedApplication] scheduleLocalNotification:alert];
+        
+    }
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    NSDictionary *infoDict = notification.userInfo;
+    if ([infoDict[@"key"] isEqualToString:@"reminder"]) {
+        
+        UIAlertView *parkingReminder = [[UIAlertView alloc] initWithTitle:@"Parking Expiration"
+                                                                  message:notification.alertBody
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles:nil];
+        [parkingReminder show];
+        
+    } else if ([infoDict[@"key"] isEqualToString:@"autopark"]) {
+        
+        UIAlertView *autoparkReminder = [[UIAlertView alloc] initWithTitle:@"AutoPark"
+                                                                   message:notification.alertBody
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@""
+                                                         otherButtonTitles:nil];
+        [autoparkReminder show];
+        
+    }
+    
 }
 
 - (void)iCloudChanged {

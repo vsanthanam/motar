@@ -12,6 +12,7 @@
 #import "MPColorManager.h"
 #import "MPParkInfoViewController.h"
 #import "MPRetroReturnTimeViewController.h"
+#import "MPRetroNameViewController.h"
 
 @interface MPPreviousParkViewController : UIViewController <MKMapViewDelegate>
 
@@ -21,7 +22,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *parkTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *previousLabel;
 @property (weak, nonatomic) IBOutlet UILabel *areaLabel;
+@property (weak, nonatomic) IBOutlet UIButton *carLocationButton;
+@property (weak, nonatomic) IBOutlet UIButton *renameParkButton;
 
 - (IBAction)userChangeDate:(id)sender;
+
+- (IBAction)userRename:(id)sender;
+- (IBAction)userCarLocation:(id)sender;
 
 @end
