@@ -297,7 +297,7 @@
 
 - (void)userShareApp {
     
-    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! motar";
+    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! http://www.appstore.com/varunsanthanam/motar";
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareString] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
     [self presentViewController:activityViewController animated:YES completion:nil];

@@ -662,11 +662,11 @@ static MKPinAnnotationColor _pinColor;
             
             if (!self.currentPark.parkImage) {
                 
-                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Parked here at %@", self.currentPark.parkDate], finalImage] applicationActivities:nil];
+                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[finalImage] applicationActivities:nil];
                 
             } else {
                 
-                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:@"Parked here at %@", self.currentPark.parkDate], finalImage, self.currentPark.parkImage] applicationActivities:nil];
+                activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[finalImage, self.currentPark.parkImage] applicationActivities:nil];
                 
             }
             
