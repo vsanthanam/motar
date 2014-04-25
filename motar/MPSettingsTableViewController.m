@@ -42,6 +42,9 @@
 @synthesize colorLabel = _colorLabel;
 @synthesize removeAdsLabel = _removeAdsLabel;
 @synthesize restoreLabel = _restoreLabel;
+@synthesize websiteLabel = _websiteLabel;
+
+static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
 
 #pragma mark - UIActionSheetDelegate Protocol Instance Methods
 
@@ -138,6 +141,10 @@
         
     }
     
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_websiteLink]];
+    NSURLConnection *connectionDoctor = [NSURLConnection connectionWithRequest:request delegate:self];
+    [connectionDoctor start];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -150,13 +157,27 @@
     
     [super viewWillAppear:animated];
     [self refreshUI];
+
+}
+
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    
+    if (error != NULL) {
+        
+        self.websiteCell.backgroundColor = [MPColorManager lightColor];
+        self.websiteCell.userInteractionEnabled = NO;
+        self.websiteLabel.textColor = [MPColorManager darkColor];
+        self.websiteLabel.text = [NSString stringWithFormat:@"%@ (Unavailable)", self.websiteLabel.text];
+        
+    }
+    
 }
 
 #pragma mark - UITableViewDataSource Protocol Instance Methods
@@ -290,7 +311,7 @@
 
 - (void)userWebsite {
     
-    NSURL *url = [NSURL URLWithString:@"http://www.santhanams.net/apps/parkbuddy"];
+    NSURL *url = [NSURL URLWithString:_websiteLink];
     [[UIApplication sharedApplication] openURL:url];
     
 }

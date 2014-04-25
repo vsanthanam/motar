@@ -14,7 +14,7 @@
 #import "MPParkInfoViewController.h"
 #import "MPTutorialViewController.h"
 
-@interface MPSettingsTableViewController : UITableViewController <UIActionSheetDelegate, SKProductsRequestDelegate>
+@interface MPSettingsTableViewController : UITableViewController <UIActionSheetDelegate, SKProductsRequestDelegate, NSURLConnectionDelegate>
 
 @property (strong, nonatomic) NSArray *productCatalogue;
 @property (strong, nonatomic) NSMutableDictionary *availableProducts;
@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *removeAdsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *restoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
 
 - (IBAction)useriCloud:(id)sender;
 - (IBAction)userAutoPark:(id)sender;
