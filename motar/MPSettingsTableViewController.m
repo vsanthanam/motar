@@ -250,7 +250,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
     
     for (NSString *identifier in response.invalidProductIdentifiers) {
         
-        NSLog(@"Invalid Product Identifier %@", identifier);
+        NSLog(@"Failed to validate invalid product identifier %@", identifier);
         [self disableProductWithIdentifier:identifier];
         
     }
@@ -265,7 +265,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
     
     if (error != NULL) {
         
-        NSLog(@"Failed to validate products with error %@", error);
+        NSLog(@"Failed to validate all product identifiers with error %@", error);
         [self disableAllProducts];
         
     }
@@ -274,7 +274,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
 
 - (void)requestDidFinish:(SKRequest *)request {
     
-    NSLog(@"Finished product validation");
+    NSLog(@"Successfully completed product identifier validation");
     
 }
 
@@ -318,7 +318,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
 
 - (void)userShareApp {
     
-    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! http://www.appstore.com/varunsanthanam/motar";
+    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! http://www.santhanams.net/apps/motar";
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareString] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
     [self presentViewController:activityViewController animated:YES completion:nil];
