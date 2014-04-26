@@ -699,20 +699,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="History" id="XXz-jr-5zY"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="28O-SF-PIm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="userRefresh:" destination="UZY-HT-2cW" eventType="valueChanged" id="bR9-CO-G34"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
-                        <outlet property="searchDisplayController" destination="Ozw-wT-xdi" id="S52-VA-KcW"/>
                         <segue destination="b8T-8p-eWN" kind="push" identifier="PreviousParkSegue" id="Qo6-oh-iWd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXV-AI-UqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Ozw-wT-xdi">
-                    <connections>
-                        <outlet property="delegate" destination="UZY-HT-2cW" id="dnn-fb-LOu"/>
-                        <outlet property="searchContentsController" destination="UZY-HT-2cW" id="48c-vm-TrG"/>
-                        <outlet property="searchResultsDataSource" destination="UZY-HT-2cW" id="Kjs-Wz-dYp"/>
-                        <outlet property="searchResultsDelegate" destination="UZY-HT-2cW" id="AId-UA-mgt"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="533" y="-777"/>
         </scene>

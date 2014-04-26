@@ -15,12 +15,12 @@
 @implementation MPPreviousTableViewController
 
 @synthesize pageViewController = _pageViewController;
-@synthesize refreshControl = _refreshControl;
 
 #pragma mark - Overridden Instance Methods
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -142,14 +142,13 @@
     
 }
 
-#pragma mark - Private Instance Methods
+#pragma mark - Actions
 
-- (void)userRefresh {
-    
-    NSLog(@"!");
+- (IBAction)userRefresh:(id)sender {
     
     [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
+    UIRefreshControl *refreshControl = (UIRefreshControl *)sender;
+    [refreshControl endRefreshing];
     
 }
 
