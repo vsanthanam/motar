@@ -15,6 +15,7 @@
 @implementation MPPreviousTableViewController
 
 @synthesize pageViewController = _pageViewController;
+@synthesize refreshControl = _refreshControl;
 
 #pragma mark - Overridden Instance Methods
 
@@ -23,7 +24,6 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.view.backgroundColor = [MPColorManager lightColor];
     
 }
@@ -42,6 +42,12 @@
         self.navigationItem.rightBarButtonItem.enabled = YES;
         
     }
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    NSLog(@"%@", self.refreshControl);
     
 }
 
@@ -133,6 +139,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"PreviousParkSegue" sender:indexPath];
+    
+}
+
+#pragma mark - Private Instance Methods
+
+- (void)userRefresh {
+    
+    NSLog(@"!");
+    
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
     
 }
 
