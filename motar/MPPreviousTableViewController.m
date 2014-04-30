@@ -45,12 +45,6 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    NSLog(@"%@", self.refreshControl);
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
