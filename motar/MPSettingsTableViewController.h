@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <StoreKit/StoreKit.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+
 #import "MPAutoParkManager.h"
 #import "MPColorManager.h"
 #import "MPPark.h"

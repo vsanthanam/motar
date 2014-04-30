@@ -92,6 +92,8 @@
 		07F8835F190341E80078AD13 /* MPReturnTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8835E190341E80078AD13 /* MPReturnTimeView.m */; };
 		07F88362190342050078AD13 /* MPShortInfoBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88361190342050078AD13 /* MPShortInfoBubble.m */; };
 		07F88364190342430078AD13 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07F88363190342430078AD13 /* iAd.framework */; };
+		07FE940D191195E100CBA0D0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FE940C191195E100CBA0D0 /* Accounts.framework */; };
+		07FE94111911983400CBA0D0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FE94101911983400CBA0D0 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +224,9 @@
 		07F88360190342050078AD13 /* MPShortInfoBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPShortInfoBubble.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F88361190342050078AD13 /* MPShortInfoBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPShortInfoBubble.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F88363190342430078AD13 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		07FE940C191195E100CBA0D0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		07FE940E191197F600CBA0D0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		07FE94101911983400CBA0D0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +234,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FE94111911983400CBA0D0 /* Social.framework in Frameworks */,
+				07FE940D191195E100CBA0D0 /* Accounts.framework in Frameworks */,
 				07F88364190342430078AD13 /* iAd.framework in Frameworks */,
 				0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */,
 				07F883531903418D0078AD13 /* CoreMotion.framework in Frameworks */,
@@ -274,6 +281,9 @@
 		07F8829719033F1A0078AD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07FE94101911983400CBA0D0 /* Social.framework */,
+				07FE940E191197F600CBA0D0 /* Twitter.framework */,
+				07FE940C191195E100CBA0D0 /* Accounts.framework */,
 				0719B2C81905E1F500CBD96A /* StoreKit.framework */,
 				07F88363190342430078AD13 /* iAd.framework */,
 				07F88355190341A30078AD13 /* MapKit.framework */,

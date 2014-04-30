@@ -530,6 +530,49 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
     
 }
 
+- (void)userFollowTwitter {
+    
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    [accountStore requestAccessToAccountsWithType:accountType
+                                          options:nil
+                                       completion:^(BOOL granted, NSError *error) {
+                                          
+                                           if (granted) {
+                                               
+                                               NSArray *availableAccounts = [accountStore accountsWithAccountType:accountType];
+                                               if ([availableAccounts count] > 0) {
+                                                   
+                                                   ACAccount *account = availableAccounts[0];
+                                                   
+                                                   NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:@"motarpark", @"screen_name", @"TRUE", @"follow", nil];
+                                                   SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/friendships/create.json"] parameters:info];
+                                                   request.account = account;
+                                                   
+                                                   [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                                                      
+                                                       if (urlResponse.statusCode == 200) {
+                                                           
+                                                           NSError *error;
+                                                           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+                                                           NSLog(@"Response %@", dict);
+                                                           
+                                                       } else {
+                                                           
+                                                           NSLog(@"ERROR. Response %li", (long)[urlResponse statusCode]);
+                                                           
+                                                       }
+                                                       
+                                                   }];
+                                                   
+                                               }
+                                               
+                                           }
+                                           
+                                       }];
+    
+}
+
 - (void)removeAds {
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"com.varunsanthanam.motar.noads"];
