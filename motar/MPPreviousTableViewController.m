@@ -25,6 +25,7 @@
     
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.view.backgroundColor = [MPColorManager lightColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
     
 }
 
@@ -120,7 +121,15 @@
         // Delete the row from the data source
         NSMutableArray *newArray = [NSMutableArray arrayWithArray:[MPPark parkArchives]];
         [newArray removeObjectAtIndex:indexPath.row];
-        [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+        if (![MPPark canUseiCloud]) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            
+        } else {
+            
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            
+        }
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
@@ -133,6 +142,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self performSegueWithIdentifier:@"PreviousParkSegue" sender:indexPath];
+    
+}
+
+#pragma mark - Private Instance Methods
+
+- (void)iCloudRefresh {
+    
+    [self.tableView reloadData];
     
 }
 

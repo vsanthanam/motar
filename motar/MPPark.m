@@ -110,6 +110,12 @@ static NSString *_defaultTag;
         
     }
     
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"]) {
+        
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"] forKey:@"PreviousKey"];
+        
+    }
+    
 }
 
 + (void)fillLocal {
@@ -117,6 +123,12 @@ static NSString *_defaultTag;
     if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"]) {
         
         [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"] forKey:@"DefaultTagKey"];
+        
+    }
+    
+    if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"] forKey:@"PreviousKey"];
         
     }
     
@@ -160,12 +172,29 @@ static NSString *_defaultTag;
         
         NSMutableArray *newArray = [NSMutableArray arrayWithObject:parkData];
         [newArray addObjectsFromArray:[MPPark parkArchives]];
-        [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+        
+        if (![MPPark canUseiCloud]) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            
+        } else {
+            
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            
+        }
         
     } else {
         
         NSMutableArray *newArray = [NSMutableArray arrayWithObject:parkData];
-        [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+        if (![MPPark canUseiCloud]) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            
+        } else {
+            
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            
+        }
         
     }
     
@@ -173,19 +202,39 @@ static NSString *_defaultTag;
 
 + (NSMutableArray *)parkArchives {
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"]) {
+    if (![MPPark canUseiCloud]) {
         
-        return (NSMutableArray *)[[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"];
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"]) {
+            
+            return (NSMutableArray *)[[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"];
+            
+        }
+
+        
+    } else {
+        
+        if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"]) {
+            
+            return (NSMutableArray *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"];
+            
+        }
         
     }
-    
     return nil;
     
 }
 
 + (void)clearArchives {
     
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"PreviousKey"];
+    if (![MPPark canUseiCloud]) {
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"PreviousKey"];
+        
+    } else {
+        
+        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:@"PreviousKey"];
+        
+    }
     
 }
 
@@ -430,7 +479,16 @@ static NSString *_defaultTag;
         NSData *parkData = [NSKeyedArchiver archivedDataWithRootObject:self];
         NSMutableArray *newArray = [NSMutableArray arrayWithArray:[MPPark parkArchives]];
         [newArray replaceObjectAtIndex:self.index withObject:parkData];
-        [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+        
+        if (![MPPark canUseiCloud]) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            
+        } else {
+            
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            
+        }
         
     }
     

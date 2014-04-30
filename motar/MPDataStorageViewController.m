@@ -40,12 +40,16 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"iCloudKey"];
         [MPPark filliCloud];
         [MPParkInfoViewController filliCloud];
+        [MPPark refresh];
+        [MPParkInfoViewController refresh];
         
     } else {
         
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"iCloudKey"];
         [MPPark fillLocal];
         [MPParkInfoViewController fillLocal];
+        [MPPark refresh];
+        [MPParkInfoViewController refresh];
         
     }
     
