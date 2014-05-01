@@ -32,6 +32,11 @@
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
     [[UITextField appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f]];
     
+    // Update Settings Keys
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"] forKey:@"BuildNumberKey"];
+    NSLog(@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]);
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forKey:@"VersionNumberKey"];
+    
     // Handle iCloud Authentication Process
     id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
     

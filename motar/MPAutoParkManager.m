@@ -20,6 +20,14 @@
 @synthesize activity = _activity;
 @synthesize location = _location;
 
+#pragma mark - Overridden Class Methods
+
++ (void)initialize {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"3.0" forKey:@"AutoParkVersionNumberKey"];
+    
+}
+
 #pragma mark - Public Class Methods
 
 + (BOOL)canTrack {

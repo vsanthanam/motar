@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>About</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version Number</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+			<key>Key</key>
+			<string>VersionNumberKey</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Build Number</string>
+			<key>Key</key>
+			<string>BuildNumberKey</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Auto Park Version Number</string>
+			<key>Key</key>
+			<string>AutoParkVersionNumberKey</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Credits</string>
+			<key>File</key>
+			<string>Credits</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Usage Reports</string>
+			<key>FooterText</key>
+			<string>motar can send anonymous usage reports that help us build better products and resolve bugs. Your location &amp; motion data remain private and is not included in any useage reports. You can opt out at anytime.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Send Usage Reports</string>
+			<key>Key</key>
+			<string>UsageReportsKey</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>
