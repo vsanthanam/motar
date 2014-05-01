@@ -6,7 +6,25 @@
 	<array>
 		<dict>
 			<key>Title</key>
-			<string>CreditOne</string>
+			<string>Designed &amp; Developed by Varun Santhanam, with a little help</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Debbuging, Emotional Support: William &quot;Wibz&quot; Mehran</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Debugging: Ananth Pallaseni</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Graphics: Varun Santhanam &amp; Icons8 (http://www.icons8.com)</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
