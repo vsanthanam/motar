@@ -15,8 +15,8 @@
 		0719B2C51905D70C00CBD96A /* OldDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C41905D70C00CBD96A /* OldDefault.png */; };
 		0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */; };
 		0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719B2C81905E1F500CBD96A /* StoreKit.framework */; };
-		073564E019128E730049FDC5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 073564DF19128E730049FDC5 /* Settings.bundle */; };
 		075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 075492431905FF5B002B5561 /* MPPaymentObserver.m */; };
+		079676221912A52E007C4459 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 079676211912A52E007C4459 /* Settings.bundle */; };
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
 		07A01A8C1905A7A2003825BB /* rename.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A8A1905A7A2003825BB /* rename.png */; };
 		07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A01A8E1905A866003825BB /* MPRenameParkViewController.m */; };
@@ -116,9 +116,9 @@
 		0719B2C41905D70C00CBD96A /* OldDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OldDefault.png; sourceTree = "<group>"; };
 		0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductCatalogue.plist; sourceTree = "<group>"; };
 		0719B2C81905E1F500CBD96A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		073564DF19128E730049FDC5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		075492421905FF5B002B5561 /* MPPaymentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPaymentObserver.h; sourceTree = "<group>"; };
 		075492431905FF5B002B5561 /* MPPaymentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPaymentObserver.m; sourceTree = "<group>"; };
+		079676211912A52E007C4459 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		07A01A891905A7A2003825BB /* rename@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rename@2x.png"; sourceTree = "<group>"; };
 		07A01A8A1905A7A2003825BB /* rename.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rename.png; sourceTree = "<group>"; };
 		07A01A8D1905A866003825BB /* MPRenameParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenameParkViewController.h; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			children = (
 				07DFB6F3190737C600CB14C0 /* motar.entitlements */,
 				07F88319190340AD0078AD13 /* View Controllers */,
-				07F8834E190341500078AD13 /* Parts */,
+				07F8834E190341500078AD13 /* UI Parts */,
 				07F8834A190341210078AD13 /* Data Structures */,
 				07F8830D1903401F0078AD13 /* Other */,
 				07F8829F19033F1A0078AD13 /* Supporting Files */,
@@ -360,6 +360,7 @@
 				07F882A419033F1A0078AD13 /* main.m */,
 				07F882A619033F1A0078AD13 /* motar-Prefix.pch */,
 				0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */,
+				079676211912A52E007C4459 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -385,7 +386,6 @@
 		07F8830D1903401F0078AD13 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				073564DF19128E730049FDC5 /* Settings.bundle */,
 				07F8830E190340450078AD13 /* MPAppDelegate.h */,
 				07F8830F190340450078AD13 /* MPAppDelegate.m */,
 				07F883161903408D0078AD13 /* MPAutoParkManager.h */,
@@ -451,7 +451,7 @@
 			name = "Data Structures";
 			sourceTree = "<group>";
 		};
-		07F8834E190341500078AD13 /* Parts */ = {
+		07F8834E190341500078AD13 /* UI Parts */ = {
 			isa = PBXGroup;
 			children = (
 				07F8834F190341800078AD13 /* MPParkButton.h */,
@@ -465,7 +465,7 @@
 				07F88360190342050078AD13 /* MPShortInfoBubble.h */,
 				07F88361190342050078AD13 /* MPShortInfoBubble.m */,
 			);
-			name = Parts;
+			name = "UI Parts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,7 +569,7 @@
 				07F882F319033FF60078AD13 /* directions.png in Resources */,
 				07F882F619033FF60078AD13 /* error@2x.png in Resources */,
 				07F882FF19033FF60078AD13 /* parkImage.png in Resources */,
-				073564E019128E730049FDC5 /* Settings.bundle in Resources */,
+				079676221912A52E007C4459 /* Settings.bundle in Resources */,
 				07A01A8C1905A7A2003825BB /* rename.png in Resources */,
 				07F882F019033FF60078AD13 /* autopark@2x.png in Resources */,
 				07F8830719033FF60078AD13 /* stationary.png in Resources */,
