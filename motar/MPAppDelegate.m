@@ -113,6 +113,8 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
+    NSLog(@"Received Local Notification %@", notification);
+    
     NSDictionary *infoDict = notification.userInfo;
     if ([infoDict[@"key"] isEqualToString:@"reminder"]) {
         

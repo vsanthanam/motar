@@ -203,7 +203,7 @@
         parkReminder.fireDate = reminderDate;
         parkReminder.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
         parkReminder.timeZone = [NSTimeZone defaultTimeZone];
-        parkReminder.soundName = UILocalNotificationDefaultSoundName;
+        parkReminder.soundName = @"expired.mp3";
         parkReminder.userInfo = @{@"key": @"reminder", @"returnDate": self.currentPark.returnDate};
         self.currentPark.parkReminder = parkReminder;
         

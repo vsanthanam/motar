@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071768AD1912B1BF00A21039 /* expired.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 071768AC1912B1BF00A21039 /* expired.mp3 */; };
 		0719B2BC1905B71600CBD96A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BA1905B71600CBD96A /* Icon@2x.png */; };
 		0719B2BD1905B71600CBD96A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BB1905B71600CBD96A /* Icon.png */; };
 		0719B2C01905B7B500CBD96A /* SpotlightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */; };
@@ -108,6 +109,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071768AC1912B1BF00A21039 /* expired.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = expired.mp3; sourceTree = "<group>"; };
 		0719B2BA1905B71600CBD96A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		0719B2BB1905B71600CBD96A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpotlightIcon.png; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		07F8829F19033F1A0078AD13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				071768AC1912B1BF00A21039 /* expired.mp3 */,
 				0719B2C41905D70C00CBD96A /* OldDefault.png */,
 				0719B2C21905B96C00CBD96A /* DefaultImage.png */,
 				0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */,
@@ -584,6 +587,7 @@
 				07F8830619033FF60078AD13 /* share@2x.png in Resources */,
 				07F882FC19033FF60078AD13 /* loading@2x.png in Resources */,
 				07F882F819033FF60078AD13 /* geo@2x.png in Resources */,
+				071768AD1912B1BF00A21039 /* expired.mp3 in Resources */,
 				0719B2C01905B7B500CBD96A /* SpotlightIcon.png in Resources */,
 				07F8830819033FF60078AD13 /* stationary@2x.png in Resources */,
 				0719B2C51905D70C00CBD96A /* OldDefault.png in Resources */,
