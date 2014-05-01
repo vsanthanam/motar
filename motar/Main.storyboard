@@ -1692,7 +1692,7 @@ CFRlbGwgYSBmcmllbmQ
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="AutoPark" footerTitle="AutoPark uses your phone's motion sensor to remind you to use the app. [BETA]" id="wHI-lh-bW0">
+                            <tableViewSection headerTitle="AutoPark" footerTitle="AutoPark uses your phone's motion sensor to remind you to use the app." id="wHI-lh-bW0">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OyY-sp-Dac">
                                         <rect key="frame" x="0.0" y="863" width="320" height="44"/>

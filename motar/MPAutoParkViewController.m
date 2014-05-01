@@ -245,7 +245,7 @@
 
 - (IBAction)userHelp:(id)sender {
     
-    static NSString *helpMessage = @"AutoPark uses information form your phone's GPS and motion sensors to decide if you are walking, running, or driving. Using this info, the app can tell when you park your car and automatically remind record the park. AutoPark is in beta, and you can disable this feature at any time from the settings page";
+    static NSString *helpMessage = @"AutoPark uses information form your phone's GPS and motion sensors to decide if you are walking, running, or driving. Using this info, the app can tell when you park your car and automatically remind record the park. You can disable this feature at any time from the settings page";
     
     self->_helpAlert = [[UIAlertView alloc] initWithTitle:@"AutoPark"
                                                   message:helpMessage

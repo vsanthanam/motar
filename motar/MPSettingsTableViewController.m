@@ -557,15 +557,44 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
                                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
                                                            NSLog(@"Response %@", dict);
                                                            
+                                                           UIAlertView *twitterAlert = [[UIAlertView alloc] initWithTitle:@"Thanks!"
+                                                                                                                  message:@"Thank you for following us on twitter." delegate:nil
+                                                                                                        cancelButtonTitle:@"OK"
+                                                                                                        otherButtonTitles:nil];
+                                                           [twitterAlert show];
+                                                           
                                                        } else {
                                                            
-                                                           NSLog(@"ERROR. Response %li", (long)[urlResponse statusCode]);
-                                                           
+                                                           UIAlertView *twitterAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                                  message:@"Could not follow on twitter"
+                                                                                                                 delegate:nil
+                                                                                                        cancelButtonTitle:@"OK"
+                                                                                                        otherButtonTitles:nil];
+                                                           [twitterAlert show];
+                                                            
                                                        }
                                                        
                                                    }];
                                                    
+                                               } else {
+                                                   
+                                                   UIAlertView *twitterAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                          message:@"No twitter accounts available"
+                                                                                                         delegate:nil
+                                                                                                cancelButtonTitle:@"OK"
+                                                                                                otherButtonTitles:nil];
+                                                   [twitterAlert show];
+                                                   
                                                }
+                                               
+                                           } else {
+                                               
+                                               UIAlertView *twitterAlert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                                                                      message:@"Could not access twitter account"
+                                                                                                     delegate:nil
+                                                                                            cancelButtonTitle:@"OK"
+                                                                                            otherButtonTitles:nil];
+                                               [twitterAlert show];
                                                
                                            }
                                            
