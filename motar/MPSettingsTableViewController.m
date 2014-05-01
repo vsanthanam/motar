@@ -124,6 +124,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeAds) name:@"PurchasedNoAds" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(failedNoAds) name:@"FailedNoAds" object:nil];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"com.varunsanthanam.motar.noads"]) {
         
@@ -619,6 +620,12 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
     self.removeAdsLabel.text = @"Thank You For Purchasing";
     self.removeAdsCell.userInteractionEnabled = NO;
     self.restoreCell.userInteractionEnabled = NO;
+    
+}
+
+- (void)failedNoAds {
+    
+    [self enableProductWithIdentifier:@"com.varunsanthanam.motar.noads"];
     
 }
 

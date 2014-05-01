@@ -83,6 +83,7 @@
                                                     delegate:nil
                                            cancelButtonTitle:@"OK"
                                            otherButtonTitles:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FailedNoAds" object:nil];
     [self->_failureError show];
     
 }
