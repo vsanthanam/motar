@@ -212,6 +212,17 @@
         self.currentPark.parkReminder = nil;
         
     }
+    
+    UILocalNotification *expirationReminder = [[UILocalNotification alloc] init];
+    expirationReminder.hasAction = NO;
+    expirationReminder.alertBody = @"Your parking has expired.";
+    expirationReminder.fireDate = self.currentPark.returnDate;
+    expirationReminder.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    expirationReminder.timeZone = [NSTimeZone defaultTimeZone];
+    expirationReminder.soundName = @"expired.mp3";
+    expirationReminder.userInfo = @{@"key": @"expired", @"returnDate": self.currentPark.returnDate};
+    [[UIApplication sharedApplication] scheduleLocalNotification:expirationReminder];
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
 }

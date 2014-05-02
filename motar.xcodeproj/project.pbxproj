@@ -317,6 +317,7 @@
 		07F8829F19033F1A0078AD13 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				079676211912A52E007C4459 /* Settings.bundle */,
 				071768AC1912B1BF00A21039 /* expired.mp3 */,
 				0719B2C41905D70C00CBD96A /* OldDefault.png */,
 				0719B2C21905B96C00CBD96A /* DefaultImage.png */,
@@ -363,7 +364,6 @@
 				07F882A419033F1A0078AD13 /* main.m */,
 				07F882A619033F1A0078AD13 /* motar-Prefix.pch */,
 				0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */,
-				079676211912A52E007C4459 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

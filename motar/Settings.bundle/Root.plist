@@ -48,6 +48,24 @@
 			<key>File</key>
 			<string>Credits</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Usage Reports</string>
+			<key>FooterText</key>
+			<string>motar can send anonymous usage reports that help us build better software. Your motion &amp; location data remain private, and are never included in any usage reports. You can opt out at any time.</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Send Usage Reports</string>
+			<key>Key</key>
+			<string>UsageReportsKey</string>
+			<key>DefaultValue</key>
+			<false/>
+		</dict>
 	</array>
 	<key>StringsTable</key>
 	<string>Root</string>
