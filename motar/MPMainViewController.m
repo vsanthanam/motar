@@ -12,7 +12,11 @@
 
 @end
 
-@implementation MPMainViewController
+@implementation MPMainViewController {
+    
+    UIStatusBarStyle statusBar;
+    
+}
 
 @synthesize pageViewController = _pageViewController;
 @synthesize parkViewController = _parkViewController;
@@ -103,6 +107,8 @@
         
         if ([self.currentPark isParked]) {
             
+            self->statusBar = UIStatusBarStyleDefault;
+            [self setNeedsStatusBarAppearanceUpdate];
             return self.parkInfoViewController;
             
         }
@@ -131,6 +137,8 @@
         
     } else if (viewController == self.parkInfoViewController) {
         
+        self->statusBar = UIStatusBarStyleLightContent;
+        [self setNeedsStatusBarAppearanceUpdate];
         return self.parkViewController;
         
     } else if (viewController == self.previousTableViewController) {
@@ -185,6 +193,8 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.view.backgroundColor = [MPColorManager lightColor];
+    self->statusBar = UIStatusBarStyleLightContent;
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -211,6 +221,12 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return self->statusBar;
     
 }
 
