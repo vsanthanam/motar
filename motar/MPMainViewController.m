@@ -12,11 +12,7 @@
 
 @end
 
-@implementation MPMainViewController {
-    
-    UIStatusBarStyle statusBar;
-    
-}
+@implementation MPMainViewController
 
 @synthesize pageViewController = _pageViewController;
 @synthesize parkViewController = _parkViewController;
@@ -193,8 +189,6 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.view.backgroundColor = [MPColorManager lightColor];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lightBar) name:@"MPLightBarNotification" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(darkBar) name:@"MPDarkBarNotifcation" object:nil];
     
 }
 
@@ -221,28 +215,6 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    
-    return self->statusBar;
-    
-}
-
-#pragma mark - Private Instance Methods
-
-- (void)lightBar {
-    
-    self->statusBar = UIStatusBarStyleLightContent;
-    [self setNeedsStatusBarAppearanceUpdate];
-    
-}
-
-- (void)darkBar {
-    
-    self->statusBar = UIStatusBarStyleDefault;
-    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 

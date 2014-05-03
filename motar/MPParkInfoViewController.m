@@ -303,7 +303,6 @@ static MKPinAnnotationColor _pinColor;
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MPDarkBarNotification" object:nil];
     [self refreshUI];
     [self.currentPark savePark];
     
