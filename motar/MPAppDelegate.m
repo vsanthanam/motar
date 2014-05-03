@@ -34,8 +34,8 @@
     
     // Update Settings Keys
     [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"] forKey:@"BuildNumberKey"];
-    NSLog(@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]);
     [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forKey:@"VersionNumberKey"];
+    NSLog(@"Build %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"BuildNumberKey"]);
     
     // Handle iCloud Authentication Process
     id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];

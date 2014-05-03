@@ -24,6 +24,8 @@
 @synthesize settingsViewController = _settingsViewController;
 @synthesize previousTableViewController = _previousTableViewController;
 
+#pragma mark - Property Access Methods
+
 - (MPPark *)currentPark {
     
     if (self.parkViewController.currentPark) {
@@ -101,14 +103,14 @@
     
 }
 
+#pragma mark - UIPageViewControllerDataSource Protocol Instance Methods
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
     if (viewController == self.parkViewController) {
         
         if ([self.currentPark isParked]) {
             
-            self->statusBar = UIStatusBarStyleDefault;
-            [self setNeedsStatusBarAppearanceUpdate];
             return self.parkInfoViewController;
             
         }
@@ -137,8 +139,6 @@
         
     } else if (viewController == self.parkInfoViewController) {
         
-        self->statusBar = UIStatusBarStyleLightContent;
-        [self setNeedsStatusBarAppearanceUpdate];
         return self.parkViewController;
         
     } else if (viewController == self.previousTableViewController) {
@@ -193,8 +193,8 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.view.backgroundColor = [MPColorManager lightColor];
-    self->statusBar = UIStatusBarStyleLightContent;
-    [self setNeedsStatusBarAppearanceUpdate];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(lightBar) name:@"MPLightBarNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(darkBar) name:@"MPDarkBarNotifcation" object:nil];
     
 }
 
@@ -227,6 +227,22 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
     return self->statusBar;
+    
+}
+
+#pragma mark - Private Instance Methods
+
+- (void)lightBar {
+    
+    self->statusBar = UIStatusBarStyleLightContent;
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+}
+
+- (void)darkBar {
+    
+    self->statusBar = UIStatusBarStyleDefault;
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 

@@ -133,6 +133,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MPLightBarNotification" object:nil];
     if ([self.currentPark isParked]) {
         
         [self parkedUI:NO];
