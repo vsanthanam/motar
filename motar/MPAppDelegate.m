@@ -130,7 +130,7 @@
         UIAlertView *autoparkReminder = [[UIAlertView alloc] initWithTitle:@"AutoPark"
                                                                    message:notification.alertBody
                                                                   delegate:nil
-                                                         cancelButtonTitle:@""
+                                                         cancelButtonTitle:@"OK"
                                                          otherButtonTitles:nil];
         [autoparkReminder show];
         
