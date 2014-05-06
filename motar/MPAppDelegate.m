@@ -64,6 +64,18 @@
     self.paymentObserver = [[MPPaymentObserver alloc] init];
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self.paymentObserver];
     
+    // Launch Count
+    if (![[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"]) {
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"LaunchCountKey"];
+        
+    } else {
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:[[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] + 1 forKey:@"LaunchCountKey"];
+        
+    }
+    
+    
     return YES;
     
 }

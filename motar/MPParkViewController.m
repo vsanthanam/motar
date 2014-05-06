@@ -16,6 +16,7 @@
     
     UIAlertView *_locationAlert;
     UIAlertView *_autoParkAlert;
+    UIAlertView *_rateAppAlert;
     NSTimer *_theTimer;
     
 }
@@ -118,6 +119,22 @@
     
 }
 
+#pragma mark - UIAlertViewDelegate Protocol Instance Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (alertView == self->_rateAppAlert) {
+        
+        if (buttonIndex != alertView.cancelButtonIndex) {
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.appstore.com/varunsanthanam/motar"]];
+            
+        }
+        
+    }
+    
+}
+
 #pragma mark - Overridden Instance Methods
 
 - (void)viewDidLoad {
@@ -184,6 +201,18 @@
     if (![self canShowAds]) {
         
         [self hideAds];
+        
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 3 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"RateAppPromptKey"]) {
+        
+        self->_rateAppAlert = [[UIAlertView alloc] initWithTitle:@"Enjoying Motar?"
+                                                         message:@"If you like motar, spread the word! We'd really appreciate a good review!"
+                                                        delegate:self
+                                               cancelButtonTitle:@"No, Thanks"
+                                               otherButtonTitles:@"Review App", nil];
+        [self->_rateAppAlert show];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RateAppPromptKey"];
         
     }
     
