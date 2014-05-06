@@ -238,16 +238,19 @@ static MKPinAnnotationColor _pinColor;
         
     } else if (newState == MKAnnotationViewDragStateEnding || newState == MKAnnotationViewDragStateCanceling) {
         
+        NSLog(@"%@", self.currentPark.parkLocation);
+        
+        __block CLLocation *newLocation;
+        
         [UIView animateWithDuration:0.5
                          animations:^{
                              
                              self.mapView.frame = CGRectMake(0, 0, self.view.frame.size.width, 297);
-                             CLLocation *newLocation = [[CLLocation alloc] initWithCoordinate:self.currentPark.parkLocation.coordinate
-                                                                                     altitude:self.currentPark.parkLocation.altitude
-                                                                           horizontalAccuracy:self.currentPark.parkLocation.horizontalAccuracy
-                                                                             verticalAccuracy:self.currentPark.parkLocation.verticalAccuracy
-                                                                                    timestamp:self.currentPark.parkLocation.timestamp];
-                             self.currentPark.parkLocation = newLocation;
+                             newLocation = [[CLLocation alloc] initWithCoordinate:view.annotation.coordinate
+                                                                         altitude:self.currentPark.parkLocation.altitude
+                                                               horizontalAccuracy:self.currentPark.parkLocation.horizontalAccuracy
+                                                                 verticalAccuracy:self.currentPark.parkLocation.verticalAccuracy
+                                                                        timestamp:self.currentPark.parkLocation.timestamp];
                              self.showLocationButton.hidden = NO;
                              self.showCarButton.hidden = NO;
                              self.shareButton.hidden = NO;
@@ -256,6 +259,13 @@ static MKPinAnnotationColor _pinColor;
                              
                          }
                          completion:nil];
+        if (newState != MKAnnotationViewDragStateCanceling) {
+            
+            self.currentPark.parkLocation = newLocation;
+            
+        }
+        
+        NSLog(@"%@", self.currentPark.parkLocation);
         
     }
     
@@ -278,19 +288,6 @@ static MKPinAnnotationColor _pinColor;
 }
 
 #pragma mark - Overridden Instance Methods
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        
-        // Custom Setup
-        
-    }
-    
-    return self;
-    
-}
 
 - (void)viewDidLoad {
     
@@ -515,15 +512,6 @@ static MKPinAnnotationColor _pinColor;
     
     [MPParkInfoViewController refresh];
     [self refreshUI];
-    
-}
-
-- (void)showAutoParkSensorIndicator {
-    
-}
-
-
-- (void)hideAutoParkSensorIndicator {
     
 }
 
