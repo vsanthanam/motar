@@ -44,7 +44,7 @@
 @synthesize restoreLabel = _restoreLabel;
 @synthesize websiteLabel = _websiteLabel;
 
-static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
+static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
 
 #pragma mark - UIActionSheetDelegate Protocol Instance Methods
 
@@ -319,7 +319,7 @@ static NSString *_websiteLink = @"http://www.santhanams.net/apps/parkbuddy";
 
 - (void)userShareApp {
     
-    static NSString *shareString = @"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! http://www.santhanams.net/apps/motar";
+    NSString *shareString = [NSString stringWithFormat:@"Check out motar! It's a smart parking app that reminds you where you parked your car and helps you avoid parking tickets! %@", _websiteLink];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[shareString] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypeAddToReadingList, UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
     [self presentViewController:activityViewController animated:YES completion:nil];
