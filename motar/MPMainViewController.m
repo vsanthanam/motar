@@ -196,14 +196,7 @@
     
     [super viewDidAppear:animated];
     
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TutorialKey"]) {
-        
-        MPTutorialViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
-        [self presentViewController:viewController animated:YES completion:nil];
-        
-    }
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"iCloudDataKey"] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"iCloudPromptKey"] && [[NSUserDefaults standardUserDefaults] boolForKey:@"TutorialKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"iCloudDataKey"] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"iCloudPromptKey"]) {
         
         [self performSegueWithIdentifier:@"iCloudSegue" sender:self.view];
         
