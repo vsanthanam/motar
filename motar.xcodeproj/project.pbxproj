@@ -16,6 +16,7 @@
 		0719B2C51905D70C00CBD96A /* OldDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C41905D70C00CBD96A /* OldDefault.png */; };
 		0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */; };
 		0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719B2C81905E1F500CBD96A /* StoreKit.framework */; };
+		0720325719310EE9006C63A4 /* MPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720325619310EE9006C63A4 /* MPConstants.m */; };
 		075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 075492431905FF5B002B5561 /* MPPaymentObserver.m */; };
 		079676221912A52E007C4459 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 079676211912A52E007C4459 /* Settings.bundle */; };
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
@@ -121,6 +122,8 @@
 		0719B2C41905D70C00CBD96A /* OldDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OldDefault.png; sourceTree = "<group>"; };
 		0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductCatalogue.plist; sourceTree = "<group>"; };
 		0719B2C81905E1F500CBD96A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0720325519310EE9006C63A4 /* MPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPConstants.h; sourceTree = "<group>"; };
+		0720325619310EE9006C63A4 /* MPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConstants.m; sourceTree = "<group>"; };
 		075492421905FF5B002B5561 /* MPPaymentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPaymentObserver.h; sourceTree = "<group>"; };
 		075492431905FF5B002B5561 /* MPPaymentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPaymentObserver.m; sourceTree = "<group>"; };
 		079676211912A52E007C4459 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -401,6 +404,8 @@
 		07F8830D1903401F0078AD13 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				0720325519310EE9006C63A4 /* MPConstants.h */,
+				0720325619310EE9006C63A4 /* MPConstants.m */,
 				07F8830E190340450078AD13 /* MPAppDelegate.h */,
 				07F8830F190340450078AD13 /* MPAppDelegate.m */,
 				07F883161903408D0078AD13 /* MPAutoParkManager.h */,
@@ -653,6 +658,7 @@
 				07F8835C190341CC0078AD13 /* MPParkTimeView.m in Sources */,
 				07F8833D190340D70078AD13 /* MPMainViewController.m in Sources */,
 				07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */,
+				0720325719310EE9006C63A4 /* MPConstants.m in Sources */,
 				07F88342190340D70078AD13 /* MPPreviousParkViewController.m in Sources */,
 				07F88346190340D70078AD13 /* MPSettingsTableViewController.m in Sources */,
 				075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */,

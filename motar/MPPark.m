@@ -27,25 +27,25 @@ static NSString *_defaultTag;
     
     if (![MPPark canUseiCloud]) {
         
-        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"]) {
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey]) {
             
             _defaultTag = @"My Car";
             
         } else {
             
-            _defaultTag = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"];
+            _defaultTag = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey];
             
         }
         
     } else {
         
-        if (![[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"]) {
+        if (![[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey]) {
             
             _defaultTag = @"My Car";
             
         } else {
             
-            _defaultTag = (NSString *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"];
+            _defaultTag = (NSString *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey];
             
         }
         
@@ -70,9 +70,9 @@ static NSString *_defaultTag;
 
 + (MPPark *)parkFromSave {
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:MPCurrentParkKey]) {
             
-        NSData *parkData = (NSData *)[[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentKey"];
+        NSData *parkData = (NSData *)[[NSUserDefaults standardUserDefaults] objectForKey:MPCurrentParkKey];
         MPPark *savedPark = [NSKeyedUnarchiver unarchiveObjectWithData:parkData];
         return savedPark;
         
@@ -98,21 +98,21 @@ static NSString *_defaultTag;
 
 + (BOOL)canUseiCloud {
     
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"iCloudKey"];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPiCloudKey];
     
 }
 
 + (void)filliCloud {
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey]) {
         
-        [[NSUbiquitousKeyValueStore defaultStore] setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"] forKey:@"DefaultTagKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:[[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey] forKey:MPDefaultTagKey];
         
     }
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:MPPreviousParksKey]) {
         
-        [[NSUbiquitousKeyValueStore defaultStore] setObject:[[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"] forKey:@"PreviousKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:[[NSUserDefaults standardUserDefaults] objectForKey:MPPreviousParksKey] forKey:MPPreviousParksKey];
         
     }
     
@@ -120,15 +120,15 @@ static NSString *_defaultTag;
 
 + (void)fillLocal {
     
-    if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"]) {
+    if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey]) {
         
-        [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"] forKey:@"DefaultTagKey"];
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey] forKey:MPDefaultTagKey];
         
     }
     
-    if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"]) {
+    if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPPreviousParksKey]) {
         
-        [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"] forKey:@"PreviousKey"];
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPPreviousParksKey] forKey:MPPreviousParksKey];
         
     }
     
@@ -138,25 +138,25 @@ static NSString *_defaultTag;
     
     if (![MPPark canUseiCloud]) {
         
-        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"]) {
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey]) {
             
             _defaultTag = @"My Car";
             
         } else {
             
-            _defaultTag = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"DefaultTagKey"];
+            _defaultTag = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:MPDefaultTagKey];
             
         }
         
     } else {
         
-        if (![[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"]) {
+        if (![[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey]) {
             
             _defaultTag = @"My Car";
             
         } else {
             
-            _defaultTag = (NSString *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"DefaultTagKey"];
+            _defaultTag = (NSString *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPDefaultTagKey];
             
         }
         
@@ -175,11 +175,11 @@ static NSString *_defaultTag;
         
         if (![MPPark canUseiCloud]) {
             
-            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:MPPreviousParksKey];
             
         } else {
             
-            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:MPPreviousParksKey];
             
         }
         
@@ -188,11 +188,11 @@ static NSString *_defaultTag;
         NSMutableArray *newArray = [NSMutableArray arrayWithObject:parkData];
         if (![MPPark canUseiCloud]) {
             
-            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:MPPreviousParksKey];
             
         } else {
             
-            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:MPPreviousParksKey];
             
         }
         
@@ -204,18 +204,18 @@ static NSString *_defaultTag;
     
     if (![MPPark canUseiCloud]) {
         
-        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"]) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:MPPreviousParksKey]) {
             
-            return (NSMutableArray *)[[NSUserDefaults standardUserDefaults] objectForKey:@"PreviousKey"];
+            return (NSMutableArray *)[[NSUserDefaults standardUserDefaults] objectForKey:MPPreviousParksKey];
             
         }
 
         
     } else {
         
-        if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"]) {
+        if ([[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPPreviousParksKey]) {
             
-            return (NSMutableArray *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"PreviousKey"];
+            return (NSMutableArray *)[[NSUbiquitousKeyValueStore defaultStore] objectForKey:MPPreviousParksKey];
             
         }
         
@@ -228,11 +228,11 @@ static NSString *_defaultTag;
     
     if (![MPPark canUseiCloud]) {
         
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"PreviousKey"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MPPreviousParksKey];
         
     } else {
         
-        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:@"PreviousKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:MPPreviousParksKey];
         
     }
     
@@ -240,7 +240,7 @@ static NSString *_defaultTag;
 
 + (void)clearSave {
     
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"CurrentKey"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:MPCurrentParkKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
@@ -258,7 +258,7 @@ static NSString *_defaultTag;
         if (![newDefaultTag isEqual: @""]) {
             
             _defaultTag = newDefaultTag;
-            [[NSUserDefaults standardUserDefaults] setObject:_defaultTag forKey:@"DefaultTagKey"];
+            [[NSUserDefaults standardUserDefaults] setObject:_defaultTag forKey:MPDefaultTagKey];
             
         } else {
             
@@ -271,7 +271,7 @@ static NSString *_defaultTag;
         if (![newDefaultTag isEqual: @""]) {
             
             _defaultTag = newDefaultTag;
-            [[NSUbiquitousKeyValueStore defaultStore] setObject:_defaultTag forKey:@"DefaultTagKey"];
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:_defaultTag forKey:MPDefaultTagKey];
             
         } else {
             
@@ -287,12 +287,12 @@ static NSString *_defaultTag;
     
     if (![MPPark canUseiCloud]) {
         
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"DefaultTagKey"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MPDefaultTagKey];
         _defaultTag = @"My Car";
         
     } else {
         
-        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:@"DefaultTagKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:MPDefaultTagKey];
         
     }
     
@@ -482,11 +482,11 @@ static NSString *_defaultTag;
         
         if (![MPPark canUseiCloud]) {
             
-            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:MPPreviousParksKey];
             
         } else {
             
-            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:MPPreviousParksKey];
             
         }
         
@@ -497,7 +497,7 @@ static NSString *_defaultTag;
 - (void)savePark {
    
     NSData *parkData = [NSKeyedArchiver archivedDataWithRootObject:self];
-    [[NSUserDefaults standardUserDefaults] setObject:parkData forKey:@"CurrentKey"];
+    [[NSUserDefaults standardUserDefaults] setObject:parkData forKey:MPCurrentParkKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
