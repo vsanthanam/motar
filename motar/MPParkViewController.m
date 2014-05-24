@@ -115,7 +115,7 @@
     CLLocation *location = [locations lastObject];
     NSLog(@"USER: %@", location);
     NSTimeInterval interval = [location.timestamp timeIntervalSinceNow];
-    if (abs(interval) < 5) {
+    if (abs(interval) < 5 && location.horizontalAccuracy == kCLLocationAccuracyBest) {
         
         self.currentPark.parkLocation = location;
         [manager stopUpdatingLocation];
@@ -200,17 +200,17 @@
         
     }
     
-//    if ([self.autoParkManager canTrack] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
-//        
-//        self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
-//                                                          message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
-//                                                         delegate:nil
-//                                                cancelButtonTitle:@"OK"
-//                                                otherButtonTitles:nil];
-//        [self->_autoParkAlert show];
-//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AutoParkPromptKey"];
-//        
-//    }
+    if ([self.autoParkManager isTracking] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
+        
+        self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
+                                                          message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
+                                                         delegate:nil
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+        [self->_autoParkAlert show];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AutoParkPromptKey"];
+        
+    }
     
     if (![self canShowAds]) {
         

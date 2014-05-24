@@ -16,6 +16,7 @@ NSString *const MPiCloudSettingKey = @"iCloudKey";
 NSString *const MPPinColorSettingKey = @"PinColorKey";
 NSString *const MPAutoParkSettingKey = @"AutoParkKey";
 NSString *const MPiCloudDataKey = @"iCloudDataKey";
+NSString *const MPUsageReportsSettingKey = @"UsageReportsKey";
 
 NSString *const MPAppFont = @"HelveticaNeue-Light";
 

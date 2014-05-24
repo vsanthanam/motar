@@ -23,6 +23,8 @@
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
 		07A01A8C1905A7A2003825BB /* rename.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A8A1905A7A2003825BB /* rename.png */; };
 		07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A01A8E1905A866003825BB /* MPRenameParkViewController.m */; };
+		07AF064C19315F9100BF5B88 /* libFlurry_5.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF064B19315F9100BF5B88 /* libFlurry_5.0.0.a */; };
+		07AF064F1931614400BF5B88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF064E1931614400BF5B88 /* SystemConfiguration.framework */; };
 		07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */; };
 		07E5330C1917143A00C1A6DF /* Fleksy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E5330B1917143A00C1A6DF /* Fleksy.framework */; };
 		07E5541B19156DB900271D8A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E5541A19156DB900271D8A /* AudioToolbox.framework */; };
@@ -133,6 +135,9 @@
 		07A01A8A1905A7A2003825BB /* rename.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rename.png; sourceTree = "<group>"; };
 		07A01A8D1905A866003825BB /* MPRenameParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenameParkViewController.h; sourceTree = "<group>"; };
 		07A01A8E1905A866003825BB /* MPRenameParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRenameParkViewController.m; sourceTree = "<group>"; };
+		07AF064A19315F9100BF5B88 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = ../Flurry.h; sourceTree = "<group>"; };
+		07AF064B19315F9100BF5B88 /* libFlurry_5.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_5.0.0.a; path = ../libFlurry_5.0.0.a; sourceTree = "<group>"; };
+		07AF064E1931614400BF5B88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		07BE2CA11908380E000A28A6 /* MPRetroNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRetroNameViewController.h; sourceTree = "<group>"; };
 		07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRetroNameViewController.m; sourceTree = "<group>"; };
 		07DFB6F3190737C600CB14C0 /* motar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = motar.entitlements; sourceTree = "<group>"; };
@@ -247,10 +252,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07AF064F1931614400BF5B88 /* SystemConfiguration.framework in Frameworks */,
 				07E5541D19156DC400271D8A /* QuartzCore.framework in Frameworks */,
 				07E5541B19156DB900271D8A /* AudioToolbox.framework in Frameworks */,
 				07E5330C1917143A00C1A6DF /* Fleksy.framework in Frameworks */,
 				07FE94111911983400CBA0D0 /* Social.framework in Frameworks */,
+				07AF064C19315F9100BF5B88 /* libFlurry_5.0.0.a in Frameworks */,
 				07FE940D191195E100CBA0D0 /* Accounts.framework in Frameworks */,
 				07F88364190342430078AD13 /* iAd.framework in Frameworks */,
 				0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */,
@@ -275,6 +282,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07AF064D19315F9900BF5B88 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				07AF064A19315F9100BF5B88 /* Flurry.h */,
+				07AF064B19315F9100BF5B88 /* libFlurry_5.0.0.a */,
+			);
+			name = Flurry;
+			sourceTree = "<group>";
+		};
 		07F8828C19033F1A0078AD13 = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +313,7 @@
 		07F8829719033F1A0078AD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07AF064E1931614400BF5B88 /* SystemConfiguration.framework */,
 				07E5541C19156DC400271D8A /* QuartzCore.framework */,
 				07E5330B1917143A00C1A6DF /* Fleksy.framework */,
 				07E5541A19156DB900271D8A /* AudioToolbox.framework */,
@@ -404,6 +421,7 @@
 		07F8830D1903401F0078AD13 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				07AF064D19315F9900BF5B88 /* Flurry */,
 				0720325519310EE9006C63A4 /* MPConstants.h */,
 				0720325619310EE9006C63A4 /* MPConstants.m */,
 				0720325819314057006C63A4 /* MPAutoParkManager.h */,
@@ -802,6 +820,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",
@@ -827,6 +849,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "motar/motar-Prefix.pch";
 				INFOPLIST_FILE = "motar/motar-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_LDFLAGS = (
 					"-lc++",
 					"-ObjC",

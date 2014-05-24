@@ -20,6 +20,14 @@
 @synthesize locationManager = _locationManager;
 @synthesize activityManager = _activityManager;
 
+#pragma mark - Overridden Class Methods
+
++ (void)initialize {
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"3.1" forKey:@"AutoParkVersionNumberKey"];
+    
+}
+
 #pragma mark - Public Class Methods
 
 + (BOOL)canTrack {
@@ -66,6 +74,12 @@
     }
     
     return self->_activityManager;
+    
+}
+
+- (BOOL)flurry {
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPUsageReportsSettingKey];
     
 }
 
@@ -155,6 +169,12 @@
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkNotification object:nil];
+    
+    if ([self canFlurry]) {
+        
+        [Flurry logEvent:MPAutoParkNotification];
+        
+    }
     
 }
 

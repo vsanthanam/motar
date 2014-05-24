@@ -20,6 +20,7 @@ extern NSString *const MPiCloudSettingKey;
 extern NSString *const MPPinColorSettingKey;
 extern NSString *const MPAutoParkSettingKey;
 extern NSString *const MPiCloudDataKey;
+extern NSString *const MPUsageReportsSettingKey;
 
 // General
 extern NSString *const MPAppFont;

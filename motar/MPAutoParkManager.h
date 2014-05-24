@@ -10,6 +10,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import <CoreLocation/CoreLocation.h>
 #import "MPConstants.h"
+#import "Flurry.h"
 
 @class MPAutoParkManager;
 
@@ -34,6 +35,7 @@
 @property (nonatomic, strong, readonly) CLLocationManager *locationManager;
 @property (nonatomic, strong, readonly) CMMotionActivityManager *activityManager;
 @property (assign) id<MPAutoParkManagerDelegate> delegate;
+@property (nonatomic, readonly, getter = canFlurry) BOOL flurry;
 
 + (BOOL)canTrack;
 + (MPAutoParkManager *)managerWithDelegate:(id<MPAutoParkManagerDelegate>)delegate;

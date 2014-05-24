@@ -14,6 +14,7 @@
 #import "MPPark.h"
 #import "MPAutoParkManager.h"
 #import "MPPaymentObserver.h"
+#import "Flurry.h"
 
 @interface MPAppDelegate : UIResponder <UIApplicationDelegate>
 

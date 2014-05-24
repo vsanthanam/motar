@@ -34,7 +34,7 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>Title</key>
-			<string>AutoPark Core</string>
+			<string>AutoPark Version</string>
 			<key>Key</key>
 			<string>AutoParkVersionNumberKey</string>
 			<key>DefaultValue</key>

@@ -75,6 +75,20 @@
         
     }
     
+    // Handle Analytics
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 1) {
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPUsageReportsSettingKey];
+        
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:MPUsageReportsSettingKey]) {
+        
+        [Flurry setCrashReportingEnabled:YES];
+        [Flurry startSession:@"995T7XB64VFS4YGD56RM"];
+        
+    }
+    
     
     return YES;
     
@@ -112,7 +126,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:MPAutoParkSettingKey]) {
         
         UILocalNotification *alert = [[UILocalNotification alloc] init];
-        alert.alertBody = @"Hey you quit motar! AutoPark tracking will résume next time you use the app.";
+        alert.alertBody = @"Hey, you quit motar! You'll need to open it again for AutoPark.";
         alert.hasAction = NO;
         alert.timeZone = [NSTimeZone defaultTimeZone];
         alert.fireDate = [[NSDate date] dateByAddingTimeInterval:2];
