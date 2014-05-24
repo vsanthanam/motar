@@ -17,7 +17,7 @@
 #import "MPAutoParkManager.h"
 #import "MPColorManager.h"
 
-@interface MPParkViewController : UIViewController <CLLocationManagerDelegate, ADBannerViewDelegate, UIAlertViewDelegate>
+@interface MPParkViewController : UIViewController <CLLocationManagerDelegate, ADBannerViewDelegate, UIAlertViewDelegate, MPAutoParkManagerDelegate>
 
 @property (nonatomic, weak) UIPageViewController *pageViewController;
 @property (nonatomic, strong) MPPark *currentPark;

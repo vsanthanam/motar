@@ -14,6 +14,18 @@ NSString *const MPPreviousParksKey = @"PreviousKey";
 
 NSString *const MPiCloudSettingKey = @"iCloudKey";
 NSString *const MPPinColorSettingKey = @"PinColorKey";
+NSString *const MPAutoParkSettingKey = @"AutoParkKey";
+NSString *const MPiCloudDataKey = @"iCloudDataKey";
+
+NSString *const MPAppFont = @"HelveticaNeue-Light";
+
+NSString *const MPAutoParkNotification = @"MPAutoParkNotification";
+
+NSString *const MPNotificationTypeKey = @"MPNotificationTypeKey";
+NSString *const MPNotificationTypeReminder = @"MPNotificationTypeReminder";
+NSString *const MPNotificationTypeExpired = @"MPNotificationTypeExpired";
+NSString *const MPNotificationTypeAutoPark = @"MPNotificationTypeAutoPark";
+
 
 @implementation MPConstants
 

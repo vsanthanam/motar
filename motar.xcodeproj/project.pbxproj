@@ -17,6 +17,7 @@
 		0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0719B2C61905DE9500CBD96A /* ProductCatalogue.plist */; };
 		0719B2C91905E1F500CBD96A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719B2C81905E1F500CBD96A /* StoreKit.framework */; };
 		0720325719310EE9006C63A4 /* MPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720325619310EE9006C63A4 /* MPConstants.m */; };
+		0720325A19314057006C63A4 /* MPAutoParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720325919314057006C63A4 /* MPAutoParkManager.m */; };
 		075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 075492431905FF5B002B5561 /* MPPaymentObserver.m */; };
 		079676221912A52E007C4459 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 079676211912A52E007C4459 /* Settings.bundle */; };
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
@@ -72,7 +73,6 @@
 		07F88310190340450078AD13 /* MPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8830F190340450078AD13 /* MPAppDelegate.m */; };
 		07F88312190340610078AD13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F88311190340610078AD13 /* Main.storyboard */; };
 		07F88315190340810078AD13 /* MPColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F88314190340810078AD13 /* MPColorManager.m */; };
-		07F883181903408D0078AD13 /* MPAutoParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F883171903408D0078AD13 /* MPAutoParkManager.m */; };
 		07F8833A190340D70078AD13 /* MPAutoParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831B190340D60078AD13 /* MPAutoParkViewController.m */; };
 		07F8833B190340D70078AD13 /* MPCarNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831D190340D60078AD13 /* MPCarNameViewController.m */; };
 		07F8833C190340D70078AD13 /* MPDataStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8831F190340D60078AD13 /* MPDataStorageViewController.m */; };
@@ -124,6 +124,8 @@
 		0719B2C81905E1F500CBD96A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0720325519310EE9006C63A4 /* MPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPConstants.h; sourceTree = "<group>"; };
 		0720325619310EE9006C63A4 /* MPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPConstants.m; sourceTree = "<group>"; };
+		0720325819314057006C63A4 /* MPAutoParkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAutoParkManager.h; sourceTree = "<group>"; };
+		0720325919314057006C63A4 /* MPAutoParkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAutoParkManager.m; sourceTree = "<group>"; };
 		075492421905FF5B002B5561 /* MPPaymentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPaymentObserver.h; sourceTree = "<group>"; };
 		075492431905FF5B002B5561 /* MPPaymentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPaymentObserver.m; sourceTree = "<group>"; };
 		079676211912A52E007C4459 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -188,8 +190,6 @@
 		07F88311190340610078AD13 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		07F88313190340810078AD13 /* MPColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPColorManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F88314190340810078AD13 /* MPColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPColorManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		07F883161903408D0078AD13 /* MPAutoParkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPAutoParkManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		07F883171903408D0078AD13 /* MPAutoParkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPAutoParkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F8831A190340D60078AD13 /* MPAutoParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPAutoParkViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		07F8831B190340D60078AD13 /* MPAutoParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MPAutoParkViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		07F8831C190340D60078AD13 /* MPCarNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MPCarNameViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -406,10 +406,10 @@
 			children = (
 				0720325519310EE9006C63A4 /* MPConstants.h */,
 				0720325619310EE9006C63A4 /* MPConstants.m */,
+				0720325819314057006C63A4 /* MPAutoParkManager.h */,
+				0720325919314057006C63A4 /* MPAutoParkManager.m */,
 				07F8830E190340450078AD13 /* MPAppDelegate.h */,
 				07F8830F190340450078AD13 /* MPAppDelegate.m */,
-				07F883161903408D0078AD13 /* MPAutoParkManager.h */,
-				07F883171903408D0078AD13 /* MPAutoParkManager.m */,
 				07F88313190340810078AD13 /* MPColorManager.h */,
 				07F88314190340810078AD13 /* MPColorManager.m */,
 				075492421905FF5B002B5561 /* MPPaymentObserver.h */,
@@ -659,6 +659,7 @@
 				07F8833D190340D70078AD13 /* MPMainViewController.m in Sources */,
 				07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */,
 				0720325719310EE9006C63A4 /* MPConstants.m in Sources */,
+				0720325A19314057006C63A4 /* MPAutoParkManager.m in Sources */,
 				07F88342190340D70078AD13 /* MPPreviousParkViewController.m in Sources */,
 				07F88346190340D70078AD13 /* MPSettingsTableViewController.m in Sources */,
 				075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */,
@@ -668,7 +669,6 @@
 				07F88343190340D70078AD13 /* MPPreviousTableViewController.m in Sources */,
 				07F88344190340D70078AD13 /* MPRetroReturnTimeViewController.m in Sources */,
 				07F88349190340D70078AD13 /* MPTutorialViewController.m in Sources */,
-				07F883181903408D0078AD13 /* MPAutoParkManager.m in Sources */,
 				07F8833B190340D70078AD13 /* MPCarNameViewController.m in Sources */,
 				07F8835F190341E80078AD13 /* MPReturnTimeView.m in Sources */,
 				07F88341190340D70078AD13 /* MPPinColorTableViewController.m in Sources */,

@@ -2,27 +2,43 @@
 //  MPAutoParkManager.h
 //  motar
 //
-//  Created by Varun Santhanam on 4/13/14.
+//  Created by Varun Santhanam on 5/24/14.
 //  Copyright (c) 2014 Varun Santhanam. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 #import <CoreMotion/CoreMotion.h>
+#import <CoreLocation/CoreLocation.h>
+#import "MPConstants.h"
+
+@class MPAutoParkManager;
+
+@protocol MPAutoParkManagerDelegate <NSObject>
+
+- (BOOL)autoParkManagerShouldTrack:(MPAutoParkManager *)manager;
+
+@optional
+- (void)autoParkManagerDidStartTracking:(MPAutoParkManager *)manager;
+- (void)autoParkManagerDidStopTracking:(MPAutoParkManager *)manager;
+- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewActivity:(CMMotionActivity *)activity;
+- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewLocation:(CLLocation *)location;
+- (void)autoParkManagerThinksUserParked:(MPAutoParkManager *)manager;
+
+@end
 
 @interface MPAutoParkManager : NSObject <CLLocationManagerDelegate>
 
-@property (nonatomic, strong, readonly) CMMotionActivityManager *activityManager;
+@property (nonatomic, strong, readonly) CLLocation *trackedLocation;
+@property (nonatomic, strong, readonly) CMMotionActivity *trackedActivity;
+@property (nonatomic, assign, getter = isTracking) BOOL tracking;
 @property (nonatomic, strong, readonly) CLLocationManager *locationManager;
-@property (nonatomic, assign, readonly, getter = isTracking) BOOL tracking;
-@property (nonatomic, readonly, getter = canTrack) BOOL trackingAvailable;
-@property (nonatomic, strong, readonly) CMMotionActivity *activity;
-@property (nonatomic, strong, readonly) CLLocation *location;
+@property (nonatomic, strong, readonly) CMMotionActivityManager *activityManager;
+@property (assign) id<MPAutoParkManagerDelegate> delegate;
 
 + (BOOL)canTrack;
++ (MPAutoParkManager *)managerWithDelegate:(id<MPAutoParkManagerDelegate>)delegate;
 
-- (void)waitForPark;
-- (void)waitForDrive;
+- (void)startTracking;
 - (void)stopTracking;
 
 @end

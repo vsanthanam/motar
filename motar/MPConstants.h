@@ -18,5 +18,19 @@ extern NSString *const MPPreviousParksKey;
 // Settings
 extern NSString *const MPiCloudSettingKey;
 extern NSString *const MPPinColorSettingKey;
+extern NSString *const MPAutoParkSettingKey;
+extern NSString *const MPiCloudDataKey;
+
+// General
+extern NSString *const MPAppFont;
+
+// AutoPark Keys
+extern NSString *const MPAutoParkNotification;
+
+// Notification Keys
+extern NSString *const MPNotificationTypeKey;
+extern NSString *const MPNotificationTypeReminder;
+extern NSString *const MPNotificationTypeExpired;
+extern NSString *const MPNotificationTypeAutoPark;
 
 @end

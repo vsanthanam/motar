@@ -18,7 +18,7 @@
     
     // Setup Custom Navbar
     [[UINavigationBar appearance] setBarTintColor:[MPColorManager darkColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:21.0f]}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:MPAppFont size:21.0f]}];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     // Setup Custom Switches
@@ -30,7 +30,7 @@
     // Custom Text Fields
     [[UITextField appearance] setBackgroundColor:[MPColorManager darkColorLessAlpha]];
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
-    [[UITextField appearance] setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14.0f]];
+    [[UITextField appearance] setFont:[UIFont fontWithName:MPAppFont size:14.0f]];
     
     // Update Settings Keys
     [[NSUserDefaults standardUserDefaults] setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"] forKey:@"BuildNumberKey"];
@@ -43,11 +43,11 @@
     if (currentiCloudToken) {
         
         NSData *iCloudData = [NSKeyedArchiver archivedDataWithRootObject:currentiCloudToken];
-        [[NSUserDefaults standardUserDefaults] setObject:iCloudData forKey:@"iCloudDataKey"];
+        [[NSUserDefaults standardUserDefaults] setObject:iCloudData forKey:MPiCloudDataKey];
         
     } else {
         
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"iCloudDataKey"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MPiCloudDataKey];
         
     }
     
@@ -109,7 +109,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:MPAutoParkSettingKey]) {
         
         UILocalNotification *alert = [[UILocalNotification alloc] init];
         alert.alertBody = @"Hey you quit motar! AutoPark tracking will résume next time you use the app.";
@@ -123,32 +123,32 @@
     
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    
-    NSLog(@"Received Local Notification %@", notification);
-    
-    NSDictionary *infoDict = notification.userInfo;
-    if ([infoDict[@"key"] isEqualToString:@"reminder"]) {
-        
-        UIAlertView *parkingReminder = [[UIAlertView alloc] initWithTitle:@"Parking Expiration"
-                                                                  message:notification.alertBody
-                                                                 delegate:nil
-                                                        cancelButtonTitle:@"OK"
-                                                        otherButtonTitles:nil];
-        [parkingReminder show];
-        
-    } else if ([infoDict[@"key"] isEqualToString:@"autopark"]) {
-        
-        UIAlertView *autoparkReminder = [[UIAlertView alloc] initWithTitle:@"AutoPark"
-                                                                   message:notification.alertBody
-                                                                  delegate:nil
-                                                         cancelButtonTitle:@"OK"
-                                                         otherButtonTitles:nil];
-        [autoparkReminder show];
-        
-    }
-    
-}
+//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+//    
+//    NSLog(@"Received Local Notification %@", notification);
+//    
+//    NSDictionary *infoDict = notification.userInfo;
+//    if ([infoDict[@"key"] isEqualToString:@"reminder"]) {
+//        
+//        UIAlertView *parkingReminder = [[UIAlertView alloc] initWithTitle:@"Parking Expiration"
+//                                                                  message:notification.alertBody
+//                                                                 delegate:nil
+//                                                        cancelButtonTitle:@"OK"
+//                                                        otherButtonTitles:nil];
+//        [parkingReminder show];
+//        
+//    } else if ([infoDict[@"key"] isEqualToString:@"autopark"]) {
+//        
+//        UIAlertView *autoparkReminder = [[UIAlertView alloc] initWithTitle:@"AutoPark"
+//                                                                   message:notification.alertBody
+//                                                                  delegate:nil
+//                                                         cancelButtonTitle:@"OK"
+//                                                         otherButtonTitles:nil];
+//        [autoparkReminder show];
+//        
+//    }
+//    
+//}
 
 - (void)iCloudChanged {
  
@@ -159,12 +159,12 @@
     // Check iCloud Availability
     if (currentiCloudToken) {
         
-        NSData *oldTokenData = [[NSUserDefaults standardUserDefaults] objectForKey:@"iCloudDataKey"];
+        NSData *oldTokenData = [[NSUserDefaults standardUserDefaults] objectForKey:MPiCloudDataKey];
         id oldToken = [NSKeyedUnarchiver unarchiveObjectWithData:oldTokenData];
         if (![oldToken isEqual: currentiCloudToken]) {
             
             NSData *iCloudData = [NSKeyedArchiver archivedDataWithRootObject:currentiCloudToken];
-            [[NSUserDefaults standardUserDefaults] setObject:iCloudData forKey:@"iCloudDataKey"];
+            [[NSUserDefaults standardUserDefaults] setObject:iCloudData forKey:MPiCloudDataKey];
             
         }
         
@@ -175,7 +175,7 @@
     } else {
         
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"iCloudDataKey"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"iCloudKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:MPiCloudSettingKey];
         
         // Migrate iCloud Data
         [MPParkInfoViewController fillLocal];

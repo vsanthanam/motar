@@ -2,7 +2,7 @@
 //  MPAutoParkManager.m
 //  motar
 //
-//  Created by Varun Santhanam on 4/13/14.
+//  Created by Varun Santhanam on 5/24/14.
 //  Copyright (c) 2014 Varun Santhanam. All rights reserved.
 //
 
@@ -10,23 +10,15 @@
 
 @implementation MPAutoParkManager {
     
-    CMMotionActivity *_previous;
+    CMMotionActivity *_pivot;
     
 }
 
+@synthesize trackedActivity = _trackedActivity;
+@synthesize trackedLocation = _trackedLocation;
+@synthesize tracking = _tracking;
 @synthesize locationManager = _locationManager;
 @synthesize activityManager = _activityManager;
-@synthesize tracking = _tracking;
-@synthesize activity = _activity;
-@synthesize location = _location;
-
-#pragma mark - Overridden Class Methods
-
-+ (void)initialize {
-    
-    [[NSUserDefaults standardUserDefaults] setObject:@"3.0" forKey:@"AutoParkVersionNumberKey"];
-    
-}
 
 #pragma mark - Public Class Methods
 
@@ -36,15 +28,28 @@
     
 }
 
-#pragma mark - Property Access Instance Methods
++ (MPAutoParkManager *)managerWithDelegate:(id<MPAutoParkManagerDelegate>)delegate {
+    
+    MPAutoParkManager *manager = [[MPAutoParkManager alloc] init];
+    manager.delegate = delegate;
+    manager->_trackedActivity = nil;
+    manager->_trackedLocation = nil;
+    manager->_tracking = NO;
+    
+    return manager;
+    
+}
+
+#pragma mark - Property Access Methods
 
 - (CLLocationManager *)locationManager {
     
     if (!self->_locationManager) {
         
         self->_locationManager = [[CLLocationManager alloc] init];
-        self->_locationManager.pausesLocationUpdatesAutomatically = NO;
         self->_locationManager.delegate = self;
+        self->_locationManager.pausesLocationUpdatesAutomatically = NO;
+        self->_locationManager.desiredAccuracy = 3000;
         
     }
     
@@ -64,177 +69,121 @@
     
 }
 
-- (BOOL)canTrack {
-    
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkKey"] && [MPAutoParkManager canTrack];
-    
-}
-
 #pragma mark - CLLocationManagerDelegate Protocol Instance Methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
-    self->_location = [locations lastObject];
-    NSLog(@"AUTOPARK: %@", self.location);
+    self->_trackedLocation = [locations lastObject];
     
-}
-
-#pragma mark - Overridden Instance Methods
-
-- (id)init {
-    
-    if (self = [super init]) {
+    if ([self.delegate respondsToSelector:@selector(autoParkManager:didTrackNewLocation:)]) {
         
-        self->_tracking = NO;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"APStop" object:self];
+        [self.delegate autoParkManager:self didTrackNewLocation:self.trackedLocation];
         
     }
     
-    return self;
+    NSLog(@"AUTOPARK: %@", self.trackedLocation);
     
 }
 
 #pragma mark - Private Instance Methods
 
-- (void)askUser {
+- (void)track {
     
-    UILocalNotification *autoParkReminder = [[UILocalNotification alloc] init];
-    autoParkReminder.fireDate = [[NSDate date] dateByAddingTimeInterval:2];
-    autoParkReminder.timeZone = [NSTimeZone defaultTimeZone];
-    autoParkReminder.soundName = UILocalNotificationDefaultSoundName;
-    autoParkReminder.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-    
-    if (self->_previous.automotive) {
+    if ([MPAutoParkManager canTrack] && [self.delegate autoParkManagerShouldTrack:self]) {
         
-        autoParkReminder.alertBody = @"Did you park your car?";
-        autoParkReminder.userInfo = @{@"key": @"autopark", @"kind": @"park"};
+        if ([self.delegate respondsToSelector:@selector(autoParkManagerDidStartTracking:)]) {
+            
+            [self.delegate autoParkManagerDidStartTracking:self];
+            
+        }
+        
+        [self.locationManager startUpdatingLocation];
+        NSLog(@"Started Tracking");
+        
+        [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMotionActivity *activity) {
+           
+            if ([self.delegate autoParkManagerShouldTrack:self]) {
+                
+                self->_trackedActivity = activity;
+                NSLog(@"%@", self.trackedActivity);
+                if ([self.delegate respondsToSelector:@selector(autoParkManager:didTrackNewActivity:)]) {
+                    
+                    [self.delegate autoParkManager:self didTrackNewActivity:activity];
+                    
+                }
+                
+                if (!self->_pivot) {
+                    
+                    if (activity.automotive && (activity.confidence == CMMotionActivityConfidenceHigh || activity.confidence == CMMagneticFieldCalibrationAccuracyMedium)) {
+                        
+                        self->_pivot = activity;
+                        
+                    }
+                    
+                } else {
+                    
+                    if ((activity.walking || activity.running) && (activity.confidence == CMMotionActivityConfidenceMedium || activity.confidence == CMMotionActivityConfidenceHigh)) {
+                        
+                        [self finishTracking];
+                        
+                    }
+                    
+                }
+                
+            } else {
+                
+                [self stopTracking];
+                
+            }
+            
+        }];
         
     } else {
         
-        autoParkReminder.alertBody = @"Did you un-park your car?";
-        autoParkReminder.userInfo = @{@"key": @"autopark", @"kind": @"un-parked"};
+        NSLog(@"Device Not Tracking");
         
     }
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:autoParkReminder];
-    [self pauseTracking];
-    
 }
 
-- (void)pauseTracking {
+- (void)finishTracking {
     
-    [self.activityManager stopActivityUpdates];
-    [self.locationManager stopUpdatingLocation];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"APStop" object:self];
+    if ([self.delegate respondsToSelector:@selector(autoParkManagerThinksUserParked:)]) {
+        
+        [self.delegate autoParkManagerThinksUserParked:self];
+        
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkNotification object:nil];
     
 }
 
 #pragma mark - Public Instance Methods
 
-- (void)waitForDrive {
+- (void)startTracking {
     
-    if ([self canTrack]) {
-        
-        if (![self isTracking]) {
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"APStart" object:self];
-            self->_tracking = YES;
-            self.locationManager.desiredAccuracy = 3000;
-            [self.locationManager startUpdatingLocation];
-            [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMotionActivity *activity) {
-                
-                if ([self canTrack]) {
-                    
-                    self->_activity = activity;
-                    NSLog(@"%@", activity);
-                    
-                    if (!self->_previous) {
-                        
-                        if ((activity.walking || activity.running) && (activity.confidence == CMMotionActivityConfidenceMedium || activity.confidence == CMMotionActivityConfidenceHigh)) {
-                            
-                            self->_previous = activity;
-                            
-                        }
-                        
-                    } else {
-                        
-                        if (activity.automotive && (activity.confidence == CMMotionActivityConfidenceMedium || activity.confidence == CMMotionActivityConfidenceHigh)) {
-                            
-                            [self askUser];
-                            
-                        }
-                        
-                    }
-                    
-                } else {
-                    
-                    [self stopTracking];
-                    
-                }
-                
-            }];
-            
-        }
-        
-    }
-    
-}
-
-- (void)waitForPark {
-    
-    if ([self canTrack]) {
-        
-        if (![self isTracking]) {
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"APStart" object:nil];
-            self->_tracking = YES;
-            self.locationManager.desiredAccuracy = 3000;
-            [self.locationManager startUpdatingLocation];
-            [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMotionActivity *activity) {
-                
-                if ([self canTrack]) {
-                    
-                    self->_activity = activity;
-                    NSLog(@"%@", activity);
-                    
-                    if (!self->_previous) {
-                        
-                        if (activity.automotive && (activity.confidence == CMMotionActivityConfidenceMedium || activity.confidence == CMMotionActivityConfidenceHigh)) {
-                            
-                            self->_previous = activity;
-                            
-                        }
-                        
-                    } else {
-                        
-                        if ((activity.walking || activity.running) && (activity.confidence == CMMotionActivityConfidenceMedium || activity.confidence == CMMotionActivityConfidenceHigh)) {
-                            
-                            [self askUser];
-                            
-                        }
-                        
-                    }
-                    
-                } else {
-                    
-                    [self stopTracking];
-                    
-                }
-                
-            }];
-            
-        }
-        
-    }
+    self->_tracking = YES;
+    self->_trackedActivity = nil;
+    self->_trackedLocation = nil;
+    self->_pivot = nil;
+    [self track];
     
 }
 
 - (void)stopTracking {
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"APStop" object:self];
+    if ([self.delegate respondsToSelector:@selector(autoParkManagerDidStopTracking:)]) {
+        
+        [self.delegate autoParkManagerDidStopTracking:self];
+        
+    }
+    self->_tracking = NO;
+    self->_trackedActivity = nil;
+    self->_trackedLocation = nil;
+    self->_pivot = nil;
+    NSLog(@"Stopped Tracking");
     [self.activityManager stopActivityUpdates];
     [self.locationManager stopUpdatingLocation];
-    self->_tracking = NO;
     
 }
 

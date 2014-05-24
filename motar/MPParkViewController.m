@@ -24,12 +24,12 @@
 @synthesize pageViewController = _pageViewController;
 @synthesize currentPark = _currentPark;
 @synthesize locationManager = _locationManager;
+@synthesize autoParkManager = _autoParkManager;
 
 @synthesize parkButton = _parkButton;
 @synthesize parkStatusMeter = _parkStatusMeter;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize shortInfoBubble = _shortInfoBubble;
-@synthesize autoParkManager = _autoParkManager;
 @synthesize helperLabel = _helperLabel;
 @synthesize motionIndicatorButton = _motionIndicatorButton;
 
@@ -53,7 +53,7 @@
     
     if (!self->_autoParkManager) {
         
-        self->_autoParkManager = [[MPAutoParkManager alloc] init];
+        self->_autoParkManager = [MPAutoParkManager managerWithDelegate:self];
         
     }
     
@@ -64,6 +64,47 @@
 - (BOOL)canShowAds {
     
     return ![[NSUserDefaults standardUserDefaults] boolForKey:@"com.varunsanthanam.motar.noads"];
+    
+}
+
+#pragma mark - MPAutoParkManagerDelegate Protocol Instance Methods
+
+- (BOOL)autoParkManagerShouldTrack:(MPAutoParkManager *)manager {
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPAutoParkSettingKey];
+    
+}
+
+- (void)autoParkManagerDidStartTracking:(MPAutoParkManager *)manager {
+    
+    [self showSensorIndicator];
+    
+}
+
+- (void)autoParkManagerDidStopTracking:(MPAutoParkManager *)manager {
+    
+    [self hideSensorIndicator];
+    
+}
+
+- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewActivity:(CMMotionActivity *)activity  {
+}
+
+- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewLocation:(CLLocation *)location {
+    
+}
+
+- (void)autoParkManagerThinksUserParked:(MPAutoParkManager *)manager {
+    
+    UILocalNotification *reminder = [[UILocalNotification alloc] init];
+    reminder.fireDate = [NSDate dateWithTimeIntervalSinceNow:3];
+    reminder.alertBody = @"Did You Park?";
+    reminder.timeZone = [NSTimeZone defaultTimeZone];
+    reminder.soundName = UILocalNotificationDefaultSoundName;
+    reminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeAutoPark};
+    [[UIApplication sharedApplication] scheduleLocalNotification:reminder];
+    [self.autoParkManager stopTracking];
+    [self.autoParkManager startTracking];
     
 }
 
@@ -142,8 +183,7 @@
     [super viewDidLoad];
     [self prepareUI];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSensorIndicator) name:@"APStart" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideSensorIndicator) name:@"APStop" object:nil];
+    [self.autoParkManager startTracking];
     
 }
 
@@ -160,43 +200,17 @@
         
     }
     
-    if (![self.autoParkManager canTrack]) {
-        
-        [self.autoParkManager stopTracking];
-        
-    } else {
-        
-        if ([self.currentPark isParked]) {
-            
-            if (![self.autoParkManager isTracking]) {
-                
-                [self.autoParkManager waitForDrive];
-                
-            }
-            
-        } else {
-            
-            if (![self.autoParkManager isTracking]) {
-                
-                [self.autoParkManager waitForPark];
-                
-            }
-            
-        }
-        
-    }
-    
-    if ([self.autoParkManager canTrack] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
-        
-        self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
-                                                          message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
-                                                         delegate:nil
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles:nil];
-        [self->_autoParkAlert show];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AutoParkPromptKey"];
-        
-    }
+//    if ([self.autoParkManager canTrack] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
+//        
+//        self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
+//                                                          message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
+//                                                         delegate:nil
+//                                                cancelButtonTitle:@"OK"
+//                                                otherButtonTitles:nil];
+//        [self->_autoParkAlert show];
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AutoParkPromptKey"];
+//        
+//    }
     
     if (![self canShowAds]) {
         
@@ -213,6 +227,12 @@
                                                otherButtonTitles:@"Review App", nil];
         [self->_rateAppAlert show];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RateAppPromptKey"];
+        
+    }
+    
+    if (!self.autoParkManager.tracking) {
+        
+        [self.autoParkManager startTracking];
         
     }
     
@@ -385,6 +405,8 @@
 
 - (void)parkHere {
     
+    [self.autoParkManager stopTracking];
+    
     if ([CLLocationManager locationServicesEnabled]) {
         
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -401,13 +423,6 @@
         
     }
     
-    if ([self.autoParkManager canTrack]) {
-        
-        [self.autoParkManager stopTracking];
-        [self.autoParkManager waitForDrive];
-        
-    }
-    
 }
 
 - (void)completePark {
@@ -416,6 +431,7 @@
     [self.currentPark savePark];
     [self parkedUI:YES];
     [self stopLoading];
+    [self.autoParkManager startTracking];
     
 }
 
@@ -426,13 +442,6 @@
     [MPPark clearSave];
     self.currentPark = [MPPark parkFromSave];
     
-    if ([self.autoParkManager canTrack]) {
-        
-        [self.autoParkManager stopTracking];
-        [self.autoParkManager waitForPark];
-        
-    }
-
 }
 
 - (void)startLoading {
@@ -617,6 +626,17 @@
         
         [self findCar];
         [self standbyUI:YES];
+        
+    }
+    
+    if (!self.autoParkManager.tracking) {
+        
+        [self.autoParkManager startTracking];
+        
+    } else {
+        
+        [self.autoParkManager stopTracking];
+        [self.autoParkManager startTracking];
         
     }
     
