@@ -98,7 +98,7 @@ static NSString *_defaultTag;
 
 + (BOOL)canUseiCloud {
     
-    return [[NSUserDefaults standardUserDefaults] boolForKey:MPiCloudKey];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPiCloudSettingKey];
     
 }
 

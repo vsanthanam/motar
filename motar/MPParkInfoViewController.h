@@ -14,6 +14,7 @@
 #import "MPParkImageViewController.h"
 #import "MPRenameParkViewController.h"
 #import "MPColorManager.h"
+#import "MPConstants.h"
 #import "MPAppDelegate.h"
 
 @interface MPParkInfoViewController : UIViewController <MKMapViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>

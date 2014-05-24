@@ -10,9 +10,13 @@
 
 @interface MPConstants : NSObject
 
+// Park Data
 extern NSString *const MPDefaultTagKey;
 extern NSString *const MPCurrentParkKey;
 extern NSString *const MPPreviousParksKey;
-extern NSString *const MPiCloudKey;
+
+// Settings
+extern NSString *const MPiCloudSettingKey;
+extern NSString *const MPPinColorSettingKey;
 
 @end

@@ -36,25 +36,25 @@ static MKPinAnnotationColor _pinColor;
     
     if (![MPParkInfoViewController canUseiCloud]) {
         
-        if (![[NSUserDefaults standardUserDefaults] integerForKey:@"PinColorKey"]) {
+        if (![[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey]) {
             
             _pinColor = MKPinAnnotationColorRed;
             
         } else {
             
-            _pinColor = (MKPinAnnotationColor)[[NSUserDefaults standardUserDefaults] integerForKey:@"PinColorKey"];
+            _pinColor = (MKPinAnnotationColor)[[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey];
             
         }
         
     } else {
         
-        if (![[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"]) {
+        if (![[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey]) {
             
             _pinColor = MKPinAnnotationColorRed;
             
         } else {
             
-            _pinColor = (MKPinAnnotationColor)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"];
+            _pinColor = (MKPinAnnotationColor)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey];
             
         }
         
@@ -74,11 +74,11 @@ static MKPinAnnotationColor _pinColor;
     
     if (![MPParkInfoViewController canUseiCloud]) {
         
-        [[NSUserDefaults standardUserDefaults] setInteger:_pinColor forKey:@"PinColorKey"];
+        [[NSUserDefaults standardUserDefaults] setInteger:_pinColor forKey:MPPinColorSettingKey];
         
     } else {
         
-        [[NSUbiquitousKeyValueStore defaultStore] setLongLong:_pinColor forKey:@"PinColorKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] setLongLong:_pinColor forKey:MPPinColorSettingKey];
         
     }
     
@@ -86,15 +86,15 @@ static MKPinAnnotationColor _pinColor;
 
 + (BOOL)canUseiCloud {
     
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"iCloudKey"];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPiCloudSettingKey];
     
 }
 
 + (void)fillLocal {
     
-    if ([[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"]) {
+    if ([[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey]) {
         
-        [[NSUserDefaults standardUserDefaults] setInteger:(NSInteger)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"] forKey:@"PinColorKey"];
+        [[NSUserDefaults standardUserDefaults] setInteger:(NSInteger)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey] forKey:MPPinColorSettingKey];
         
     }
     
@@ -102,9 +102,9 @@ static MKPinAnnotationColor _pinColor;
 
 + (void)filliCloud {
     
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"PinColorKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey]) {
         
-        [[NSUbiquitousKeyValueStore defaultStore] setLongLong:[[NSUserDefaults standardUserDefaults] integerForKey:@"iCloudKey"] forKey:@"iCloudKey"];
+        [[NSUbiquitousKeyValueStore defaultStore] setLongLong:[[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey] forKey:MPPinColorSettingKey];
         
     }
     
@@ -114,25 +114,25 @@ static MKPinAnnotationColor _pinColor;
     
     if (![MPParkInfoViewController canUseiCloud]) {
         
-        if (![[NSUserDefaults standardUserDefaults] integerForKey:@"PinColorKey"]) {
+        if (![[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey]) {
             
             _pinColor = MKPinAnnotationColorRed;
             
         } else {
             
-            _pinColor = (MKPinAnnotationColor)[[NSUserDefaults standardUserDefaults] integerForKey:@"PinColorKey"];
+            _pinColor = (MKPinAnnotationColor)[[NSUserDefaults standardUserDefaults] integerForKey:MPPinColorSettingKey];
             
         }
         
     } else {
         
-        if (![[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"]) {
+        if (![[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey]) {
             
             _pinColor = MKPinAnnotationColorRed;
             
         } else {
             
-            _pinColor = (MKPinAnnotationColor)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:@"PinColorKey"];
+            _pinColor = (MKPinAnnotationColor)[[NSUbiquitousKeyValueStore defaultStore] longLongForKey:MPPinColorSettingKey];
             
         }
         

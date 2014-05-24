@@ -11,7 +11,9 @@
 NSString *const MPDefaultTagKey = @"DefaultTagKey";
 NSString *const MPCurrentParkKey = @"CurrentKey";
 NSString *const MPPreviousParksKey = @"PreviousKey";
-NSString *const MPiCloudKey = @"iCloudKey";
+
+NSString *const MPiCloudSettingKey = @"iCloudKey";
+NSString *const MPPinColorSettingKey = @"PinColorKey";
 
 @implementation MPConstants
 
