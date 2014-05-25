@@ -120,6 +120,7 @@
                 
                 self->_trackedActivity = activity;
                 NSLog(@"%@", self.trackedActivity);
+                [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkNewMotionNotification object:nil];
                 if ([self.delegate respondsToSelector:@selector(autoParkManager:didTrackNewActivity:)]) {
                     
                     [self.delegate autoParkManager:self didTrackNewActivity:activity];

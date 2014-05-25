@@ -67,6 +67,12 @@
     
 }
 
+- (BOOL)canFlurry {
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:MPUsageReportsSettingKey];
+    
+}
+
 #pragma mark - MPAutoParkManagerDelegate Protocol Instance Methods
 
 - (BOOL)autoParkManagerShouldTrack:(MPAutoParkManager *)manager {
@@ -115,7 +121,7 @@
     CLLocation *location = [locations lastObject];
     NSLog(@"USER: %@", location);
     NSTimeInterval interval = [location.timestamp timeIntervalSinceNow];
-    if (abs(interval) < 5 && location.horizontalAccuracy == kCLLocationAccuracyBest) {
+    if (abs(interval) < 2) {
         
         self.currentPark.parkLocation = location;
         [manager stopUpdatingLocation];
@@ -233,6 +239,17 @@
     if (!self.autoParkManager.tracking) {
         
         [self.autoParkManager startTracking];
+        
+    }
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"AutoParkSegue"]) {
+        
+        MPAutoParkViewController *viewController = (MPAutoParkViewController *)[segue destinationViewController];
+        viewController.autoParkManager = self.autoParkManager;
         
     }
     
@@ -615,6 +632,11 @@
         
         [self startLoading];
         [self parkHere];
+        if ([self canFlurry]) {
+            
+            [Flurry logEvent:@"User Park"];
+            
+        }
         
     }
     
@@ -626,6 +648,11 @@
         
         [self findCar];
         [self standbyUI:YES];
+        if ([self canFlurry]) {
+            
+            [Flurry logEvent:@"User Un-Park"];
+            
+        }
         
     }
     

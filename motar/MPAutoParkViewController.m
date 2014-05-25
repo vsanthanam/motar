@@ -18,24 +18,10 @@
     
 }
 
-@synthesize activityManager = _activityManager;
 @synthesize autoParkImageView = _autoParkImageView;
 @synthesize autoParkSensorStatusLabel = _autoParkSensorStatusLabel;
 @synthesize autoParkAccuracyMeter = _autoParkAccuracyMeter;
 
-#pragma mark - Property Access Methods
-
-- (CMMotionActivityManager *)activityManager {
-    
-    if (!self->_activityManager) {
-        
-        self->_activityManager = [[CMMotionActivityManager alloc] init];
-        
-    }
-    
-    return self->_activityManager;
-    
-}
 
 #pragma mark - Overridden Instance Methods
 
@@ -46,7 +32,8 @@
     self.autoParkSensorActivityIndicator.hidesWhenStopped = YES;
     if ([MPAutoParkManager canTrack]) {
         
-        [self startSensing];
+        [self didTrackNewActivity];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didTrackNewActivity) name:MPAutoParkNewMotionNotification object:nil];
         
     } else {
         
@@ -65,7 +52,9 @@
 
 #pragma mark - Private Instance Methods
 
-- (void)didTrackNewActivity:(CMMotionActivity *)activity {
+- (void)didTrackNewActivity {
+    
+    CMMotionActivity *activity = self.autoParkManager.trackedActivity;
     
     switch (activity.confidence) {
         case CMMotionActivityConfidenceHigh:
@@ -215,30 +204,11 @@
 
 #pragma mark - Public Instance Methods
 
-- (void)stopSensing {
-    
-    [self.activityManager stopActivityUpdates];
-    self->_activityManager = nil;
-    
-}
-
-- (void)startSensing {
-    
-    [self.autoParkSensorActivityIndicator startAnimating];
-    [self.activityManager startActivityUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMMotionActivity *activity) {
-        
-        [self didTrackNewActivity:activity];
-        
-    }];
-    
-}
-
 
 #pragma mark - Actions
 
 - (IBAction)userDone:(id)sender {
     
-    [self stopSensing];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

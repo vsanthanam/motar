@@ -10,12 +10,15 @@
 #import <MapKit/MapKit.h>
 #import <iAd/iAd.h>
 
+#import "MPAutoParkViewController.h"
+
 #import "MPPark.h"
 #import "MPParkButton.h"
 #import "MPParkStatusMeter.h"
 #import "MPShortInfoBubble.h"
 #import "MPAutoParkManager.h"
 #import "MPColorManager.h"
+#import "Flurry.h"
 
 @interface MPParkViewController : UIViewController <CLLocationManagerDelegate, ADBannerViewDelegate, UIAlertViewDelegate, MPAutoParkManagerDelegate>
 
@@ -24,6 +27,7 @@
 @property (nonatomic, strong, readonly) CLLocationManager *locationManager;
 @property (nonatomic, strong, readonly) MPAutoParkManager *autoParkManager;
 @property (nonatomic, readonly, getter = canShowAds) BOOL adsAvailable;
+@property (nonatomic, readonly, getter = canFlurry) BOOL flurry;
 
 @property (weak, nonatomic) IBOutlet MPParkButton *parkButton;
 @property (weak, nonatomic) IBOutlet MPParkStatusMeter *parkStatusMeter;

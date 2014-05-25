@@ -204,7 +204,7 @@
         parkReminder.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
         parkReminder.timeZone = [NSTimeZone defaultTimeZone];
         parkReminder.soundName = @"expired.mp3";
-        parkReminder.userInfo = @{@"key": @"reminder", @"returnDate": self.currentPark.returnDate};
+        parkReminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeReminder, @"returnDate": self.currentPark.returnDate};
         self.currentPark.parkReminder = parkReminder;
         
     } else {
@@ -220,7 +220,7 @@
     expirationReminder.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     expirationReminder.timeZone = [NSTimeZone defaultTimeZone];
     expirationReminder.soundName = @"expired.mp3";
-    expirationReminder.userInfo = @{@"key": @"expired", @"returnDate": self.currentPark.returnDate};
+    expirationReminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeExpired, @"returnDate": self.currentPark.returnDate};
     [[UIApplication sharedApplication] scheduleLocalNotification:expirationReminder];
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];

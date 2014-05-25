@@ -7,21 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreMotion/CoreMotion.h>
 
 #import "MPColorManager.h"
 #import "MPAutoParkManager.h"
+#import "MPConstants.h"
 
 @interface MPAutoParkViewController : UIViewController
 
-@property (nonatomic, strong, readonly) CMMotionActivityManager *activityManager;
+@property (nonatomic, weak) MPAutoParkManager *autoParkManager;
 @property (weak, nonatomic) IBOutlet UIImageView *autoParkImageView;
 @property (weak, nonatomic) IBOutlet UILabel *autoParkSensorStatusLabel;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *autoParkSensorActivityIndicator;
 @property (weak, nonatomic) IBOutlet UIProgressView *autoParkAccuracyMeter;
-
-- (void)startSensing;
-- (void)stopSensing;
 
 - (IBAction)userDone:(id)sender;
 - (IBAction)userHelp:(id)sender;

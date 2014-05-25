@@ -21,6 +21,7 @@ NSString *const MPUsageReportsSettingKey = @"UsageReportsKey";
 NSString *const MPAppFont = @"HelveticaNeue-Light";
 
 NSString *const MPAutoParkNotification = @"MPAutoParkNotification";
+NSString *const MPAutoParkNewMotionNotification = @"MPAutoParkNewMotionNotification";
 
 NSString *const MPNotificationTypeKey = @"MPNotificationTypeKey";
 NSString *const MPNotificationTypeReminder = @"MPNotificationTypeReminder";
