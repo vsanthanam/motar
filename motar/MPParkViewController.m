@@ -93,7 +93,8 @@
     
 }
 
-- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewActivity:(CMMotionActivity *)activity  {
+- (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewActivity:(CMMotionActivity *)activity {
+    
 }
 
 - (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewLocation:(CLLocation *)location {
@@ -104,7 +105,7 @@
     
     UILocalNotification *reminder = [[UILocalNotification alloc] init];
     reminder.fireDate = [NSDate dateWithTimeIntervalSinceNow:3];
-    reminder.alertBody = @"Did You Park?";
+    reminder.alertBody = @"Did You Park Your Car?";
     reminder.timeZone = [NSTimeZone defaultTimeZone];
     reminder.soundName = UILocalNotificationDefaultSoundName;
     reminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeAutoPark};

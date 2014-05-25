@@ -21,9 +21,9 @@
 @optional
 - (void)autoParkManagerDidStartTracking:(MPAutoParkManager *)manager;
 - (void)autoParkManagerDidStopTracking:(MPAutoParkManager *)manager;
+- (void)autoParkManagerThinksUserParked:(MPAutoParkManager *)manager;
 - (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewActivity:(CMMotionActivity *)activity;
 - (void)autoParkManager:(MPAutoParkManager *)manager didTrackNewLocation:(CLLocation *)location;
-- (void)autoParkManagerThinksUserParked:(MPAutoParkManager *)manager;
 
 @end
 
