@@ -189,6 +189,7 @@
     [self.view addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
     self.view.backgroundColor = [MPColorManager lightColor];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wakeFromAutoPark) name:MPAutoParkWakeFromAutoParkNotification object:nil];
     
 }
 
@@ -208,6 +209,14 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+}
+
+#pragma mark - Private Instance Methods
+
+- (void)wakeFromAutoPark {
+    
+    [self.pageViewController setViewControllers:@[self.parkViewController] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
 }
 

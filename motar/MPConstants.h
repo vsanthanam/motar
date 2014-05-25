@@ -28,6 +28,7 @@ extern NSString *const MPAppFont;
 // AutoPark Keys
 extern NSString *const MPAutoParkNotification;
 extern NSString *const MPAutoParkNewMotionNotification;
+extern NSString *const MPAutoParkWakeFromAutoParkNotification;
 
 // Notification Keys
 extern NSString *const MPNotificationTypeKey;

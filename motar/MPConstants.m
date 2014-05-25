@@ -22,6 +22,7 @@ NSString *const MPAppFont = @"HelveticaNeue-Light";
 
 NSString *const MPAutoParkNotification = @"MPAutoParkNotification";
 NSString *const MPAutoParkNewMotionNotification = @"MPAutoParkNewMotionNotification";
+NSString *const MPAutoParkWakeFromAutoParkNotification = @"MPAutoParkWakeFromAutoParkNotification";
 
 NSString *const MPNotificationTypeKey = @"MPNotificationTypeKey";
 NSString *const MPNotificationTypeReminder = @"MPNotificationTypeReminder";

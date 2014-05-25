@@ -137,32 +137,18 @@
     
 }
 
-//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-//    
-//    NSLog(@"Received Local Notification %@", notification);
-//    
-//    NSDictionary *infoDict = notification.userInfo;
-//    if ([infoDict[@"key"] isEqualToString:@"reminder"]) {
-//        
-//        UIAlertView *parkingReminder = [[UIAlertView alloc] initWithTitle:@"Parking Expiration"
-//                                                                  message:notification.alertBody
-//                                                                 delegate:nil
-//                                                        cancelButtonTitle:@"OK"
-//                                                        otherButtonTitles:nil];
-//        [parkingReminder show];
-//        
-//    } else if ([infoDict[@"key"] isEqualToString:@"autopark"]) {
-//        
-//        UIAlertView *autoparkReminder = [[UIAlertView alloc] initWithTitle:@"AutoPark"
-//                                                                   message:notification.alertBody
-//                                                                  delegate:nil
-//                                                         cancelButtonTitle:@"OK"
-//                                                         otherButtonTitles:nil];
-//        [autoparkReminder show];
-//        
-//    }
-//    
-//}
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    NSLog(@"Received Local Notification %@", notification);
+    NSDictionary *infoDict = notification.userInfo;
+    
+    if (infoDict[MPNotificationTypeKey] == MPNotificationTypeAutoPark) {
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkWakeFromAutoParkNotification object:nil];
+        
+    }
+    
+}
 
 - (void)iCloudChanged {
  
