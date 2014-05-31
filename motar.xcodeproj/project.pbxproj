@@ -23,6 +23,8 @@
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
 		07A01A8C1905A7A2003825BB /* rename.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A8A1905A7A2003825BB /* rename.png */; };
 		07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A01A8E1905A866003825BB /* MPRenameParkViewController.m */; };
+		07ADAF5719356AA10070ECF2 /* gps.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADAF5519356AA00070ECF2 /* gps.png */; };
+		07ADAF5819356AA10070ECF2 /* gps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADAF5619356AA10070ECF2 /* gps@2x.png */; };
 		07AF064C19315F9100BF5B88 /* libFlurry_5.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF064B19315F9100BF5B88 /* libFlurry_5.0.0.a */; };
 		07AF064F1931614400BF5B88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07AF064E1931614400BF5B88 /* SystemConfiguration.framework */; };
 		07BE2CA31908380E000A28A6 /* MPRetroNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BE2CA21908380E000A28A6 /* MPRetroNameViewController.m */; };
@@ -135,6 +137,8 @@
 		07A01A8A1905A7A2003825BB /* rename.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rename.png; sourceTree = "<group>"; };
 		07A01A8D1905A866003825BB /* MPRenameParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenameParkViewController.h; sourceTree = "<group>"; };
 		07A01A8E1905A866003825BB /* MPRenameParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPRenameParkViewController.m; sourceTree = "<group>"; };
+		07ADAF5519356AA00070ECF2 /* gps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gps.png; sourceTree = "<group>"; };
+		07ADAF5619356AA10070ECF2 /* gps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gps@2x.png"; sourceTree = "<group>"; };
 		07AF064A19315F9100BF5B88 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = ../Flurry.h; sourceTree = "<group>"; };
 		07AF064B19315F9100BF5B88 /* libFlurry_5.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_5.0.0.a; path = ../libFlurry_5.0.0.a; sourceTree = "<group>"; };
 		07AF064E1931614400BF5B88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -357,6 +361,8 @@
 				0719B2BF1905B7B500CBD96A /* SpotlightIcon@2x.png */,
 				0719B2BB1905B71600CBD96A /* Icon.png */,
 				0719B2BA1905B71600CBD96A /* Icon@2x.png */,
+				07ADAF5519356AA00070ECF2 /* gps.png */,
+				07ADAF5619356AA10070ECF2 /* gps@2x.png */,
 				07A01A8A1905A7A2003825BB /* rename.png */,
 				07A01A891905A7A2003825BB /* rename@2x.png */,
 				07F882CD19033FF60078AD13 /* automotive.png */,
@@ -601,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07F8830C19033FF60078AD13 /* walking@2x.png in Resources */,
+				07ADAF5819356AA10070ECF2 /* gps@2x.png in Resources */,
 				07F882ED19033FF60078AD13 /* automotive.png in Resources */,
 				0719B2C71905DE9500CBD96A /* ProductCatalogue.plist in Resources */,
 				07F882F119033FF60078AD13 /* camera.png in Resources */,
@@ -644,6 +651,7 @@
 				0719B2C11905B7B500CBD96A /* SpotlightIcon@2x.png in Resources */,
 				07F882FE19033FF60078AD13 /* location@2x.png in Resources */,
 				07F882F919033FF60078AD13 /* iCloud.png in Resources */,
+				07ADAF5719356AA10070ECF2 /* gps.png in Resources */,
 				07F8830919033FF60078AD13 /* time.png in Resources */,
 				07F882EE19033FF60078AD13 /* automotive@2x.png in Resources */,
 			);

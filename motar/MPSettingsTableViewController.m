@@ -655,7 +655,7 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
     if ([self.autoParkSwitch isOn]) {
         
-        self->_autoParkActionSheet = [[UIActionSheet alloc] initWithTitle:@"AutoPark uses data from your phone's motion and gps sensors to remind you use the app. All tracking data is stored on the device only and destroyed after each use. This feature can be disabled at anytime"
+        self->_autoParkActionSheet = [[UIActionSheet alloc] initWithTitle:@"AutoPark uses data from your phone's motion and gps sensors to remind you use the app. All tracking data is stored on the device only and destroyed after each use. This feature can be disabled at anytime. Tracking will begin after you restart the app."
                                                                  delegate:self
                                                         cancelButtonTitle:@"Cancel"
                                                    destructiveButtonTitle:@"Enable AutoPark"

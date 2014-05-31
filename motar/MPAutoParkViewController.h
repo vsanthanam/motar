@@ -22,6 +22,6 @@
 
 - (IBAction)userDone:(id)sender;
 - (IBAction)userHelp:(id)sender;
-
+- (IBAction)userGPS:(id)sender;
 
 @end

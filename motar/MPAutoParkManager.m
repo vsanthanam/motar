@@ -24,7 +24,7 @@
 
 + (void)initialize {
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"3.1" forKey:@"AutoParkVersionNumberKey"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"3.0.1" forKey:@"AutoParkVersionNumberKey"];
     
 }
 
@@ -129,7 +129,7 @@
                 
                 if (!self->_pivot) {
                     
-                    if (activity.automotive && (activity.confidence == CMMotionActivityConfidenceHigh || activity.confidence == CMMagneticFieldCalibrationAccuracyMedium)) {
+                    if (activity.automotive && (activity.confidence == CMMotionActivityConfidenceHigh)) {
                         
                         self->_pivot = activity;
                         
@@ -202,6 +202,8 @@
     self->_trackedActivity = nil;
     self->_trackedLocation = nil;
     self->_pivot = nil;
+    self->_activityManager = nil;
+    self->_locationManager = nil;
     NSLog(@"Stopped Tracking");
     [self.activityManager stopActivityUpdates];
     [self.locationManager stopUpdatingLocation];

@@ -225,4 +225,16 @@
     [self->_helpAlert show];
 }
 
+- (IBAction)userGPS:(id)sender {
+    
+    NSString *GPSString = [NSString stringWithFormat:@"%@", self.autoParkManager.trackedLocation];
+    UIAlertView *GPSAlert = [[UIAlertView alloc] initWithTitle:@"Tracked Location"
+                                                       message:GPSString
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles: nil];
+    [GPSAlert show];
+    
+}
+
 @end

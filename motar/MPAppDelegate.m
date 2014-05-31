@@ -144,7 +144,7 @@
     
     if (infoDict[MPNotificationTypeKey] == MPNotificationTypeAutoPark) {
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkWakeFromAutoParkNotification object:nil];
+        // do autopark stuff.
         
     }
     

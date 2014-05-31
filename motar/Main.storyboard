@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Csq-gg-hpc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Csq-gg-hpc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -664,11 +664,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParkCell" textLabel="rlE-Ih-l3i" detailTextLabel="SAC-2y-sZx" imageView="Fg6-h6-Rf1" style="IBUITableViewCellStyleSubtitle" id="VyL-3N-RTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ParkCell" textLabel="rlE-Ih-l3i" detailTextLabel="SAC-2y-sZx" imageView="Fg6-h6-Rf1" style="IBUITableViewCellStyleSubtitle" id="VyL-3N-RTF">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VyL-3N-RTF" id="5Qt-yn-gDq">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rlE-Ih-l3i">
@@ -1015,6 +1015,17 @@
                                 </state>
                                 <connections>
                                     <action selector="userHelp:" destination="NpM-3o-VwA" eventType="touchUpInside" id="kit-gU-S0C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzu-cQ-FVB">
+                                <rect key="frame" x="20" y="510" width="78" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GPS" image="gps.png">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userGPS:" destination="NpM-3o-VwA" eventType="touchUpInside" id="PuK-IP-WH9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1759,6 +1770,7 @@ CFRlbGwgYSBmcmllbmQ
         <image name="camera.png" width="25" height="25"/>
         <image name="directions.png" width="25" height="25"/>
         <image name="geo.png" width="25" height="25"/>
+        <image name="gps.png" width="25" height="25"/>
         <image name="iCloud.png" width="256" height="256"/>
         <image name="loading.png" width="256" height="256"/>
         <image name="location.png" width="25" height="25"/>

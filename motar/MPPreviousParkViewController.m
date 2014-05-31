@@ -43,7 +43,6 @@
         annotationView.draggable = YES;
         annotationView.pinColor = [MPParkInfoViewController pinColor];
         
-        
     } else {
         
         annotationView.pinColor = [MPParkInfoViewController pinColor];

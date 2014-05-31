@@ -105,7 +105,7 @@
     
     UILocalNotification *reminder = [[UILocalNotification alloc] init];
     reminder.fireDate = [NSDate dateWithTimeIntervalSinceNow:3];
-    reminder.alertBody = @"Did You Park Your Car?";
+    reminder.alertBody = @"Did you park your car?";
     reminder.timeZone = [NSTimeZone defaultTimeZone];
     reminder.soundName = UILocalNotificationDefaultSoundName;
     reminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeAutoPark};
@@ -207,7 +207,7 @@
         
     }
     
-    if ([self.autoParkManager isTracking] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
+    if ([self.autoParkManager.delegate autoParkManagerShouldTrack:self.autoParkManager] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
         
         self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
                                                           message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
