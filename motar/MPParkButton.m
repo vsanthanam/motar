@@ -32,9 +32,8 @@
         UIColor* innerLight = [UIColor colorWithRed: 0.69 green: 0.69 blue: 0.69 alpha: 1];
         
         //// Gradient Declarations
-        NSArray* innerGradientColors = [NSArray arrayWithObjects:
-                                        (id)innerDark.CGColor,
-                                        (id)innerLight.CGColor, nil];
+        NSArray* innerGradientColors = @[(id)innerDark.CGColor,
+                                        (id)innerLight.CGColor];
         CGFloat innerGradientLocations[] = {0, 1};
         CGGradientRef innerGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)innerGradientColors, innerGradientLocations);
         
@@ -102,14 +101,12 @@
         UIColor* innerLight = [UIColor colorWithRed: 0.692 green: 0.692 blue: 0.692 alpha: 1];
         
         //// Gradient Declarations
-        NSArray* outerGradientColors = [NSArray arrayWithObjects:
-                                        (id)outerLight.CGColor,
-                                        (id)outerDark.CGColor, nil];
+        NSArray* outerGradientColors = @[(id)outerLight.CGColor,
+                                        (id)outerDark.CGColor];
         CGFloat outerGradientLocations[] = {0, 1};
         CGGradientRef outerGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)outerGradientColors, outerGradientLocations);
-        NSArray* innerGradientColors = [NSArray arrayWithObjects:
-                                        (id)innerDark.CGColor,
-                                        (id)innerLight.CGColor, nil];
+        NSArray* innerGradientColors = @[(id)innerDark.CGColor,
+                                        (id)innerLight.CGColor];
         CGFloat innerGradientLocations[] = {0, 1};
         CGGradientRef innerGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)innerGradientColors, innerGradientLocations);
         

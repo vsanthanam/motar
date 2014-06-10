@@ -42,5 +42,6 @@
 
 - (void)startTracking;
 - (void)stopTracking;
+- (void)resetTracking;
 
 @end

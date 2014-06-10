@@ -210,4 +210,10 @@
     
 }
 
+- (void)resetTracking {
+    
+    self->_pivot = nil;
+    
+}
+
 @end

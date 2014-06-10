@@ -56,7 +56,7 @@
     
     if ([[segue identifier] isEqualToString:@"PreviousParkSegue"]) {
         
-        NSData *parkData = [[MPPark parkArchives] objectAtIndex:((NSIndexPath *)sender).row];
+        NSData *parkData = [MPPark parkArchives][((NSIndexPath *)sender).row];
         MPPark *park = [NSKeyedUnarchiver unarchiveObjectWithData:parkData];
         park.index = ((NSIndexPath *)sender).row;
         MPPreviousParkViewController *viewController = [segue destinationViewController];
@@ -90,7 +90,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     // Populate Cell
-    NSData *parkData = [[MPPark parkArchives] objectAtIndex:indexPath.row];
+    NSData *parkData = [MPPark parkArchives][indexPath.row];
     MPPark *park = [NSKeyedUnarchiver unarchiveObjectWithData:parkData];
     cell.textLabel.text = park.parkTag;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

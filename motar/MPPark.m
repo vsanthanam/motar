@@ -86,7 +86,7 @@ static NSString *_defaultTag;
     
     if ([MPPark parkArchives]) {
         
-        NSData *parkData = [[MPPark parkArchives] objectAtIndex:index];
+        NSData *parkData = [MPPark parkArchives][index];
         MPPark *archivedPark = [NSKeyedUnarchiver unarchiveObjectWithData:parkData];
         return archivedPark;
         
@@ -478,7 +478,7 @@ static NSString *_defaultTag;
         
         NSData *parkData = [NSKeyedArchiver archivedDataWithRootObject:self];
         NSMutableArray *newArray = [NSMutableArray arrayWithArray:[MPPark parkArchives]];
-        [newArray replaceObjectAtIndex:self.index withObject:parkData];
+        newArray[self.index] = parkData;
         
         if (![MPPark canUseiCloud]) {
             

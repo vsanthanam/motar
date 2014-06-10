@@ -546,7 +546,7 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
                                                    
                                                    ACAccount *account = availableAccounts[0];
                                                    
-                                                   NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys:@"motarpark", @"screen_name", @"TRUE", @"follow", nil];
+                                                   NSDictionary *info = @{@"screen_name": @"motarpark", @"follow": @"TRUE"};
                                                    SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"https://api.twitter.com/1.1/friendships/create.json"] parameters:info];
                                                    request.account = account;
                                                    

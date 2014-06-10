@@ -110,8 +110,7 @@
     reminder.soundName = UILocalNotificationDefaultSoundName;
     reminder.userInfo = @{MPNotificationTypeKey: MPNotificationTypeAutoPark};
     [[UIApplication sharedApplication] scheduleLocalNotification:reminder];
-    [self.autoParkManager stopTracking];
-    [self.autoParkManager startTracking];
+    [self.autoParkManager resetTracking];
     
 }
 
@@ -660,12 +659,6 @@
     if (!self.autoParkManager.tracking) {
         
         [self.autoParkManager startTracking];
-        
-    } else {
-        
-        [self.autoParkManager stopTracking];
-        [self.autoParkManager startTracking];
-        
     }
     
 }

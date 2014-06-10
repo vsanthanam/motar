@@ -41,9 +41,8 @@
         UIColor* color2 = [UIColor colorWithRed: 0 green: 0.657 blue: 0.219 alpha: 0.6];
         
         //// Gradient Declarations
-        NSArray* gradientColors = [NSArray arrayWithObjects:
-                                   (id)color.CGColor,
-                                   (id)color2.CGColor, nil];
+        NSArray* gradientColors = @[(id)color.CGColor,
+                                   (id)color2.CGColor];
         CGFloat gradientLocations[] = {0, 1};
         CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
         
@@ -88,9 +87,8 @@
         UIColor* color2 = [UIColor colorWithRed: 0.657 green: 0 blue: 0 alpha: 0.6];
         
         //// Gradient Declarations
-        NSArray* gradientColors = [NSArray arrayWithObjects:
-                                   (id)color.CGColor,
-                                   (id)color2.CGColor, nil];
+        NSArray* gradientColors = @[(id)color.CGColor,
+                                   (id)color2.CGColor];
         CGFloat gradientLocations[] = {0, 1};
         CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
         
