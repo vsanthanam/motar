@@ -16,6 +16,7 @@
     
     UIAlertView *_locationAlert;
     UIAlertView *_autoParkAlert;
+    UIAlertView *_useAutoParkAlert;
     UIAlertView *_rateAppAlert;
     NSTimer *_theTimer;
     
@@ -178,6 +179,14 @@
             
         }
         
+    } else if (alertView == self->_useAutoParkAlert) {
+        
+        if (buttonIndex != alertView.cancelButtonIndex) {
+            
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPAutoParkSettingKey];
+            
+        }
+        
     }
     
 }
@@ -210,7 +219,7 @@
         
         self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
                                                           message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
-                                                         delegate:nil
+                                                         delegate:self
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];
         [self->_autoParkAlert show];
@@ -221,6 +230,18 @@
     if (![self canShowAds]) {
         
         [self hideAds];
+        
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 2 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"UseAutoParkPromptKey"] && [MPAutoParkManager canTrack]) {
+        
+        self->_useAutoParkAlert = [[UIAlertView alloc] initWithTitle:@"Use AutoPark?"
+                                                             message:@"AutoPark uses your phone's motion sensor to save your car's location automatically."
+                                                            delegate:self
+                                                   cancelButtonTitle:@"No"
+                                                   otherButtonTitles:@"Yes", nil];
+        [self ->_useAutoParkAlert show];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UseAutoParkPromptKey"];
         
     }
     
