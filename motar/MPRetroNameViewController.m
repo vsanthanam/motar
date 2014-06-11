@@ -15,7 +15,6 @@
 @implementation MPRetroNameViewController
 
 @synthesize currentPark = _currentPark;
-
 @synthesize nameField = _nameField;
 
 - (void)viewDidLoad {
@@ -52,7 +51,6 @@
 }
 
 - (IBAction)userCancel:(id)sender {
-    
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     

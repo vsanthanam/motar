@@ -126,6 +126,27 @@
         
         self.currentPark.parkLocation = location;
         [manager stopUpdatingLocation];
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        __block CLPlacemark *placemark;
+        [geocoder reverseGeocodeLocation:self.currentPark.parkLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+           
+            if (!error) {
+                
+                placemark = [placemarks lastObject];
+                NSString *city = [placemark locality];
+                NSString *state = [placemark administrativeArea];
+                NSString *locationString = [NSString stringWithFormat:@"%@, %@", city, state];
+                self.currentPark.parkTag = locationString;
+                
+            } else {
+                
+                NSLog(@"Failed to get localized location info: %@", error);
+                
+            }
+            
+        }];
+        
         [self completePark];
         
     }

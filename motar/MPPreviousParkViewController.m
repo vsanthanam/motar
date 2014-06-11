@@ -42,6 +42,7 @@
         annotationView.animatesDrop = YES;
         annotationView.draggable = YES;
         annotationView.pinColor = [MPParkInfoViewController pinColor];
+        NSLog(@"%li", (long)[MPParkInfoViewController pinColor]);
         
     } else {
         
@@ -82,6 +83,7 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
+    self.mapView.delegate = self;
     
 }
 

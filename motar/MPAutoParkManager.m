@@ -24,7 +24,7 @@
 
 + (void)initialize {
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"3.0.2" forKey:@"AutoParkVersionNumberKey"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"3.0.2" forKey:MPAutoParkVersionNumberKey];
     
 }
 

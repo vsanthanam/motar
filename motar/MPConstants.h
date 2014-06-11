@@ -28,6 +28,7 @@ extern NSString *const MPLaunchCountKey;
 extern NSString *const MPFlurryKey;
 extern NSString *const MPBuildNumberKey;
 extern NSString *const MPVersionNumberKey;
+extern NSString *const MPAutoParkVersionNumberKey;
 
 // AutoPark Notifications
 extern NSString *const MPAutoParkNotification;
