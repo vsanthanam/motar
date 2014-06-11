@@ -215,7 +215,7 @@
         
     }
     
-    if ([self.autoParkManager.delegate autoParkManagerShouldTrack:self.autoParkManager] && ![[NSUserDefaults standardUserDefaults] boolForKey:@"AutoParkPromptKey"]) {
+    if ([self.autoParkManager.delegate autoParkManagerShouldTrack:self.autoParkManager] && ![[NSUserDefaults standardUserDefaults] boolForKey:MPAutoParkPromptKey]) {
         
         self->_autoParkAlert = [[UIAlertView alloc] initWithTitle:@"Motion Indicator"
                                                           message:@"The motion indicator appears whenver motar is gathering data from your device. Tap on the indicator for more info!"
@@ -223,7 +223,7 @@
                                                 cancelButtonTitle:@"OK"
                                                 otherButtonTitles:nil];
         [self->_autoParkAlert show];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"AutoParkPromptKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPAutoParkPromptKey];
         
     }
     
@@ -233,7 +233,7 @@
         
     }
     
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 2 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"UseAutoParkPromptKey"] && [MPAutoParkManager canTrack]) {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:MPLaunchCountKey] == 2 && ![[NSUserDefaults standardUserDefaults] boolForKey:MPUseAutoParkPromptKey] && [MPAutoParkManager canTrack]) {
         
         self->_useAutoParkAlert = [[UIAlertView alloc] initWithTitle:@"Use AutoPark?"
                                                              message:@"AutoPark uses your phone's motion sensor to save your car's location automatically."
@@ -241,11 +241,11 @@
                                                    cancelButtonTitle:@"No"
                                                    otherButtonTitles:@"Yes", nil];
         [self ->_useAutoParkAlert show];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UseAutoParkPromptKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPUseAutoParkPromptKey];
         
     }
     
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 3 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"RateAppPromptKey"]) {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:MPLaunchCountKey] == 3 && ![[NSUserDefaults standardUserDefaults] boolForKey:MPRateAppPromptKey]) {
         
         self->_rateAppAlert = [[UIAlertView alloc] initWithTitle:@"Enjoying motar?"
                                                          message:@"If you like motar, spread the word! We'd really appreciate a good review!"
@@ -253,7 +253,7 @@
                                                cancelButtonTitle:@"No, Thanks"
                                                otherButtonTitles:@"Review App", nil];
         [self->_rateAppAlert show];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RateAppPromptKey"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPRateAppPromptKey];
         
     }
     

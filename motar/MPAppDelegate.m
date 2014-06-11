@@ -65,18 +65,18 @@
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self.paymentObserver];
     
     // Launch Count
-    if (![[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"]) {
+    if (![[NSUserDefaults standardUserDefaults] integerForKey:MPLaunchCountKey]) {
         
-        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"LaunchCountKey"];
+        [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:MPLaunchCountKey];
         
     } else {
         
-        [[NSUserDefaults standardUserDefaults] setInteger:[[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] + 1 forKey:@"LaunchCountKey"];
+        [[NSUserDefaults standardUserDefaults] setInteger:[[NSUserDefaults standardUserDefaults] integerForKey:MPLaunchCountKey] + 1 forKey:MPLaunchCountKey];
         
     }
     
     // Handle Analytics
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 1) {
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:MPLaunchCountKey] == 1) {
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:MPUsageReportsSettingKey];
         
@@ -85,7 +85,7 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:MPUsageReportsSettingKey]) {
         
         [Flurry setCrashReportingEnabled:YES];
-        [Flurry startSession:@"995T7XB64VFS4YGD56RM"];
+        [Flurry startSession:MPFlurryKey];
         
     }
     
