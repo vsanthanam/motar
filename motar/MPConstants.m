@@ -20,7 +20,9 @@ NSString *const MPUsageReportsSettingKey = @"UsageReportsKey";
 
 NSString *const MPAppFont = @"HelveticaNeue-Light";
 NSString *const MPLaunchCountKey = @"LaunchCountKey";
-NSString *const = MPFlurryKey = @"995T7XB64VFS4YGD56RM";
+NSString *const MPFlurryKey = @"995T7XB64VFS4YGD56RM";
+NSString *const MPBuildNumberKey = @"BuildNumberKey";
+NSString *const MPVersionNumberKey = @"VersionNumberKey";
 
 NSString *const MPAutoParkNotification = @"MPAutoParkNotification";
 NSString *const MPAutoParkNewMotionNotification = @"MPAutoParkNewMotionNotification";

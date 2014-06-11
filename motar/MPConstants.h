@@ -26,6 +26,8 @@ extern NSString *const MPUsageReportsSettingKey;
 extern NSString *const MPAppFont;
 extern NSString *const MPLaunchCountKey;
 extern NSString *const MPFlurryKey;
+extern NSString *const MPBuildNumberKey;
+extern NSString *const MPVersionNumberKey;
 
 // AutoPark Keys
 extern NSString *const MPAutoParkNotification;
