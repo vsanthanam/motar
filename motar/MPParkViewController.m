@@ -247,7 +247,7 @@
     
     if ([[NSUserDefaults standardUserDefaults] integerForKey:@"LaunchCountKey"] == 3 && ![[NSUserDefaults standardUserDefaults] boolForKey:@"RateAppPromptKey"]) {
         
-        self->_rateAppAlert = [[UIAlertView alloc] initWithTitle:@"Enjoying Motar?"
+        self->_rateAppAlert = [[UIAlertView alloc] initWithTitle:@"Enjoying motar?"
                                                          message:@"If you like motar, spread the word! We'd really appreciate a good review!"
                                                         delegate:self
                                                cancelButtonTitle:@"No, Thanks"
