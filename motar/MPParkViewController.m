@@ -120,7 +120,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
     CLLocation *location = [locations lastObject];
-    NSLog(@"USER: %@", location);
+    NSLog(@"User: %@", location);
     NSTimeInterval interval = [location.timestamp timeIntervalSinceNow];
     if (abs(interval) < 2) {
         

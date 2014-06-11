@@ -95,7 +95,7 @@
         
     }
     
-    NSLog(@"AUTOPARK: %@", self.trackedLocation);
+    NSLog(@"Background: %@", self.trackedLocation);
     
 }
 
