@@ -24,9 +24,6 @@
     // Setup Custom Switches
     [[UISwitch appearance] setTintColor:[UIColor whiteColor]];
     
-    // Custom Table View Cells
-    // [[UITableViewCell appearance] setBackgroundColor:[MPColorManager darkColorLessAlpha]];
-    
     // Custom Text Fields
     [[UITextField appearance] setBackgroundColor:[MPColorManager darkColorLessAlpha]];
     [[UITextField appearance] setTextColor:[UIColor whiteColor]];
@@ -130,7 +127,7 @@
         alert.hasAction = NO;
         alert.timeZone = [NSTimeZone defaultTimeZone];
         alert.fireDate = [[NSDate date] dateByAddingTimeInterval:2];
-        alert.userInfo = @{@"key": @"exit"};
+        alert.userInfo = @{MPNotificationTypeKey: MPNotificationTypeAutoParkExit};
         [[UIApplication sharedApplication] scheduleLocalNotification:alert];
         
     }

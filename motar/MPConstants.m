@@ -32,9 +32,10 @@ NSString *const MPNotificationTypeKey = @"MPNotificationTypeKey";
 NSString *const MPNotificationTypeReminder = @"MPNotificationTypeReminder";
 NSString *const MPNotificationTypeExpired = @"MPNotificationTypeExpired";
 NSString *const MPNotificationTypeAutoPark = @"MPNotificationTypeAutoPark";
+NSString *const MPNotificationTypeAutoParkExit = @"MPNotificationTypeAutoParkExit";
 
 NSString *const MPUseAutoParkPromptKey = @"UseAutoParkPromptKey";
-NSString *const MPAutoParkKey = @"AutoParkPromptKey";
+NSString *const MPAutoParkPromptKey = @"AutoParkPromptKey";
 NSString *const MPRateAppPromptKey = @"RateAppPromptKey";
 
 @implementation MPConstants

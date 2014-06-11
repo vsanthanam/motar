@@ -21,6 +21,7 @@
 @synthesize autoParkImageView = _autoParkImageView;
 @synthesize autoParkSensorStatusLabel = _autoParkSensorStatusLabel;
 @synthesize autoParkAccuracyMeter = _autoParkAccuracyMeter;
+@synthesize autoParkAccuracyLabel = _autoParkAccuracyLabel;
 
 
 #pragma mark - Overridden Instance Methods
@@ -58,18 +59,21 @@
     
     switch (activity.confidence) {
         case CMMotionActivityConfidenceHigh:
-            [self.autoParkAccuracyMeter setProgress:0.75 animated:YES];
+            [self.autoParkAccuracyMeter setProgress:1.0 animated:YES];
             [self.autoParkAccuracyMeter setTintColor:[UIColor greenColor]];
+            self.autoParkAccuracyLabel.text = @"high.";
             break;
         
         case CMMotionActivityConfidenceMedium:
-            [self.autoParkAccuracyMeter setProgress:0.5 animated:YES];
+            [self.autoParkAccuracyMeter setProgress:0.66 animated:YES];
             [self.autoParkAccuracyMeter setTintColor:[UIColor yellowColor]];
+            self.autoParkAccuracyLabel.text = @"medium.";
             break;
             
         default:
-            [self.autoParkAccuracyMeter setProgress:0.25 animated:YES];
+            [self.autoParkAccuracyMeter setProgress:0.33 animated:YES];
             [self.autoParkAccuracyMeter setTintColor:[UIColor redColor]];
+            self.autoParkAccuracyLabel.text = @"low.";
             break;
     }
     
@@ -197,6 +201,7 @@
                         completion:nil];
         
         [self.autoParkAccuracyMeter setProgress:0.0 animated:YES];
+        self.autoParkAccuracyLabel.text = @"";
         
     }
     
@@ -215,7 +220,7 @@
 
 - (IBAction)userHelp:(id)sender {
     
-    static NSString *helpMessage = @"AutoPark uses information form your phone's GPS and motion sensors to decide if you are walking, running, or driving. Using this info, the app can tell when you park your car and automatically remind record the park. You can disable this feature at any time from the settings page";
+    static NSString *helpMessage = @"AutoPark uses information form your phone's GPS and motion sensors to decide if you are walking, running, or driving. Using this info, the app can tell when you park your car and automatically remind record the park. You can disable this feature at any time from the settings page.";
     
     self->_helpAlert = [[UIAlertView alloc] initWithTitle:@"AutoPark"
                                                   message:helpMessage

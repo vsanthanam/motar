@@ -10,12 +10,12 @@
 
 @interface MPConstants : NSObject
 
-// Park Data
+// Park Data Keys
 extern NSString *const MPDefaultTagKey;
 extern NSString *const MPCurrentParkKey;
 extern NSString *const MPPreviousParksKey;
 
-// Settings
+// Settings Keys
 extern NSString *const MPiCloudSettingKey;
 extern NSString *const MPPinColorSettingKey;
 extern NSString *const MPAutoParkSettingKey;
@@ -29,19 +29,19 @@ extern NSString *const MPFlurryKey;
 extern NSString *const MPBuildNumberKey;
 extern NSString *const MPVersionNumberKey;
 
-// AutoPark Keys
+// AutoPark Notifications
 extern NSString *const MPAutoParkNotification;
 extern NSString *const MPAutoParkNewMotionNotification;
 extern NSString *const MPAutoParkWakeFromAutoParkNotification;
 
-// Notification Keys
+// Notification Info
 extern NSString *const MPNotificationTypeKey;
 extern NSString *const MPNotificationTypeReminder;
 extern NSString *const MPNotificationTypeExpired;
 extern NSString *const MPNotificationTypeAutoPark;
+extern NSString *const MPNotificationTypeAutoParkExit;
 
 // User Prompt Keys
-
 extern NSString *const MPUseAutoParkPromptKey;
 extern NSString *const MPAutoParkPromptKey;
 extern NSString *const MPRateAppPromptKey;

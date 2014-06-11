@@ -24,7 +24,7 @@
 
 + (void)initialize {
     
-    [[NSUserDefaults standardUserDefaults] setObject:@"3.0.1" forKey:@"AutoParkVersionNumberKey"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"3.0.2" forKey:@"AutoParkVersionNumberKey"];
     
 }
 
@@ -119,7 +119,7 @@
             if ([self.delegate autoParkManagerShouldTrack:self]) {
                 
                 self->_trackedActivity = activity;
-                NSLog(@"%@", self.trackedActivity);
+                NSLog(@"Motion: %@", self.trackedActivity);
                 [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkNewMotionNotification object:nil];
                 if ([self.delegate respondsToSelector:@selector(autoParkManager:didTrackNewActivity:)]) {
                     
