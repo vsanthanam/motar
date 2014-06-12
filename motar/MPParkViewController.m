@@ -74,6 +74,8 @@
     
 }
 
+
+
 #pragma mark - MPAutoParkManagerDelegate Protocol Instance Methods
 
 - (BOOL)autoParkManagerShouldTrack:(MPAutoParkManager *)manager {
@@ -114,6 +116,8 @@
     [self.autoParkManager resetTracking];
     
 }
+
+
 
 #pragma mark - CLLocationManagerDelegate Protocol Instance Methods
 
@@ -170,6 +174,8 @@
     
 }
 
+
+
 #pragma mark - ADBannerViewDelegate Protocol Instance Methods
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
@@ -187,6 +193,8 @@
     [self showAds];
     
 }
+
+
 
 #pragma mark - UIAlertViewDelegate Protocol Instance Methods
 
@@ -211,6 +219,8 @@
     }
     
 }
+
+
 
 #pragma mark - Overridden Instance Methods
 
@@ -298,11 +308,12 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Private Instance Methods
 
@@ -648,6 +659,8 @@
     
 }
 
+
+
 #pragma mark - Public Instance Methods
 
 - (void)showAds {
@@ -681,6 +694,7 @@
                      }];
     
 }
+
 
 
 #pragma mark - Actions
@@ -727,4 +741,5 @@
     [self performSegueWithIdentifier:@"AutoParkSegue" sender:sender];
     
 }
+
 @end

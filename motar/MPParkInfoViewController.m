@@ -32,6 +32,8 @@
 
 static MKPinAnnotationColor _pinColor;
 
+#pragma mark - Overridden Class Methods
+
 + (void)initialize {
     
     if (![MPParkInfoViewController canUseiCloud]) {
@@ -61,6 +63,9 @@ static MKPinAnnotationColor _pinColor;
     }
     
 }
+
+
+#pragma mark - Public Class Methods
 
 + (MKPinAnnotationColor)pinColor {
     
@@ -139,6 +144,8 @@ static MKPinAnnotationColor _pinColor;
     }
     
 }
+
+
 
 #pragma mark - MKMapViewDelegate Protocol Instance Methods
 
@@ -271,6 +278,8 @@ static MKPinAnnotationColor _pinColor;
     
 }
 
+
+
 #pragma mark - UIImagePickerControllerDelegate Protocol Instance Methods
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -286,6 +295,8 @@ static MKPinAnnotationColor _pinColor;
     [picker dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
 
 #pragma mark - Overridden Instance Methods
 
@@ -337,6 +348,8 @@ static MKPinAnnotationColor _pinColor;
     }
     
 }
+
+
 
 #pragma mark - Private Instance Methods
 
@@ -515,6 +528,8 @@ static MKPinAnnotationColor _pinColor;
     
 }
 
+
+
 #pragma mark - Actions
 
 - (IBAction)userShowLocation:(id)sender {
@@ -673,4 +688,5 @@ static MKPinAnnotationColor _pinColor;
     [self performSegueWithIdentifier:@"RenameParkSegue" sender:sender];
     
 }
+
 @end

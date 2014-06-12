@@ -18,8 +18,7 @@
 
 #pragma mark - Overridden Instance Methods
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     
     [super viewDidLoad];
     
@@ -46,8 +45,8 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -66,25 +65,24 @@
     
 }
 
+
+
 #pragma mark - UITableViewDataSource Protocol && UITableViewDelegate Protocol Instance Methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [[MPPark parkArchives] count];
     
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     // Fetch Cell
     static NSString *cellIdentifier = @"ParkCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -107,15 +105,15 @@
 }
 
 // Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
 // Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         // Delete the row from the data source
@@ -145,6 +143,8 @@
     
 }
 
+
+
 #pragma mark - Private Instance Methods
 
 - (void)iCloudRefresh {
@@ -152,6 +152,8 @@
     [self.tableView reloadData];
     
 }
+
+
 
 #pragma mark - Actions
 

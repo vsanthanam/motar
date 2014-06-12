@@ -54,6 +54,7 @@ static NSString *_defaultTag;
 }
 
 
+
 #pragma mark - Public Class Methods
 
 + (MPPark *)park {
@@ -298,6 +299,8 @@ static NSString *_defaultTag;
     
 }
 
+
+
 #pragma mark - NSCoding Protocol Instance Methods
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -355,6 +358,8 @@ static NSString *_defaultTag;
     
 }
 
+
+
 #pragma mark - Property Access Instance Methods
 
 - (NSDate *)parkDate {
@@ -398,6 +403,8 @@ static NSString *_defaultTag;
     
 }
 
+
+
 #pragma mark - Overridden Instance Methods
 
 - (id)init {
@@ -414,6 +421,8 @@ static NSString *_defaultTag;
     return self;
     
 }
+
+
 
 #pragma mark - Public Instance Methods
 

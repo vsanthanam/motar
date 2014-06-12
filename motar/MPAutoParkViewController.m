@@ -51,6 +51,8 @@
     
 }
 
+
+
 #pragma mark - Private Instance Methods
 
 - (void)didTrackNewActivity {
@@ -207,7 +209,6 @@
     
 }
 
-#pragma mark - Public Instance Methods
 
 
 #pragma mark - Actions
