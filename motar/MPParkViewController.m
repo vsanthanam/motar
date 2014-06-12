@@ -638,11 +638,11 @@
     [self prepareUI];
     if ([self.currentPark isParked]) {
         
-        [self parkedUI:NO];
+        [self parkedUI:YES];
         
     } else {
-        
-        [self standbyUI:NO];
+    
+        [self standbyUI:YES];
         
     }
     

@@ -20,6 +20,8 @@
 		0720325A19314057006C63A4 /* MPAutoParkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0720325919314057006C63A4 /* MPAutoParkManager.m */; };
 		075492441905FF5B002B5561 /* MPPaymentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 075492431905FF5B002B5561 /* MPPaymentObserver.m */; };
 		079676221912A52E007C4459 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 079676211912A52E007C4459 /* Settings.bundle */; };
+		07998A7E1949376700D7246B /* undo.png in Resources */ = {isa = PBXBuildFile; fileRef = 07998A7C1949376700D7246B /* undo.png */; };
+		07998A7F1949376700D7246B /* undo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07998A7D1949376700D7246B /* undo@2x.png */; };
 		07A01A8B1905A7A2003825BB /* rename@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A891905A7A2003825BB /* rename@2x.png */; };
 		07A01A8C1905A7A2003825BB /* rename.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A01A8A1905A7A2003825BB /* rename.png */; };
 		07A01A8F1905A866003825BB /* MPRenameParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A01A8E1905A866003825BB /* MPRenameParkViewController.m */; };
@@ -133,6 +135,8 @@
 		075492421905FF5B002B5561 /* MPPaymentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPaymentObserver.h; sourceTree = "<group>"; };
 		075492431905FF5B002B5561 /* MPPaymentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPaymentObserver.m; sourceTree = "<group>"; };
 		079676211912A52E007C4459 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		07998A7C1949376700D7246B /* undo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undo.png; sourceTree = "<group>"; };
+		07998A7D1949376700D7246B /* undo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo@2x.png"; sourceTree = "<group>"; };
 		07A01A891905A7A2003825BB /* rename@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rename@2x.png"; sourceTree = "<group>"; };
 		07A01A8A1905A7A2003825BB /* rename.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rename.png; sourceTree = "<group>"; };
 		07A01A8D1905A866003825BB /* MPRenameParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRenameParkViewController.h; sourceTree = "<group>"; };
@@ -357,6 +361,8 @@
 				071768AC1912B1BF00A21039 /* expired.mp3 */,
 				0719B2C41905D70C00CBD96A /* OldDefault.png */,
 				0719B2C21905B96C00CBD96A /* DefaultImage.png */,
+				07998A7C1949376700D7246B /* undo.png */,
+				07998A7D1949376700D7246B /* undo@2x.png */,
 				0719B2BE1905B7B500CBD96A /* SpotlightIcon.png */,
 				0719B2BF1905B7B500CBD96A /* SpotlightIcon@2x.png */,
 				0719B2BB1905B71600CBD96A /* Icon.png */,
@@ -645,8 +651,10 @@
 				07F8830A19033FF60078AD13 /* time@2x.png in Resources */,
 				07F882B119033F1A0078AD13 /* Images.xcassets in Resources */,
 				07F882A319033F1A0078AD13 /* InfoPlist.strings in Resources */,
+				07998A7E1949376700D7246B /* undo.png in Resources */,
 				07F8830219033FF60078AD13 /* running@2x.png in Resources */,
 				0719B2BD1905B71600CBD96A /* Icon.png in Resources */,
+				07998A7F1949376700D7246B /* undo@2x.png in Resources */,
 				07F8830419033FF60078AD13 /* sensor@2x.png in Resources */,
 				0719B2C11905B7B500CBD96A /* SpotlightIcon@2x.png in Resources */,
 				07F882FE19033FF60078AD13 /* location@2x.png in Resources */,

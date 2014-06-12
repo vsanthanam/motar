@@ -394,13 +394,7 @@ static NSString *_defaultTag;
 
 - (BOOL)isMostRecent {
     
-    if (self.index) {
-        
-        return self.index == 0;
-        
-    }
-    
-    return NO;
+    return self.index == 0;
     
 }
 

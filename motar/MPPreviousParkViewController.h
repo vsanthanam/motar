@@ -24,10 +24,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *areaLabel;
 @property (weak, nonatomic) IBOutlet UIButton *carLocationButton;
 @property (weak, nonatomic) IBOutlet UIButton *renameParkButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
 
 - (IBAction)userChangeDate:(id)sender;
 
 - (IBAction)userRename:(id)sender;
 - (IBAction)userCarLocation:(id)sender;
+- (IBAction)userUndo:(id)sender;
 
 @end

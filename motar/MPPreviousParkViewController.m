@@ -24,6 +24,7 @@
 @synthesize areaLabel = _areaLabel;
 @synthesize carLocationButton = _carLocationButton;
 @synthesize renameParkButton = _renameParkButton;
+@synthesize undoButton = _undoButton;
 
 #pragma mark - MKMapViewDelegate Protocol Instance Methods
 
@@ -84,6 +85,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iCloudRefresh) name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification object:nil];
     self.mapView.delegate = self;
+    
+    if (![self.currentPark isMostRecent]) {
+        
+        self.undoButton.hidden = YES;
+        
+    }
     
 }
 
@@ -236,6 +243,27 @@
     MKCoordinateRegion region = self.mapView.region;
     region.center = self.currentPark.parkLocation.coordinate;
     [self.mapView setRegion:region animated:YES];
+    
+}
+
+- (IBAction)userUndo:(id)sender {
+    
+    [self.currentPark undo];
+    [self.currentPark savePark];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MPEmptyParkNotification object:nil];
+    NSMutableArray *newArray = [NSMutableArray arrayWithArray:[MPPark parkArchives]];
+    [newArray removeObjectAtIndex:0];
+    if (![MPPark canUseiCloud]) {
+        
+        [[NSUserDefaults standardUserDefaults] setObject:newArray forKey:@"PreviousKey"];
+        
+    } else {
+        
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:newArray forKey:@"PreviousKey"];
+        
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    
     
 }
 @end

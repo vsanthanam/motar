@@ -886,6 +886,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caq-BM-p69">
+                                        <rect key="frame" x="235" y="62" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="undo.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userUndo:" destination="b8T-8p-eWN" eventType="touchUpInside" id="CQe-5j-GX0"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -945,6 +955,7 @@
                         <outlet property="parkTimeLabel" destination="j3K-BL-JbT" id="zoy-Cv-sAg"/>
                         <outlet property="previousLabel" destination="Mfl-PB-dGu" id="yzY-bE-2p1"/>
                         <outlet property="renameParkButton" destination="rLC-iN-EET" id="YA7-KQ-6Ks"/>
+                        <outlet property="undoButton" destination="caq-BM-p69" id="AWg-yD-xTa"/>
                         <segue destination="Qa7-NR-Das" kind="modal" identifier="RetroDateSegue" id="WWX-gQ-iec"/>
                         <segue destination="nkk-iZ-QMz" kind="modal" identifier="RetroNameSegue" id="vzJ-pO-KxO"/>
                     </connections>
@@ -1785,6 +1796,7 @@ CFRlbGwgYSBmcmllbmQ
         <image name="rename.png" width="25" height="25"/>
         <image name="share.png" width="25" height="25"/>
         <image name="time.png" width="32" height="32"/>
+        <image name="undo.png" width="25" height="25"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
