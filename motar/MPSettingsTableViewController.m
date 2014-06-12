@@ -96,6 +96,7 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
             [MPPark clearSave];
             [self.iCloudSwitch setOn:NO animated:YES];
             [self.autoParkSwitch setOn:NO animated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:MPEmptyParkNotification object:nil];
         
         }
         
@@ -639,6 +640,9 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
         [MPParkInfoViewController filliCloud];
         [MPPark filliCloud];
         [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+        [MPPark refresh];
+        [MPParkInfoViewController refresh];
+        [self refreshUI];
         
     } else {
         

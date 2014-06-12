@@ -35,7 +35,10 @@ extern NSString *const MPAutoParkNotification;
 extern NSString *const MPAutoParkNewMotionNotification;
 extern NSString *const MPAutoParkWakeFromAutoParkNotification;
 
-// Notification Info
+// Other Notifications
+extern NSString *const MPEmptyParkNotification;
+
+// Local Notification Info
 extern NSString *const MPNotificationTypeKey;
 extern NSString *const MPNotificationTypeReminder;
 extern NSString *const MPNotificationTypeExpired;

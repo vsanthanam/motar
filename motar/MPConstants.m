@@ -29,6 +29,8 @@ NSString *const MPAutoParkNewMotionNotification = @"MPAutoParkNewMotionNotificat
 NSString *const MPAutoParkWakeFromAutoParkNotification = @"MPAutoParkWakeFromAutoParkNotification";
 NSString *const MPAutoParkVersionNumberKey = @"AutoParkVersionNumberKey";
 
+NSString *const MPEmptyParkNotification = @"MPEmptyParkNotification";
+
 NSString *const MPNotificationTypeKey = @"MPNotificationTypeKey";
 NSString *const MPNotificationTypeReminder = @"MPNotificationTypeReminder";
 NSString *const MPNotificationTypeExpired = @"MPNotificationTypeExpired";

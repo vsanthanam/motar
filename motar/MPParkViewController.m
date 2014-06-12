@@ -220,6 +220,7 @@
     [self prepareUI];
     
     [self.autoParkManager startTracking];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emptyCurrentPark) name:MPEmptyParkNotification object:nil];
     
 }
 
@@ -628,6 +629,22 @@
                          self.motionIndicatorButton.alpha = 0.0;
                          
                      }];
+    
+}
+
+- (void)emptyCurrentPark {
+    
+    self.currentPark = nil;
+    [self prepareUI];
+    if ([self.currentPark isParked]) {
+        
+        [self parkedUI:NO];
+        
+    } else {
+        
+        [self standbyUI:NO];
+        
+    }
     
 }
 
