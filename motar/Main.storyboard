@@ -1408,6 +1408,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="WAK-6A-eRG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="rJc-C9-hl6">
+                            <connections>
+                                <action selector="userDelete:" destination="Sra-2j-qQ4" id="43V-q2-8fx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="3YP-MP-dpe">
                             <connections>
                                 <action selector="userDone:" destination="Sra-2j-qQ4" id="0dI-Lz-H9f"/>

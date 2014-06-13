@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MPColorManager.h"
+#import "MPPark.h"
 
-@interface MPParkImageViewController : UIViewController
+@interface MPParkImageViewController : UIViewController <UIActionSheetDelegate>
+
+@property (nonatomic, weak) MPPark *currentPark;
 
 - (IBAction)userDone:(id)sender;
+- (IBAction)userDelete:(id)sender;
 
 @end

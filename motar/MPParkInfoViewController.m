@@ -338,6 +338,7 @@ static MKPinAnnotationColor _pinColor;
         UIImageView *imageView = (UIImageView *)viewController.view;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = self.currentPark.parkImage;
+        viewController.currentPark = self.currentPark;  
         
     } else if ([[segue identifier] isEqualToString:@"RenameParkSegue"]) {
         
