@@ -178,6 +178,7 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     
     self.parkInfoViewController.currentPark = self.currentPark;
+    
     if (pendingViewControllers[0] == self.parkInfoViewController || pendingViewControllers[0] == self.parkViewController) {
         
         self->_theBar = UIStatusBarStyleDefault;
