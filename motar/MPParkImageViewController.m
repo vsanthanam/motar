@@ -24,6 +24,12 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [MPColorManager lightColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -31,6 +37,12 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
+    
 }
 
 
