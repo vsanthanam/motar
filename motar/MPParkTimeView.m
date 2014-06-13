@@ -10,8 +10,8 @@
 
 @implementation MPParkTimeView
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -22,8 +22,8 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
+    
     // Drawing code
     //// Color Declarations
     UIColor* color = [UIColor colorWithRed: 0 green: 0.657 blue: 0 alpha: 0.3];
@@ -34,6 +34,5 @@
     [roundedRectanglePath fill];
     
 }
-
 
 @end

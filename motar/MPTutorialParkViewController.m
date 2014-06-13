@@ -129,6 +129,9 @@
     
 }
 
+
+#pragma mark - Actions
+
 - (IBAction)userPark:(id)sender {
     
     self.tutorialShortInfoBubble.hidden = NO;
@@ -208,4 +211,5 @@
                         
                     }];
 }
+
 @end

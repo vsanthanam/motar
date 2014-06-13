@@ -16,8 +16,10 @@
 
 @synthesize nameField = _nameField;
 
-- (void)viewDidLoad
-{
+#pragma mark - Overridden Instance Methods
+
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.view.backgroundColor = [MPColorManager lightColor];
     self.nameField.placeholder = [MPPark defaultTag];
@@ -32,11 +34,15 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+#pragma mark - Actions
 
 - (IBAction)userDone:(id)sender {
     

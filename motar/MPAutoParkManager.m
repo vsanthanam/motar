@@ -28,6 +28,8 @@
     
 }
 
+
+
 #pragma mark - Public Class Methods
 
 + (BOOL)canTrack {
@@ -47,6 +49,8 @@
     return manager;
     
 }
+
+
 
 #pragma mark - Property Access Methods
 
@@ -77,11 +81,13 @@
     
 }
 
-- (BOOL)flurry {
+- (BOOL)canFlurry {
     
     return [[NSUserDefaults standardUserDefaults] boolForKey:MPUsageReportsSettingKey];
     
 }
+
+
 
 #pragma mark - CLLocationManagerDelegate Protocol Instance Methods
 
@@ -98,6 +104,8 @@
     NSLog(@"Background: %@", self.trackedLocation);
     
 }
+
+
 
 #pragma mark - Private Instance Methods
 
@@ -178,6 +186,8 @@
     }
     
 }
+
+
 
 #pragma mark - Public Instance Methods
 

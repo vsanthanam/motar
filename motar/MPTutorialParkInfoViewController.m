@@ -58,10 +58,11 @@
     
 }
 
+
+
 #pragma mark - Overridden Instance Methods
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [MPColorManager lightColor];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -84,11 +85,13 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Private Instance Methods
 

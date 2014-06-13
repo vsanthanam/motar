@@ -65,6 +65,8 @@
     
 }
 
+
+
 #pragma mark - UIPageViewControlerDataSource Protocol Instance Methods
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
@@ -111,6 +113,8 @@
     
 }
 
+
+
 #pragma mark - Private Instance Methods
 
 - (void)becomeDark {
@@ -124,6 +128,8 @@
     self.view.backgroundColor = [MPColorManager lightColor];
     
 }
+
+
 
 #pragma mark - Overridden Instance Methods
 

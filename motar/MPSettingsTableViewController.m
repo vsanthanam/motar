@@ -104,10 +104,12 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
+
+
 #pragma mark - Overridden Instance Methods
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.view.backgroundColor = [MPColorManager lightColor];
@@ -182,6 +184,8 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
+
+
 #pragma mark - UITableViewDataSource Protocol Instance Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -240,6 +244,8 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
+
+
 #pragma mark - SKProductsRequestDelegate Protocol Instance Methods
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
@@ -261,6 +267,8 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
+
+
 #pragma mark - SKRequestDelegate Protocol Instance Methods
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
@@ -279,6 +287,8 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     NSLog(@"Successfully completed product identifier validation");
     
 }
+
+
 
 #pragma mark - Private Instance Methods
 
@@ -505,7 +515,6 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
-
 - (void)processAllProducts {
     
     for (NSString *identifier in self.productCatalogue) {
@@ -630,6 +639,8 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     
 }
 
+
+
 #pragma mark - Actions
 
 - (IBAction)useriCloud:(id)sender {
@@ -673,4 +684,5 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
     }
     
 }
+
 @end

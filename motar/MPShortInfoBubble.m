@@ -24,8 +24,7 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
    
     //// Color Declarations
     UIColor* color = [UIColor colorWithRed: 0 green: 0.657 blue: 0 alpha: 0.3];

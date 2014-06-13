@@ -14,8 +14,6 @@
     
 }
 
-#pragma mark - SKPaymentO
-
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
     
     NSLog(@"%@", queue);

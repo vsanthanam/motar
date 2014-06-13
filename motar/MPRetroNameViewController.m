@@ -17,6 +17,8 @@
 @synthesize currentPark = _currentPark;
 @synthesize nameField = _nameField;
 
+#pragma mark - Overridden Instance Methods
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -31,6 +33,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+#pragma mark - Actions
 
 - (IBAction)userDone:(id)sender {
     
@@ -55,4 +61,5 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 @end
