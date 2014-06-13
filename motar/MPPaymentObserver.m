@@ -14,6 +14,8 @@
     
 }
 
+#pragma mark - SKPaymentTransactionObserver Protocol Instance Methods
+
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
     
     NSLog(@"%@", queue);
@@ -70,6 +72,9 @@
     }
     
 }
+
+
+#pragma mark - Private Instance Methods
 
 - (void)transactionFailed:(SKPaymentTransaction *)transaction {
     

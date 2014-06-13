@@ -12,7 +12,11 @@
 
 @end
 
-@implementation MPMainViewController
+@implementation MPMainViewController {
+    
+    UIStatusBarStyle _theBar;
+    
+}
 
 @synthesize pageViewController = _pageViewController;
 @synthesize parkViewController = _parkViewController;
@@ -174,6 +178,17 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     
     self.parkInfoViewController.currentPark = self.currentPark;
+    if (pendingViewControllers[0] == self.parkInfoViewController || pendingViewControllers[0] == self.parkViewController) {
+        
+        self->_theBar = UIStatusBarStyleDefault;
+        
+    } else {
+        
+        self->_theBar = UIStatusBarStyleLightContent;
+        
+    }
+    
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -196,6 +211,8 @@
     [self.pageViewController didMoveToParentViewController:self];
     self.view.backgroundColor = [MPColorManager lightColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(wakeFromAutoPark) name:MPAutoParkWakeFromAutoParkNotification object:nil];
+    self->_theBar = UIStatusBarStyleDefault;
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -215,6 +232,12 @@
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    return self->_theBar;
     
 }
 
