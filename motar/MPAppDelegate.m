@@ -136,9 +136,31 @@
     NSLog(@"Received Local Notification %@", notification);
     NSDictionary *infoDict = notification.userInfo;
     
-    if (infoDict[MPNotificationTypeKey] == MPNotificationTypeAutoPark) {
+    if (infoDict[MPNotificationTypeKey] == MPNotificationTypeReminder) {
         
-        // do autopark stuff.
+        if (abs([notification.fireDate timeIntervalSinceDate:[NSDate date]]) < 60) {
+            
+            UIAlertView *reminderAlert = [[UIAlertView alloc] initWithTitle:@"Reminder"
+                                                                    message:@"Your parking expires in 15 minutes."
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+            [reminderAlert show];
+            
+        }
+        
+    } else if (infoDict[MPNotificationTypeKey] == MPNotificationTypeAutoPark) {
+        
+        if (abs([notification.fireDate timeIntervalSinceDate:[NSDate date]]) < 60) {
+            
+            UIAlertView *autoParkAlert = [[UIAlertView alloc] initWithTitle:@"AutoPark"
+                                                                    message:@"Did you park your car?"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+            [autoParkAlert show];
+            
+        }
         
     }
     

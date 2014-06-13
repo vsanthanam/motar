@@ -65,6 +65,7 @@ static MKPinAnnotationColor _pinColor;
 }
 
 
+
 #pragma mark - Public Class Methods
 
 + (MKPinAnnotationColor)pinColor {
