@@ -101,7 +101,7 @@
         
     }
     
-    NSLog(@"Background: %@", self.trackedLocation);
+    NSLog(@"Background Location: %@", self.trackedLocation);
     
 }
 
@@ -127,7 +127,7 @@
             if ([self.delegate autoParkManagerShouldTrack:self]) {
                 
                 self->_trackedActivity = activity;
-                NSLog(@"Motion: %@", self.trackedActivity);
+                NSLog(@"Background Motion: %@", self.trackedActivity);
                 [[NSNotificationCenter defaultCenter] postNotificationName:MPAutoParkNewMotionNotification object:nil];
                 if ([self.delegate respondsToSelector:@selector(autoParkManager:didTrackNewActivity:)]) {
                     

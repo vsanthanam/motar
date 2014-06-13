@@ -10,6 +10,8 @@
 
 @implementation MPAppDelegate
 
+#pragma mark - UIApplicationDelegate Protocol Instance Methods
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Reset App Badge Number
@@ -165,6 +167,10 @@
     }
     
 }
+
+
+
+#pragma mark - Private Insance Methods
 
 - (void)iCloudChanged {
  
