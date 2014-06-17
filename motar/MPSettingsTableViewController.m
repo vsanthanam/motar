@@ -97,6 +97,7 @@ static NSString *_websiteLink = @"http://www.varunsanthanam.com/motar";
             [self.iCloudSwitch setOn:NO animated:YES];
             [self.autoParkSwitch setOn:NO animated:YES];
             [[NSNotificationCenter defaultCenter] postNotificationName:MPEmptyParkNotification object:nil];
+            [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         }
         
